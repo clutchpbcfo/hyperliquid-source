@@ -1,0 +1,7 @@
+{
+  "workflow_commit": "fbcaeffd247ee9807e43075d638bc84a3f4241d2",
+  "source_commit": "fb5cc42d58a96f953230d3ff8bee1d7c7cd7050d",
+  "python": "Python 3.12.3",
+  "captures": "only three named Git LFS paths",
+  "mac_files_or_credentials": false
+}

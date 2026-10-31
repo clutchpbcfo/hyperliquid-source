@@ -1,0 +1,70 @@
+[
+  {
+    "name": "primary-offline",
+    "command": [
+      "/home/runner/work/_temp/replay-venv/bin/python",
+      "-I",
+      "-S",
+      "-B",
+      "-c",
+      "import runpy,sys; p=sys.argv[1]; sys.path.insert(0,p.rsplit(\"/\",1)[0]); sys.argv=sys.argv[1:]; runpy.run_path(p,run_name=\"__main__\")",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/research/work-items/RE-002-std-clang-carriers/probe.py",
+      "--repo",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source",
+      "--inputs",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-std-inputs-linux",
+      "--out",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-primary-linux"
+    ],
+    "exit_code": 0,
+    "seconds": 9.789,
+    "required": true
+  },
+  {
+    "name": "primary-native-format-qualification",
+    "command": [
+      "/home/runner/work/_temp/replay-venv/bin/python",
+      "-I",
+      "-S",
+      "-B",
+      "-c",
+      "import runpy,sys; p=sys.argv[1]; sys.path.insert(0,p.rsplit(\"/\",1)[0]); sys.argv=sys.argv[1:]; runpy.run_path(p,run_name=\"__main__\")",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/research/work-items/RE-002-std-clang-carriers/probe.py",
+      "--repo",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source",
+      "--inputs",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-std-inputs-linux",
+      "--out",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-native-linux",
+      "--native-objdump",
+      "/usr/lib/llvm-18/bin/llvm-objdump"
+    ],
+    "exit_code": 0,
+    "seconds": 10.19,
+    "required": false
+  },
+  {
+    "name": "independent",
+    "command": [
+      "/home/runner/work/_temp/replay-venv/bin/python",
+      "-I",
+      "-B",
+      "-c",
+      "import runpy,sys; p=sys.argv[1]; sys.path.insert(0,p.rsplit(\"/\",1)[0]); sys.argv=sys.argv[1:]; runpy.run_path(p,run_name=\"__main__\")",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/research/work-items/RE-002-std-clang-carriers/independent/check_carriers.py",
+      "--repo",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source",
+      "--inputs",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-std-inputs-linux",
+      "--primary",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-primary-linux",
+      "--out",
+      "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-independent-linux",
+      "--native-objdump",
+      "/usr/lib/llvm-18/bin/llvm-objdump"
+    ],
+    "exit_code": 0,
+    "seconds": 4.977,
+    "required": true
+  }
+]

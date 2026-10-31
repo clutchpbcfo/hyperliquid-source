@@ -1,0 +1,249 @@
+{
+  "artifact_id": 13060811197,
+  "run_id": 41248957180,
+  "archive_sha256": "63d599feb08ef941c1c132e582fbe22ea2464bcc82144a4645ad353b991b4fb5",
+  "inventory": {
+    "authentication/channel-rust-1.94.1.toml.gpg-status": {
+      "bytes": 419,
+      "sha256": "24961ba5a48d950a375b4100f37f3be4421de5b06e6444db4f424f265d04d07a"
+    },
+    "authentication/channel-rust-1.94.1.toml.gpg-stderr": {
+      "bytes": 426,
+      "sha256": "83454f74bd0cdd3f2ccab8461f1f718567d4a0d7c530fafa37040d9d6c0424a5"
+    },
+    "authentication/channel-rust-1.95.0.toml.gpg-status": {
+      "bytes": 419,
+      "sha256": "f9071f5ecf0f3f09f20cb583a618fabfbca4416dcce909fcb4cbe82c7c073fd2"
+    },
+    "authentication/channel-rust-1.95.0.toml.gpg-stderr": {
+      "bytes": 426,
+      "sha256": "8b78e7f839b6658048495b7354fc764e4de63de2e785f61c9726c064e5a47242"
+    },
+    "authentication/rust-std-1.94.1-x86_64-unknown-linux-gnu.tar.xz.gpg-status": {
+      "bytes": 419,
+      "sha256": "4719387f9eeda45aa8c843989fe94b7c3757c684f9844fc0c8ab1584af240b38"
+    },
+    "authentication/rust-std-1.94.1-x86_64-unknown-linux-gnu.tar.xz.gpg-stderr": {
+      "bytes": 426,
+      "sha256": "f4ed02a861f9ed242915d1e4dab8108079e66fbfddc2d2c8e7d2e89c17b2c697"
+    },
+    "authentication/rust-std-1.95.0-x86_64-unknown-linux-gnu.tar.xz.gpg-status": {
+      "bytes": 419,
+      "sha256": "4e36018e0aa38c41d5bede7d9d9f90c1c7488f5cbfa4afc2b296fd3e673ca3ec"
+    },
+    "authentication/rust-std-1.95.0-x86_64-unknown-linux-gnu.tar.xz.gpg-stderr": {
+      "bytes": 426,
+      "sha256": "3ff2c477070f6c84447239d002705501c114361396693e5f0355df4b5a7e1054"
+    },
+    "authentication.json": {
+      "bytes": 497,
+      "sha256": "06c24d51d02575c904cff2e0ec46026f43f7d4011d8248b753cf090c6baeee74"
+    },
+    "fetch.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fetch.stdout": {
+      "bytes": 440,
+      "sha256": "faac386c7cd40a80ceffb2d6e96138e99c6eb08415a7169f7354703bb2c35516"
+    },
+    "logs/independent.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/independent.stdout": {
+      "bytes": 81,
+      "sha256": "a71186dcb074a45e4fe658ebd1982b74547aafe234669042d8cebc643633bb3c"
+    },
+    "logs/primary-native-format-qualification.stdout": {
+      "bytes": 203,
+      "sha256": "1828e813d2e366f1aa5112ebc040254dfd1dec3eccede3d768bfb5c068f095e0"
+    },
+    "logs/primary-native-format-qualification.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/primary-offline.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/primary-offline.stdout": {
+      "bytes": 204,
+      "sha256": "a91797bc626dfc93bcbe722761e9b7e9a97899a923e7d7986c358b049141dbbe"
+    },
+    "preflight.json": {
+      "bytes": 245,
+      "sha256": "a3738d8c3d885eeb796de5e7922d9e47fd8aa591a7feb04c9f0a608632373b38"
+    },
+    "re002-independent-linux/agreement.json": {
+      "bytes": 53927,
+      "sha256": "1e2a21d49b15d80017aa2ad41f6ca9298442038f884292548ffca4960df25d24"
+    },
+    "re002-independent-linux/objdump-version.txt": {
+      "bytes": 1613,
+      "sha256": "51392c170c10af97eef3453dc5fcdf5c978f7413c95106fd742cc2474d6efa99"
+    },
+    "re002-independent-linux/popcount-1.94.1.asm": {
+      "bytes": 1746,
+      "sha256": "80b94f9ae08a406be31009a32e55716067485adb3f3f4410ec4a65a3dff795ff"
+    },
+    "re002-independent-linux/popcount-1.95.0.asm": {
+      "bytes": 1746,
+      "sha256": "80b94f9ae08a406be31009a32e55716067485adb3f3f4410ec4a65a3dff795ff"
+    },
+    "re002-native-linux/census.json": {
+      "bytes": 7963,
+      "sha256": "11419f7360d783f83d60f64ecba4d2c87ceea8217226d70b89c594533a1ce966"
+    },
+    "re002-native-linux/native-object.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "re002-native-linux/native-object.stdout": {
+      "bytes": 1746,
+      "sha256": "80b94f9ae08a406be31009a32e55716067485adb3f3f4410ec4a65a3dff795ff"
+    },
+    "re002-native-linux/native-version.stdout": {
+      "bytes": 1613,
+      "sha256": "51392c170c10af97eef3453dc5fcdf5c978f7413c95106fd742cc2474d6efa99"
+    },
+    "re002-native-linux/object-controls.json": {
+      "bytes": 1181,
+      "sha256": "675460bc577c9aa45c7fda74d5cef09b1e1690c886717914f832697f7aeadc84"
+    },
+    "re002-native-linux/results.json": {
+      "bytes": 24662,
+      "sha256": "d90fbff914a609518f58ce1508eb0f00bfb2669196d54fa3c2cd1fea9a28615f"
+    },
+    "re002-native-linux/target-observations.json": {
+      "bytes": 7274,
+      "sha256": "10c9481d1ae84a2a3d1797dbd84f2b1a9c4b007fd6f1ed788554698910ec0996"
+    },
+    "re002-primary-linux/census.json": {
+      "bytes": 7963,
+      "sha256": "11419f7360d783f83d60f64ecba4d2c87ceea8217226d70b89c594533a1ce966"
+    },
+    "re002-primary-linux/object-controls.json": {
+      "bytes": 1181,
+      "sha256": "675460bc577c9aa45c7fda74d5cef09b1e1690c886717914f832697f7aeadc84"
+    },
+    "re002-primary-linux/results.json": {
+      "bytes": 21796,
+      "sha256": "3e6043dc7159245373423a05fc97d40dac8c219ddc7b907d9ffe63307978e54f"
+    },
+    "re002-primary-linux/target-observations.json": {
+      "bytes": 4686,
+      "sha256": "0e03a89c81e6d39598de375c8ce3dcbb19e16a7686b7a4a7f484bb675fb7a7f5"
+    },
+    "stages.json": {
+      "bytes": 2658,
+      "sha256": "dbfb0c311765b48f6e44014c2eef3b6ac3a4e0e0e0f9ad3b9d4a7c664129dd5a"
+    },
+    "summary.json": {
+      "bytes": 3860,
+      "sha256": "c34441ef04d1d90ba9549f40ef36d7e76b08bcc39842430801461ce109d750bb"
+    },
+    "tool-identities.json": {
+      "bytes": 2008,
+      "sha256": "3c43eff1a83157ffa362a75e249f66a7871b1009fc821273c00ad4d51d6ff0b3"
+    }
+  },
+  "summary": {
+    "source_commit": "fb5cc42d58a96f953230d3ff8bee1d7c7cd7050d",
+    "nonroot_no_capabilities": true,
+    "separate_network_namespace_no_external_interface": true,
+    "source_readonly_canary_rejected": true,
+    "inputs_unchanged": true,
+    "source_and_target_sha256": {
+      "artifacts/node/94/hl-node": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+      "artifacts/node/115/hl-node": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
+      "artifacts/visor/captured/hl-visor": "89338207c793d80ac2fba75bb0d36c659e2cabc87a94e61a57ba532b8d212e31",
+      "tools/artifacts.py": "0c674c5e8bb9bf952e90c49efe361cfaa4bb4fa8177455bfe8c149f28c701351",
+      "tools/fde_extents.py": "c7c23b9f8e19821e37af127e9eb1dabbf4b0d0577b26c1ce4814ead220133b7e",
+      "tools/elf_index.py": "6664354c8af5240d0b1fa76c3c9956c6fdded00e0efe283620745d3d566a2d11"
+    },
+    "stages": [
+      {
+        "name": "primary-offline",
+        "command": [
+          "/home/runner/work/_temp/replay-venv/bin/python",
+          "-I",
+          "-S",
+          "-B",
+          "-c",
+          "import runpy,sys; p=sys.argv[1]; sys.path.insert(0,p.rsplit(\"/\",1)[0]); sys.argv=sys.argv[1:]; runpy.run_path(p,run_name=\"__main__\")",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/research/work-items/RE-002-std-clang-carriers/probe.py",
+          "--repo",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source",
+          "--inputs",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-std-inputs-linux",
+          "--out",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-primary-linux"
+        ],
+        "exit_code": 0,
+        "seconds": 9.789,
+        "required": true
+      },
+      {
+        "name": "primary-native-format-qualification",
+        "command": [
+          "/home/runner/work/_temp/replay-venv/bin/python",
+          "-I",
+          "-S",
+          "-B",
+          "-c",
+          "import runpy,sys; p=sys.argv[1]; sys.path.insert(0,p.rsplit(\"/\",1)[0]); sys.argv=sys.argv[1:]; runpy.run_path(p,run_name=\"__main__\")",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/research/work-items/RE-002-std-clang-carriers/probe.py",
+          "--repo",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source",
+          "--inputs",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-std-inputs-linux",
+          "--out",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-native-linux",
+          "--native-objdump",
+          "/usr/lib/llvm-18/bin/llvm-objdump"
+        ],
+        "exit_code": 0,
+        "seconds": 10.19,
+        "required": false
+      },
+      {
+        "name": "independent",
+        "command": [
+          "/home/runner/work/_temp/replay-venv/bin/python",
+          "-I",
+          "-B",
+          "-c",
+          "import runpy,sys; p=sys.argv[1]; sys.path.insert(0,p.rsplit(\"/\",1)[0]); sys.argv=sys.argv[1:]; runpy.run_path(p,run_name=\"__main__\")",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/research/work-items/RE-002-std-clang-carriers/independent/check_carriers.py",
+          "--repo",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source",
+          "--inputs",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-std-inputs-linux",
+          "--primary",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-primary-linux",
+          "--out",
+          "/home/runner/work/hyperliquid-source/hyperliquid-source/work/re002-independent-linux",
+          "--native-objdump",
+          "/usr/lib/llvm-18/bin/llvm-objdump"
+        ],
+        "exit_code": 0,
+        "seconds": 4.977,
+        "required": true
+      }
+    ],
+    "candidates": 218,
+    "comparisons": 654,
+    "independent_carriers": 110,
+    "captured_execution": false,
+    "repository_test_discovery": false,
+    "optional_native_format_qualified": true
+  },
+  "preflight": {
+    "workflow_commit": "fbcaeffd247ee9807e43075d638bc84a3f4241d2",
+    "source_commit": "fb5cc42d58a96f953230d3ff8bee1d7c7cd7050d",
+    "python": "Python 3.12.3",
+    "captures": "only three named Git LFS paths",
+    "mac_files_or_credentials": false
+  }
+}
