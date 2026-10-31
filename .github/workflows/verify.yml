@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           lfs: true
           submodules: recursive
       - run: sudo apt-get update && sudo apt-get install -y ripgrep gnupg git-lfs
@@ -18,3 +19,14 @@ jobs:
           cache: npm
       - run: make rea-install rea-smoke
       - run: make verify test catalogue-check index reproduce
+      - name: Replay repository-local LFS initialization
+        run: |
+          mkdir -p work
+          python3 -B research/work-items/RE-002-local-lfs/reproduce.py > work/local-lfs-replay-linux.json
+      - name: Retain local LFS replay result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr118-local-lfs-replay-linux
+          path: work/local-lfs-replay-linux.json
+          if-no-files-found: error
