@@ -1,20 +1,203 @@
-name: Verify research inputs
-on: [push, pull_request, workflow_dispatch]
+name: RE-002 packet Linux replay
+on:
+  push:
+    branches: [validation/re002-packet-linux-20261031]
 permissions:
   contents: read
 jobs:
-  static-research:
+  packet-only:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout exact submitted source without stored credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          lfs: true
-          submodules: recursive
-      - run: sudo apt-get update && sudo apt-get install -y ripgrep gnupg git-lfs
-      - run: git -C references/can1357-hl lfs pull
-      - uses: actions/setup-node@v4
+          ref: fb5cc42d58a96f953230d3ff8bee1d7c7cd7050d
+          persist-credentials: false
+          fetch-depth: 1
+          lfs: false
+          submodules: false
+      - name: Prepare disposable runner tools and hash-pinned ELF reader
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends gnupg git-lfs llvm-18 python3-venv
+          python3 -m venv "$RUNNER_TEMP/replay-venv"
+          wheel="$RUNNER_TEMP/pyelftools-0.32-py3-none-any.whl"
+          curl --disable --fail --silent --show-error --proto '=https' --max-time 120 \
+            https://files.pythonhosted.org/packages/af/43/700932c4f0638c3421177144a2e86448c0d75dbaee2c7936bda3f9fd0878/pyelftools-0.32-py3-none-any.whl \
+            --output "$wheel"
+          printf '%s  %s\n' 013df952a006db5e138b1edf6d8a68ecc50630adbd0d83a2d41e7f846163d738 "$wheel" | sha256sum --check --strict
+          "$RUNNER_TEMP/replay-venv/bin/python" -I -m pip --isolated --disable-pip-version-check install --no-index --no-deps "$wheel"
+      - name: Materialize only three admitted captures and authenticate Rust data
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = fb5cc42d58a96f953230d3ff8bee1d7c7cd7050d
+          git lfs install --local
+          git lfs pull --include='artifacts/node/94/hl-node,artifacts/node/115/hl-node,artifacts/visor/captured/hl-visor' --exclude=''
+          mkdir -p work "$RUNNER_TEMP/packet-work/re002-public" "$RUNNER_TEMP/offline-tmp"
+          printf 'owned nonsecret readonly canary\n' > controlled-readonly-canary.txt
+          python3 -I -S -B - <<'PY'
+          import json, os, pathlib, subprocess
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])/'packet-work/re002-public/preflight.json'
+          p.write_text(json.dumps({'workflow_commit':os.environ['GITHUB_SHA'], 'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(), 'python':subprocess.check_output(['python3','--version'],text=True).strip(), 'captures':'only three named Git LFS paths', 'mac_files_or_credentials':False},indent=2)+'\n')
+          PY
+          env -i HOME="$HOME" PATH='/usr/bin:/bin' TMPDIR="$RUNNER_TEMP" LANG=C.UTF-8 LC_ALL=C.UTF-8 \
+            "$RUNNER_TEMP/replay-venv/bin/python" -I -S -B \
+            research/work-items/RE-002-std-clang-carriers/fetch_inputs.py \
+            --out "$RUNNER_TEMP/packet-work/re002-std-inputs-linux" \
+            > "$RUNNER_TEMP/packet-work/re002-public/fetch.stdout" \
+            2> "$RUNNER_TEMP/packet-work/re002-public/fetch.stderr"
+      - name: Run only admitted packet methods without network or writable source
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > "$RUNNER_TEMP/replay.py" <<'PY'
+          """Disposable Linux-only runner for three explicitly named static packet methods."""
+          import errno
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import shutil
+          import socket
+          import subprocess
+          import sys
+          import time
+
+          repo, native = Path(sys.argv[1]).resolve(), Path(sys.argv[2]).resolve()
+          packet = repo / 'research/work-items/RE-002-std-clang-carriers'
+          work = repo / 'work'
+          public = work / 're002-public'
+          public.mkdir(exist_ok=True)
+          logs = public / 'logs'
+          logs.mkdir(exist_ok=True)
+
+
+          def sha(path):
+              value = hashlib.sha256()
+              with path.open('rb') as handle:
+                  for block in iter(lambda: handle.read(1024 * 1024), b''):
+                      value.update(block)
+              return value.hexdigest()
+
+
+          def retain(source, destination):
+              if source.is_symlink() or not source.is_file() or source.stat().st_size > 5 * 1024 * 1024:
+                  raise ValueError('artifact is not an admitted small regular file')
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(source, destination)
+
+
+          assert os.getuid() != 0
+          assert os.readlink('/proc/self/ns/net') != os.environ['OUTER_NETNS']
+          assert sorted(name for _, name in socket.if_nameindex()) == ['lo']
+          assert not any(name in os.environ for name in ['GITHUB_TOKEN', 'ACTIONS_RUNTIME_TOKEN', 'SSH_AUTH_SOCK'])
+          status = Path('/proc/self/status').read_text()
+          assert 'CapEff:\t0000000000000000' in status
+          canary = repo / 'controlled-readonly-canary.txt'
+          assert canary.read_text() == 'owned nonsecret readonly canary\n'
+          try:
+              canary.write_text('must not write')
+          except OSError as error:
+              assert error.errno == errno.EROFS
+          else:
+              raise RuntimeError('source mount is writable')
+
+          admission = json.loads((packet / 'packet.sha256.json').read_text())
+          for name, row in admission.items():
+              path = packet / name
+              assert path.is_file() and not path.is_symlink() and path.stat().st_size == row['bytes'] and sha(path) == row['sha256'], name
+          config = json.loads((packet / 'inputs.json').read_text())
+          targets = {row['path']: row['sha256'] for row in config['targets']}
+          helpers = ['tools/artifacts.py', 'tools/fde_extents.py', 'tools/elf_index.py']
+          before = {name: sha(repo / name) for name in [*targets, *helpers]}
+          assert all(before[name] == value for name, value in targets.items())
+          tools = {'python': {'version': sys.version, 'sha256': sha(Path(sys.executable).resolve())},
+                   'native_reader': {'path': str(native), 'sha256': sha(native)}}
+          tools['native_reader']['version'] = subprocess.check_output([str(native), '--version'], text=True)
+          (public / 'tool-identities.json').write_text(json.dumps(tools, indent=2) + '\n')
+          stages = []
+
+
+          def run(name, script, arguments, required):
+              # -I -S avoids user/site startup. Only the explicitly hashed script's folder is added.
+              entry = str(packet / script)
+              launcher = 'import runpy,sys; p=sys.argv[1]; sys.path.insert(0,p.rsplit("/",1)[0]); sys.argv=sys.argv[1:]; runpy.run_path(p,run_name="__main__")'
+              flags = ['-I', '-S', '-B']
+              if script.startswith('independent/'):
+                  flags = ['-I', '-B']  # dedicated venv contains only the hash-pinned pyelftools wheel and pip
+              command = [sys.executable, *flags, '-c', launcher, entry, *arguments]
+              started = time.monotonic()
+              with (logs / (name + '.stdout')).open('wb') as stdout, (logs / (name + '.stderr')).open('wb') as stderr:
+                  result = subprocess.run(command, cwd=repo, stdout=stdout, stderr=stderr, timeout=120)
+              row = {'name': name, 'command': command, 'exit_code': result.returncode,
+                     'seconds': round(time.monotonic() - started, 3), 'required': required}
+              stages.append(row)
+              (public / 'stages.json').write_text(json.dumps(stages, indent=2) + '\n')
+              print(json.dumps(row), flush=True)
+              if required and result.returncode:
+                  raise RuntimeError('required admitted method failed: ' + name)
+              return result.returncode
+
+
+          inputs = str(work / 're002-std-inputs-linux')
+          base = ['--repo', str(repo), '--inputs', inputs]
+          run('primary-offline', 'probe.py', [*base, '--out', str(work / 're002-primary-linux')], True)
+          run('primary-native-format-qualification', 'probe.py', [*base, '--out', str(work / 're002-native-linux'), '--native-objdump', str(native)], False)
+          run('independent', 'independent/check_carriers.py', [*base, '--primary', str(work / 're002-primary-linux'),
+              '--out', str(work / 're002-independent-linux'), '--native-objdump', str(native)], True)
+          after = {name: sha(repo / name) for name in before}
+          assert before == after
+          for directory in ['re002-primary-linux', 're002-native-linux']:
+              root = work / directory
+              for name in ['results.json', 'object-controls.json', 'target-observations.json', 'census.json',
+                           'native-version.stdout', 'native-object.stdout', 'native-object.stderr']:
+                  if (root / name).is_file():
+                      retain(root / name, public / directory / name)
+          root = work / 're002-independent-linux'
+          for name in ['agreement.json', 'popcount-1.94.1.asm', 'popcount-1.95.0.asm', 'objdump-version.txt']:
+              if (root / name).is_file():
+                  retain(root / name, public / root.name / name)
+          auth = work / 're002-std-inputs-linux'
+          retain(auth / 'authentication.json', public / 'authentication.json')
+          for path in auth.iterdir():
+              if path.name.endswith(('.gpg-status', '.gpg-stderr')):
+                  retain(path, public / 'authentication' / path.name)
+          primary = json.loads((work / 're002-primary-linux/results.json').read_text()) if (work / 're002-primary-linux/results.json').is_file() else None
+          independent = json.loads((root / 'agreement.json').read_text()) if (root / 'agreement.json').is_file() else None
+          summary = {'source_commit': 'fb5cc42d58a96f953230d3ff8bee1d7c7cd7050d',
+                     'nonroot_no_capabilities': True, 'separate_network_namespace_no_external_interface': True,
+                     'source_readonly_canary_rejected': True, 'inputs_unchanged': before == after,
+                     'source_and_target_sha256': before, 'stages': stages,
+                     'candidates': primary['eligible_symbol_candidates']['total'] if primary else None,
+                     'comparisons': primary['comparison_count'] if primary else None,
+                     'independent_carriers': sum(len(r['carriers']) for r in independent['versions']) if independent else None,
+                     'captured_execution': False, 'repository_test_discovery': False,
+                     'optional_native_format_qualified': next(r['exit_code'] == 0 for r in stages if r['name'].startswith('primary-native'))}
+          (public / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
+          print(json.dumps(summary), flush=True)
+          assert summary['candidates'] == 218 and summary['comparisons'] == 654 and summary['independent_carriers'] == 110
+          assert all(r['exit_code'] == 0 for r in stages if r['required'])
+          PY
+          outer_netns="$(readlink /proc/self/ns/net)"
+          sudo unshare --net --mount --propagation private /bin/bash -euo pipefail -c '
+            repo="$1"; work="$2"; uid="$3"; gid="$4"; home_dir="$5"; temp_dir="$6"; outer_netns="$7"; venv="$8"; script="$9"; native="${10}"
+            mount --bind "$repo" "$repo"
+            mount -o remount,bind,ro,noexec,nosuid,nodev "$repo"
+            mount --bind "$work" "$repo/work"
+            mount -o remount,bind,rw,noexec,nosuid,nodev "$repo/work"
+            exec setpriv --reuid "$uid" --regid "$gid" --init-groups --bounding-set=-all --inh-caps=-all --ambient-caps=-all --no-new-privs \
+              env -i HOME="$home_dir" PATH="/usr/bin:/bin" TMPDIR="$temp_dir" LANG=C.UTF-8 LC_ALL=C.UTF-8 OUTER_NETNS="$outer_netns" \
+              "$venv/bin/python" -I -B "$script" "$repo" "$native"
+          ' _ "$GITHUB_WORKSPACE" "$RUNNER_TEMP/packet-work" "$(id -u)" "$(id -g)" "$HOME" "$RUNNER_TEMP/offline-tmp" "$outer_netns" "$RUNNER_TEMP/replay-venv" "$RUNNER_TEMP/replay.py" /usr/bin/llvm-objdump-18
+      - name: Retain only selected public research receipts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          node-version-file: .nvmrc
-          cache: npm
-      - run: make rea-install rea-smoke
-      - run: make verify test catalogue-check index reproduce
+          name: re002-packet-linux-replay
+          path: ${{ runner.temp }}/packet-work/re002-public/
+          if-no-files-found: warn
+          retention-days: 7
