@@ -1,0 +1,21 @@
+{
+  "repository": "lalalune/hyperliquid-source",
+  "source_commit": "cec50f68e01c967d21538d48c49683ddeea52767",
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+  "selected_function_va": "0x15c0d90",
+  "total_excerpt_bytes": 2539,
+  "native_program": "/usr/bin/objdump",
+  "native_version_queries": 1,
+  "native_decodes": 2,
+  "repository_python_modules_executed": 0,
+  "captured_program_executions": 0,
+  "third_party_python_packages": [],
+  "whole_elf_reauthenticated_in_job": false,
+  "input_binding_receipt": "FUNCTION_RANGE_RECORDS.json and TARGET_IDENTITY.json retained locally",
+  "payload_files": {
+    "WINDOWS.json": "2bd889e28facb925fff45a7eac436efa540b2f69f478aed868a5c851968aa2d7",
+    "bootstrap.sh": "360b62de472af33c85d34eefc6d19855581b3d8abda6e84658e34dd19febdc9b",
+    "isolate.sh": "d41354dab48207ca91a5a00ac43fed1cdd9848d810fb02155a44e60a1c62b019",
+    "probe.py": "1fc6d6d59efede8b9e92643da56faaf72d57db9e3c41a56b79c7daf22669e75e"
+  }
+}

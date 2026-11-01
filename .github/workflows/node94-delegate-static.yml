@@ -1,0 +1,27 @@
+name: Bounded node94 JSON delegate static decode
+on:
+  push:
+    branches: [validation/node94-json-delegate-static-20261101]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.3'
+      - name: Qualify and decode two captured byte excerpts as data
+        run: bash payload/bootstrap.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: node94-json-delegate-static-receipts
+          path: |
+            probe-receipts/*.json
+            probe-receipts/*.stdout
+            probe-receipts/*.stderr
