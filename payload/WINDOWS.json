@@ -1,0 +1,73 @@
+{
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+  "source_execution": false,
+  "repository_imports": false,
+  "method": "Owned ELF-header, unwind-table and exact supported CIE/FDE field reading; raw data only.",
+  "regions": [
+    {
+      "label": "object-constructor",
+      "start_va": "0x1619820",
+      "end_va": "0x1619976",
+      "bytes": 342,
+      "file_offset": "0x1618820",
+      "body_sha256": "7fa307a65dbd08d8057d6a63ee9ac96931c51785ed5fd5c583d5165c61777422",
+      "fde_va": "0xff77e8",
+      "fde_file_offset": "0xff77e8",
+      "fde_hex": "30000000c09b03003020620056010000040bd594ff420e10410e18470ea00183038e02032f010e18410e10420e08410ea0010000",
+      "cie_file_offset": "0xfbdc2c",
+      "cie_hex": "1c00000000000000017a504c5200017810079b29ca7b041b1b0c070890010000",
+      "cie_augmentation": "zPLR",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "code_alignment": 1,
+      "data_alignment": -8,
+      "return_register": 16,
+      "initial_location_field_va": "0xff77f0",
+      "initial_location_delta": 6430768,
+      "address_range_field_hex": "56010000",
+      "unwind_index_row": 6580,
+      "next_unwind_start_not_extent": "0x1619980",
+      "head_hex": "4156534881ec880000004889fb488b4608488b4e1048c1e1",
+      "tail_hex": "89c34889e7e878deffff4889dfe8a0670404ff15b2471504",
+      "body_hex": "4156534881ec880000004889fb488b4608488b4e1048c1e1064801c14889042448894c240848c744241000000000488d7c24204889e6e87569f9ff0fb64424203c16751b488b4424284889430848b80100000000000080488903e9d00000008b4c24218b54242489542404894c2401488b4c24280f104424300f1144241088042448894c2408488d7c24204889e6e80df6f8ff49be01000000000000804c397424207542488d7c2428e842d7ffff488d7c24204889e6e8f5f0f8ff4c397424207524488d7c2428e824d7ffff488d3d47a0c4febe3d000000e893fdffff488943084c8933eb41488b842480000000488943600f104424700f1143500f104424600f1143400f104424200f104c24300f105424400f105c24500f115b300f1153200f114b100f11034889e7e891deffff4889d84881c4880000005b415ec34889c34889e7e878deffff4889dfe8a0670404ff15b2471504"
+    },
+    {
+      "label": "post-object",
+      "start_va": "0x15b9ce0",
+      "end_va": "0x15b9d93",
+      "bytes": 179,
+      "file_offset": "0x15b8ce0",
+      "body_sha256": "0cea4ce5f5eefe11bddba53ecdd65b88db44f4969bfa6d1226a25761b84808f0",
+      "fde_va": "0xcfe300",
+      "fde_file_offset": "0xcfe300",
+      "fde_hex": "2c000000eccd0100d8b98b00b300000000440e20025b0e08410e205a0e08410e20550e08410e20540e08410e20000000",
+      "cie_file_offset": "0xce1518",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "cie_augmentation": "zR",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "code_alignment": 1,
+      "data_alignment": -8,
+      "return_register": 16,
+      "initial_location_field_va": "0xcfe308",
+      "initial_location_delta": 9157080,
+      "address_range_field_hex": "b3000000",
+      "unwind_index_row": 5625,
+      "next_unwind_start_not_extent": "0x15b9da0",
+      "head_hex": "4883ec18488b4f20488b47284839c8733a488b571848ffc0",
+      "tail_hex": "e6e80ff1ffff4883c418c3488d3debca0b04ff1585431b04",
+      "body_hex": "4883ec18488b4f20488b47284839c8733a488b571848ffc048f7d948be0026000001000000440fb64402ff4983f82c774a4c0fa3c67329488947284c8d040149ffc048ffc04983f80175da48c70424030000004889e6e855f1ffff4883c418c34983f82c751548c70424150000004889e6e83af1ffff4883c418c34183f87d75104885c074204889472831c04883c418c348c70424160000004889e6e80ff1ffff4883c418c3488d3debca0b04ff1585431b04"
+    }
+  ],
+  "incoming_edges": [
+    {
+      "site_va": "0x15c127d",
+      "bytes": "e89e850500",
+      "destination_va": "0x1619820"
+    },
+    {
+      "site_va": "0x15c1185",
+      "bytes": "e8568bffff",
+      "destination_va": "0x15b9ce0"
+    }
+  ],
+  "limit": "FDE-declared PC ranges and two prior decoded incoming edges. Not a complete source-function extent, CFG, all-callers census, output schema or reconstructed behavior."
+}
