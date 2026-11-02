@@ -1,0 +1,32 @@
+{
+  "phase": "before_git_diagnostics",
+  "uid": 65534,
+  "gid": 65534,
+  "groups": [],
+  "capabilities": {
+    "CapInh": "0000000000000000",
+    "CapPrm": "0000000000000000",
+    "CapEff": "0000000000000000",
+    "CapBnd": "0000000000000000",
+    "CapAmb": "0000000000000000"
+  },
+  "no_new_privileges": "1",
+  "parent_network_namespace": "net:[4026531833]",
+  "current_network_namespace": "net:[4026532363]",
+  "interfaces": [
+    "lo"
+  ],
+  "python": "3.12.3 (main, Sep 26 2024, 18:18:55) [GCC 13.2.0]",
+  "compiler_paths": {
+    "cc": null,
+    "gcc": null,
+    "clang": null,
+    "rustc": null,
+    "cargo": null,
+    "rustup": null
+  },
+  "captured_emulation_flags": {},
+  "repository_modules_imported": false,
+  "repository_tests_started": 0,
+  "read_only_canaries_EROFS": true
+}

@@ -1,0 +1,47 @@
+{
+  "status": "STATIC_EXCERPTS_DECODED_AND_ARTIFACT_VERIFIED",
+  "verified_utc": "2026-11-01T08:01:47.242875+00:00",
+  "run_id": 41287064801,
+  "run_url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/41287064801",
+  "commit": "e173eb3716169036ae63040817b8f7104fdd7d05",
+  "workflow_count": 1,
+  "job_count": 1,
+  "run_attempt": 1,
+  "artifact_id": 13075791679,
+  "artifact_bytes": 9830,
+  "artifact_sha256": "2461c3cf78e70d778471325383b741b55437a9fc053e3de0c906258734134191",
+  "artifact_digest_matches_github": true,
+  "receipt_files": 12,
+  "native_version_queries": 1,
+  "native_decode_commands": 2,
+  "native_commands_total": 3,
+  "objdump_version": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+  "regions": [
+    {
+      "label": "object-constructor",
+      "start_va": "0x1619820",
+      "end_va": "0x1619976",
+      "bytes": 342,
+      "body_sha256": "7fa307a65dbd08d8057d6a63ee9ac96931c51785ed5fd5c583d5165c61777422",
+      "instructions": 79
+    },
+    {
+      "label": "post-object",
+      "start_va": "0x15b9ce0",
+      "end_va": "0x15b9d93",
+      "bytes": 179,
+      "body_sha256": "0cea4ce5f5eefe11bddba53ecdd65b88db44f4969bfa6d1226a25761b84808f0",
+      "instructions": 47
+    }
+  ],
+  "input_hashes_unchanged": true,
+  "linux_isolation_qualified": true,
+  "native_tools_executed_on_mac": false,
+  "repository_modules_executed": false,
+  "captured_program_executed": false,
+  "whole_elf_reauthenticated_in_job": false,
+  "automatic_retry_or_extra_job": false,
+  "upstream_pr_opened": false,
+  "limits": "Native decode of full-digest-bound excerpts, not recovered parser semantics, accepted schemas, complete call/CFG closure, implementation or milestone acceptance."
+}

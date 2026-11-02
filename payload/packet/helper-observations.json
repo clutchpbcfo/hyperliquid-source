@@ -1,0 +1,765 @@
+{
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+  "regions": [
+    {
+      "label": "object-constructor",
+      "start_va": "0x1619820",
+      "end_va": "0x1619976",
+      "bytes": 342,
+      "body_sha256": "7fa307a65dbd08d8057d6a63ee9ac96931c51785ed5fd5c583d5165c61777422"
+    },
+    {
+      "label": "post-object",
+      "start_va": "0x15b9ce0",
+      "end_va": "0x15b9d93",
+      "bytes": 179,
+      "body_sha256": "0cea4ce5f5eefe11bddba53ecdd65b88db44f4969bfa6d1226a25761b84808f0"
+    }
+  ],
+  "static_field_observations": {
+    "whitespace_domain": 256,
+    "whitespace_bytes": [
+      9,
+      10,
+      13,
+      32
+    ],
+    "ordinary_output_bytes": 104,
+    "constructor_diagnostic": "data did not match any variant of untagged enum JsonRpcResult",
+    "alternative_targets": [
+      "0x15a8ec0",
+      "0x15a89d0"
+    ],
+    "closing_byte": 125,
+    "explicit_local_closing_return": 0,
+    "postobject_raw_codes": [
+      3,
+      21,
+      22
+    ]
+  },
+  "annotations": [
+    {
+      "id": "buffer-to-intermediate",
+      "observation_and_limit": "Observed: a 64-byte-stride start/end iterator is passed to 0x15b01d0; raw tag 0x16 selects a sentinel output. Intermediate concrete type unresolved.",
+      "instruction_anchors": [
+        {
+          "va": "0x161982d",
+          "bytes": "488b4608",
+          "text": "mov    rax,QWORD PTR [rsi+0x8]",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619831",
+          "bytes": "488b4e10",
+          "text": "mov    rcx,QWORD PTR [rsi+0x10]",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619835",
+          "bytes": "48c1e106",
+          "text": "shl    rcx,0x6",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619839",
+          "bytes": "4801c1",
+          "text": "add    rcx,rax",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619845",
+          "bytes": "48c744241000000000",
+          "text": "mov    QWORD PTR [rsp+0x10],0x0",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619856",
+          "bytes": "e87569f9ff",
+          "text": "call   0x15b01d0",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619860",
+          "bytes": "3c16",
+          "text": "cmp    al,0x16",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619862",
+          "bytes": "751b",
+          "text": "jne    0x161987f",
+          "region": "object-constructor"
+        }
+      ]
+    },
+    {
+      "id": "ordered-alternatives",
+      "observation_and_limit": "Observed: first alternative 0x15a8ec0; raw sentinel invokes an intervening helper then second alternative 0x15a89d0. Non-sentinel result from either reaches the common copy. Both alternative grammars unresolved.",
+      "instruction_anchors": [
+        {
+          "va": "0x16198ae",
+          "bytes": "e80df6f8ff",
+          "text": "call   0x15a8ec0",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198b3",
+          "bytes": "49be0100000000000080",
+          "text": "movabs r14,0x8000000000000001",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198bd",
+          "bytes": "4c39742420",
+          "text": "cmp    QWORD PTR [rsp+0x20],r14",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198c2",
+          "bytes": "7542",
+          "text": "jne    0x1619906",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198c9",
+          "bytes": "e842d7ffff",
+          "text": "call   0x1617010",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198d6",
+          "bytes": "e8f5f0f8ff",
+          "text": "call   0x15a89d0",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198db",
+          "bytes": "4c39742420",
+          "text": "cmp    QWORD PTR [rsp+0x20],r14",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198e0",
+          "bytes": "7524",
+          "text": "jne    0x1619906",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198e7",
+          "bytes": "e824d7ffff",
+          "text": "call   0x1617010",
+          "region": "object-constructor"
+        }
+      ]
+    },
+    {
+      "id": "named-diagnostic",
+      "observation_and_limit": "Observed: both alternative sentinels reach the 61-byte captured JsonRpcResult diagnostic and output sentinel. Association with an untagged JsonRpcResult is supported by data; fully qualified source type and fields unresolved.",
+      "instruction_anchors": [
+        {
+          "va": "0x16198ec",
+          "bytes": "488d3d47a0c4fe",
+          "text": "lea    rdi,[rip+0xfffffffffec4a047]        # 0x26393a",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198f3",
+          "bytes": "be3d000000",
+          "text": "mov    esi,0x3d",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198f8",
+          "bytes": "e893fdffff",
+          "text": "call   0x1619690",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x16198fd",
+          "bytes": "48894308",
+          "text": "mov    QWORD PTR [rbx+0x8],rax",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619901",
+          "bytes": "4c8933",
+          "text": "mov    QWORD PTR [rbx],r14",
+          "region": "object-constructor"
+        }
+      ]
+    },
+    {
+      "id": "ordinary-output",
+      "observation_and_limit": "Observed: local stores copy exactly 104 bytes, matching the delegate layout. Cleanup helper remains opaque.",
+      "instruction_anchors": [
+        {
+          "va": "0x161990e",
+          "bytes": "48894360",
+          "text": "mov    QWORD PTR [rbx+0x60],rax",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619917",
+          "bytes": "0f114350",
+          "text": "movups XMMWORD PTR [rbx+0x50],xmm0",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619920",
+          "bytes": "0f114340",
+          "text": "movups XMMWORD PTR [rbx+0x40],xmm0",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619938",
+          "bytes": "0f115b30",
+          "text": "movups XMMWORD PTR [rbx+0x30],xmm3",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x161993c",
+          "bytes": "0f115320",
+          "text": "movups XMMWORD PTR [rbx+0x20],xmm2",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619940",
+          "bytes": "0f114b10",
+          "text": "movups XMMWORD PTR [rbx+0x10],xmm1",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x1619944",
+          "bytes": "0f1103",
+          "text": "movups XMMWORD PTR [rbx],xmm0",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x161994a",
+          "bytes": "e891deffff",
+          "text": "call   0x16177e0",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x161994f",
+          "bytes": "4889d8",
+          "text": "mov    rax,rbx",
+          "region": "object-constructor"
+        },
+        {
+          "va": "0x161995c",
+          "bytes": "c3",
+          "text": "ret",
+          "region": "object-constructor"
+        }
+      ]
+    },
+    {
+      "id": "postobject-closing-check",
+      "observation_and_limit": "Observed: skip the four whitespace bytes, require closing brace, advance cursor past it and explicitly return zero on that local arm. This closes the object; trailing input admission remains in the prior wrapper.",
+      "instruction_anchors": [
+        {
+          "va": "0x15b9ce4",
+          "bytes": "488b4f20",
+          "text": "mov    rcx,QWORD PTR [rdi+0x20]",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9ce8",
+          "bytes": "488b4728",
+          "text": "mov    rax,QWORD PTR [rdi+0x28]",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9cef",
+          "bytes": "733a",
+          "text": "jae    0x15b9d2b",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9cfb",
+          "bytes": "48be0026000001000000",
+          "text": "movabs rsi,0x100002600",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d0b",
+          "bytes": "4983f82c",
+          "text": "cmp    r8,0x2c",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d11",
+          "bytes": "4c0fa3c6",
+          "text": "bt     rsi,r8",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d17",
+          "bytes": "48894728",
+          "text": "mov    QWORD PTR [rdi+0x28],rax",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d40",
+          "bytes": "4983f82c",
+          "text": "cmp    r8,0x2c",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d5b",
+          "bytes": "4183f87d",
+          "text": "cmp    r8d,0x7d",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d5f",
+          "bytes": "7510",
+          "text": "jne    0x15b9d71",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d66",
+          "bytes": "48894728",
+          "text": "mov    QWORD PTR [rdi+0x28],rax",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d6a",
+          "bytes": "31c0",
+          "text": "xor    eax,eax",
+          "region": "post-object"
+        }
+      ]
+    },
+    {
+      "id": "postobject-other-paths",
+      "observation_and_limit": "Observed: raw codes 3 at exhaustion, 21 at comma, 22 at other non-closing byte, forwarded to 0x15b8e90. Guarded zero-cursor path calls through a slot. Helper return semantics unresolved.",
+      "instruction_anchors": [
+        {
+          "va": "0x15b9d2b",
+          "bytes": "48c7042403000000",
+          "text": "mov    QWORD PTR [rsp],0x3",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d36",
+          "bytes": "e855f1ffff",
+          "text": "call   0x15b8e90",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d46",
+          "bytes": "48c7042415000000",
+          "text": "mov    QWORD PTR [rsp],0x15",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d51",
+          "bytes": "e83af1ffff",
+          "text": "call   0x15b8e90",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d71",
+          "bytes": "48c7042416000000",
+          "text": "mov    QWORD PTR [rsp],0x16",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d7c",
+          "bytes": "e80ff1ffff",
+          "text": "call   0x15b8e90",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d86",
+          "bytes": "488d3debca0b04",
+          "text": "lea    rdi,[rip+0x40bcaeb]        # 0x5676878",
+          "region": "post-object"
+        },
+        {
+          "va": "0x15b9d8d",
+          "bytes": "ff1585431b04",
+          "text": "call   QWORD PTR [rip+0x41b4385]        # 0x576e118",
+          "region": "post-object"
+        }
+      ]
+    }
+  ],
+  "control_transfers": [
+    {
+      "va": "0x1619856",
+      "bytes": "e87569f9ff",
+      "text": "call   0x15b01d0",
+      "region": "object-constructor",
+      "recalculated_destination": "0x15b01d0",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x1619862",
+      "bytes": "751b",
+      "text": "jne    0x161987f",
+      "region": "object-constructor",
+      "recalculated_destination": "0x161987f",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x161987a",
+      "bytes": "e9d0000000",
+      "text": "jmp    0x161994f",
+      "region": "object-constructor",
+      "recalculated_destination": "0x161994f",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x16198ae",
+      "bytes": "e80df6f8ff",
+      "text": "call   0x15a8ec0",
+      "region": "object-constructor",
+      "recalculated_destination": "0x15a8ec0",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x16198c2",
+      "bytes": "7542",
+      "text": "jne    0x1619906",
+      "region": "object-constructor",
+      "recalculated_destination": "0x1619906",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x16198c9",
+      "bytes": "e842d7ffff",
+      "text": "call   0x1617010",
+      "region": "object-constructor",
+      "recalculated_destination": "0x1617010",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x16198d6",
+      "bytes": "e8f5f0f8ff",
+      "text": "call   0x15a89d0",
+      "region": "object-constructor",
+      "recalculated_destination": "0x15a89d0",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x16198e0",
+      "bytes": "7524",
+      "text": "jne    0x1619906",
+      "region": "object-constructor",
+      "recalculated_destination": "0x1619906",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x16198e7",
+      "bytes": "e824d7ffff",
+      "text": "call   0x1617010",
+      "region": "object-constructor",
+      "recalculated_destination": "0x1617010",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x16198f8",
+      "bytes": "e893fdffff",
+      "text": "call   0x1619690",
+      "region": "object-constructor",
+      "recalculated_destination": "0x1619690",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x1619904",
+      "bytes": "eb41",
+      "text": "jmp    0x1619947",
+      "region": "object-constructor",
+      "recalculated_destination": "0x1619947",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x161994a",
+      "bytes": "e891deffff",
+      "text": "call   0x16177e0",
+      "region": "object-constructor",
+      "recalculated_destination": "0x16177e0",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x1619963",
+      "bytes": "e878deffff",
+      "text": "call   0x16177e0",
+      "region": "object-constructor",
+      "recalculated_destination": "0x16177e0",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x161996b",
+      "bytes": "e8a0670404",
+      "text": "call   0x5660110",
+      "region": "object-constructor",
+      "recalculated_destination": "0x5660110",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x1619970",
+      "bytes": "ff15b2471504",
+      "text": "call   QWORD PTR [rip+0x41547b2]        # 0x576e128",
+      "region": "object-constructor"
+    },
+    {
+      "va": "0x15b9cef",
+      "bytes": "733a",
+      "text": "jae    0x15b9d2b",
+      "region": "post-object",
+      "recalculated_destination": "0x15b9d2b",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x15b9d0f",
+      "bytes": "774a",
+      "text": "ja     0x15b9d5b",
+      "region": "post-object",
+      "recalculated_destination": "0x15b9d5b",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x15b9d15",
+      "bytes": "7329",
+      "text": "jae    0x15b9d40",
+      "region": "post-object",
+      "recalculated_destination": "0x15b9d40",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x15b9d29",
+      "bytes": "75da",
+      "text": "jne    0x15b9d05",
+      "region": "post-object",
+      "recalculated_destination": "0x15b9d05",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x15b9d36",
+      "bytes": "e855f1ffff",
+      "text": "call   0x15b8e90",
+      "region": "post-object",
+      "recalculated_destination": "0x15b8e90",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x15b9d44",
+      "bytes": "7515",
+      "text": "jne    0x15b9d5b",
+      "region": "post-object",
+      "recalculated_destination": "0x15b9d5b",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x15b9d51",
+      "bytes": "e83af1ffff",
+      "text": "call   0x15b8e90",
+      "region": "post-object",
+      "recalculated_destination": "0x15b8e90",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x15b9d5f",
+      "bytes": "7510",
+      "text": "jne    0x15b9d71",
+      "region": "post-object",
+      "recalculated_destination": "0x15b9d71",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x15b9d64",
+      "bytes": "7420",
+      "text": "je     0x15b9d86",
+      "region": "post-object",
+      "recalculated_destination": "0x15b9d86",
+      "destination_is_local_instruction_start": true
+    },
+    {
+      "va": "0x15b9d7c",
+      "bytes": "e80ff1ffff",
+      "text": "call   0x15b8e90",
+      "region": "post-object",
+      "recalculated_destination": "0x15b8e90",
+      "destination_is_executable_file_data": true
+    },
+    {
+      "va": "0x15b9d8d",
+      "bytes": "ff1585431b04",
+      "text": "call   QWORD PTR [rip+0x41b4385]        # 0x576e118",
+      "region": "post-object"
+    }
+  ],
+  "diagnostic": {
+    "va": "0x26393a",
+    "file_offset": "0x26393a",
+    "length": 61,
+    "hex": "6461746120646964206e6f74206d6174636820616e792076617269616e74206f6620756e74616767656420656e756d204a736f6e527063526573756c74",
+    "ascii": "data did not match any variant of untagged enum JsonRpcResult"
+  },
+  "selected_relocations": {
+    "0x576e118": [
+      {
+        "type": 8,
+        "relative_target": "0x157b480",
+        "record_file_offset": "0x1b1ef8",
+        "record_bytes": "18e1760500000000080000000000000080b4570100000000"
+      }
+    ],
+    "0x576e128": [
+      {
+        "type": 8,
+        "relative_target": "0x157b63b",
+        "record_file_offset": "0x1b1f28",
+        "record_bytes": "28e176050000000008000000000000003bb6570100000000"
+      }
+    ],
+    "0x5676878": [
+      {
+        "type": 8,
+        "relative_target": "0x1df9be",
+        "record_file_offset": "0x20be8",
+        "record_bytes": "78686705000000000800000000000000bef91d0000000000"
+      }
+    ]
+  },
+  "read_guard_descriptor": {
+    "va": "0x5676878",
+    "file_offset": "0x5674878",
+    "hex": "000000000000000060000000000000000402000009000000",
+    "pointed_file_offset": "0x1df9be",
+    "pointed_ascii": "/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_json-1.0.120/src/read.rs"
+  },
+  "corruption_controls": {
+    "count": 19,
+    "rejected": [
+      {
+        "name": "iterator-stride",
+        "region": "constructor",
+        "position": "0x1619838",
+        "rejection": "64-byte iterator stride"
+      },
+      {
+        "name": "special-tag",
+        "region": "constructor",
+        "position": "0x1619861",
+        "rejection": "initial raw special tag"
+      },
+      {
+        "name": "first-alternative-call",
+        "region": "constructor",
+        "position": "0x16198af",
+        "rejection": "direct helper destination"
+      },
+      {
+        "name": "second-alternative-call",
+        "region": "constructor",
+        "position": "0x16198d7",
+        "rejection": "direct helper destination"
+      },
+      {
+        "name": "raw-sentinel",
+        "region": "constructor",
+        "position": "0x16198b5",
+        "rejection": "raw sentinel"
+      },
+      {
+        "name": "first-alternative-branch",
+        "region": "constructor",
+        "position": "0x16198c2",
+        "rejection": "first alternative sentinel branch"
+      },
+      {
+        "name": "second-alternative-branch",
+        "region": "constructor",
+        "position": "0x16198e0",
+        "rejection": "second alternative sentinel branch"
+      },
+      {
+        "name": "diagnostic-address",
+        "region": "constructor",
+        "position": "0x16198ef",
+        "rejection": "diagnostic RIP binding"
+      },
+      {
+        "name": "diagnostic-length",
+        "region": "constructor",
+        "position": "0x16198f4",
+        "rejection": "diagnostic length"
+      },
+      {
+        "name": "ordinary-output-coverage",
+        "region": "constructor",
+        "position": "0x1619911",
+        "rejection": "104-byte output coverage"
+      },
+      {
+        "name": "whitespace-mask",
+        "region": "post-object",
+        "position": "0x15b9cfd",
+        "rejection": "local whitespace predicate"
+      },
+      {
+        "name": "closing-byte",
+        "region": "post-object",
+        "position": "0x15b9d5e",
+        "rejection": "closing brace predicate"
+      },
+      {
+        "name": "closing-branch",
+        "region": "post-object",
+        "position": "0x15b9d5f",
+        "rejection": "closing brace branch"
+      },
+      {
+        "name": "cursor-field",
+        "region": "post-object",
+        "position": "0x15b9d69",
+        "rejection": "closing cursor store"
+      },
+      {
+        "name": "zero-return",
+        "region": "post-object",
+        "position": "0x15b9d6b",
+        "rejection": "closing local zero return"
+      },
+      {
+        "name": "raw-eof-code",
+        "region": "post-object",
+        "position": "0x15b9d2f",
+        "rejection": "raw local diagnostic code"
+      },
+      {
+        "name": "raw-comma-code",
+        "region": "post-object",
+        "position": "0x15b9d4a",
+        "rejection": "raw local diagnostic code"
+      },
+      {
+        "name": "raw-other-code",
+        "region": "post-object",
+        "position": "0x15b9d75",
+        "rejection": "raw local diagnostic code"
+      },
+      {
+        "name": "diagnostic-type-name",
+        "region": "diagnostic",
+        "position": "0x3c",
+        "rejection": "diagnostic bytes/name"
+      }
+    ],
+    "global_digest_gate_used_for_mutants": false
+  },
+  "instruction_counts": {
+    "object-constructor": 79,
+    "post-object": 47
+  },
+  "target_execution": false,
+  "native_execution_in_local_analysis": false,
+  "repository_imports": false,
+  "limits": "Static local byte predicates, transfer arithmetic and read-only data associations only. No accepted-input execution, complete alternatives/CFG/exception closure, Rust implementation, runtime equivalence or gate completion."
+}

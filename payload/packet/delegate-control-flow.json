@@ -1,0 +1,829 @@
+{
+  "source_sha256": "11b6ac618f848362971f5e10e4f2cf4e89f070a5ba2eb9ca3be4596bc17eecc2",
+  "branches": [
+    {
+      "va": "0x15c0dbc",
+      "bytes": "7340",
+      "text": "jae    0x15c0dfe",
+      "target": "0x15c0dfe",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0de2",
+      "bytes": "7735",
+      "text": "ja     0x15c0e19",
+      "target": "0x15c0e19",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0de8",
+      "bytes": "732f",
+      "text": "jae    0x15c0e19",
+      "target": "0x15c0e19",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0dfc",
+      "bytes": "75db",
+      "text": "jne    0x15c0dd9",
+      "target": "0x15c0dd9",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e14",
+      "bytes": "e97b050000",
+      "text": "jmp    0x15c1394",
+      "target": "0x15c1394",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e1c",
+      "bytes": "0f85e7050000",
+      "text": "jne    0x15c1409",
+      "target": "0x15c1409",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e29",
+      "bytes": "0f847c060000",
+      "text": "je     0x15c14ab",
+      "target": "0x15c14ab",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e35",
+      "bytes": "0f84e7050000",
+      "text": "je     0x15c1422",
+      "target": "0x15c1422",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e3e",
+      "bytes": "0f8474060000",
+      "text": "je     0x15c14b8",
+      "target": "0x15c14b8",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e66",
+      "bytes": "0f83b8020000",
+      "text": "jae    0x15c1124",
+      "target": "0x15c1124",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e89",
+      "bytes": "7767",
+      "text": "ja     0x15c0ef2",
+      "target": "0x15c0ef2",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e8f",
+      "bytes": "7311",
+      "text": "jae    0x15c0ea2",
+      "target": "0x15c0ea2",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e9b",
+      "bytes": "75e3",
+      "text": "jne    0x15c0e80",
+      "target": "0x15c0e80",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0e9d",
+      "bytes": "e982020000",
+      "text": "jmp    0x15c1124",
+      "target": "0x15c1124",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0ea6",
+      "bytes": "754a",
+      "text": "jne    0x15c0ef2",
+      "target": "0x15c0ef2",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0eab",
+      "bytes": "0f85be050000",
+      "text": "jne    0x15c146f",
+      "target": "0x15c146f",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0eb5",
+      "bytes": "0f8419060000",
+      "text": "je     0x15c14d4",
+      "target": "0x15c14d4",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0ec5",
+      "bytes": "0f833d040000",
+      "text": "jae    0x15c1308",
+      "target": "0x15c1308",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0ed9",
+      "bytes": "772a",
+      "text": "ja     0x15c0f05",
+      "target": "0x15c0f05",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0edf",
+      "bytes": "7324",
+      "text": "jae    0x15c0f05",
+      "target": "0x15c0f05",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0eeb",
+      "bytes": "75e3",
+      "text": "jne    0x15c0ed0",
+      "target": "0x15c0ed0",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0eed",
+      "bytes": "e916040000",
+      "text": "jmp    0x15c1308",
+      "target": "0x15c1308",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0ef6",
+      "bytes": "0f8477030000",
+      "text": "je     0x15c1273",
+      "target": "0x15c1273",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0eff",
+      "bytes": "0f842b050000",
+      "text": "je     0x15c1430",
+      "target": "0x15c1430",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0f09",
+      "bytes": "0f853c050000",
+      "text": "jne    0x15c144b",
+      "target": "0x15c144b",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0f13",
+      "bytes": "0f84bb050000",
+      "text": "je     0x15c14d4",
+      "target": "0x15c14d4",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0f47",
+      "bytes": "0f8491040000",
+      "text": "je     0x15c13de",
+      "target": "0x15c13de",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0f54",
+      "bytes": "7426",
+      "text": "je     0x15c0f7c",
+      "target": "0x15c0f7c",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0f59",
+      "bytes": "0f88a1050000",
+      "text": "js     0x15c1500",
+      "target": "0x15c1500",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0f67",
+      "bytes": "7417",
+      "text": "je     0x15c0f80",
+      "target": "0x15c0f80",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0f75",
+      "bytes": "750e",
+      "text": "jne    0x15c0f85",
+      "target": "0x15c0f85",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0f77",
+      "bytes": "e976050000",
+      "text": "jmp    0x15c14f2",
+      "target": "0x15c14f2",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0f7e",
+      "bytes": "eb2e",
+      "text": "jmp    0x15c0fae",
+      "target": "0x15c0fae",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c0fea",
+      "bytes": "0f83b0030000",
+      "text": "jae    0x15c13a0",
+      "target": "0x15c13a0",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1002",
+      "bytes": "0f8782040000",
+      "text": "ja     0x15c148a",
+      "target": "0x15c148a",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c100c",
+      "bytes": "7319",
+      "text": "jae    0x15c1027",
+      "target": "0x15c1027",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1020",
+      "bytes": "75d7",
+      "text": "jne    0x15c0ff9",
+      "target": "0x15c0ff9",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1022",
+      "bytes": "e979030000",
+      "text": "jmp    0x15c13a0",
+      "target": "0x15c13a0",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c102b",
+      "bytes": "0f8559040000",
+      "text": "jne    0x15c148a",
+      "target": "0x15c148a",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1039",
+      "bytes": "0f84a4040000",
+      "text": "je     0x15c14e3",
+      "target": "0x15c14e3",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c105d",
+      "bytes": "0f8492030000",
+      "text": "je     0x15c13f5",
+      "target": "0x15c13f5",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c10bc",
+      "bytes": "7502",
+      "text": "jne    0x15c10c0",
+      "target": "0x15c10c0",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c111e",
+      "bytes": "0f8256fdffff",
+      "text": "jb     0x15c0e7a",
+      "target": "0x15c0e7a",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c115c",
+      "bytes": "7411",
+      "text": "je     0x15c116f",
+      "target": "0x15c116f",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1176",
+      "bytes": "0f8449030000",
+      "text": "je     0x15c14c5",
+      "target": "0x15c14c5",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c11fb",
+      "bytes": "0f8422010000",
+      "text": "je     0x15c1323",
+      "target": "0x15c1323",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1204",
+      "bytes": "0f8543010000",
+      "text": "jne    0x15c134d",
+      "target": "0x15c134d",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c128f",
+      "bytes": "0f84a5feffff",
+      "text": "je     0x15c113a",
+      "target": "0x15c113a",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1303",
+      "bytes": "e94cfeffff",
+      "text": "jmp    0x15c1154",
+      "target": "0x15c1154",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c131e",
+      "bytes": "e917feffff",
+      "text": "jmp    0x15c113a",
+      "target": "0x15c113a",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c132b",
+      "bytes": "741b",
+      "text": "je     0x15c1348",
+      "target": "0x15c1348",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c134b",
+      "bytes": "eb3c",
+      "text": "jmp    0x15c1389",
+      "target": "0x15c1389",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1354",
+      "bytes": "7433",
+      "text": "je     0x15c1389",
+      "target": "0x15c1389",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1359",
+      "bytes": "7413",
+      "text": "je     0x15c136e",
+      "target": "0x15c136e",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1377",
+      "bytes": "7410",
+      "text": "je     0x15c1389",
+      "target": "0x15c1389",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c139b",
+      "bytes": "e9befeffff",
+      "text": "jmp    0x15c125e",
+      "target": "0x15c125e",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c13d9",
+      "bytes": "e96cfdffff",
+      "text": "jmp    0x15c114a",
+      "target": "0x15c114a",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c13f0",
+      "bytes": "e94dfdffff",
+      "text": "jmp    0x15c1142",
+      "target": "0x15c1142",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1407",
+      "bytes": "ebb3",
+      "text": "jmp    0x15c13bc",
+      "target": "0x15c13bc",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c141d",
+      "bytes": "e967ffffff",
+      "text": "jmp    0x15c1389",
+      "target": "0x15c1389",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c142b",
+      "bytes": "e9d7f9ffff",
+      "text": "jmp    0x15c0e07",
+      "target": "0x15c0e07",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1446",
+      "bytes": "e9effcffff",
+      "text": "jmp    0x15c113a",
+      "target": "0x15c113a",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1452",
+      "bytes": "751b",
+      "text": "jne    0x15c146f",
+      "target": "0x15c146f",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c146a",
+      "bytes": "e9cbfcffff",
+      "text": "jmp    0x15c113a",
+      "target": "0x15c113a",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1485",
+      "bytes": "e9b0fcffff",
+      "text": "jmp    0x15c113a",
+      "target": "0x15c113a",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c14a6",
+      "bytes": "e911ffffff",
+      "text": "jmp    0x15c13bc",
+      "target": "0x15c13bc",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c14d2",
+      "bytes": "eb35",
+      "text": "jmp    0x15c1509",
+      "target": "0x15c1509",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c14e1",
+      "bytes": "eb26",
+      "text": "jmp    0x15c1509",
+      "target": "0x15c1509",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c14f0",
+      "bytes": "eb17",
+      "text": "jmp    0x15c1509",
+      "target": "0x15c1509",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1518",
+      "bytes": "e98e000000",
+      "text": "jmp    0x15c15ab",
+      "target": "0x15c15ab",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1523",
+      "bytes": "eb31",
+      "text": "jmp    0x15c1556",
+      "target": "0x15c1556",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1525",
+      "bytes": "eb00",
+      "text": "jmp    0x15c1527",
+      "target": "0x15c1527",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1537",
+      "bytes": "eb72",
+      "text": "jmp    0x15c15ab",
+      "target": "0x15c15ab",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1539",
+      "bytes": "eb6d",
+      "text": "jmp    0x15c15a8",
+      "target": "0x15c15a8",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c1561",
+      "bytes": "7452",
+      "text": "je     0x15c15b5",
+      "target": "0x15c15b5",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c158c",
+      "bytes": "eb27",
+      "text": "jmp    0x15c15b5",
+      "target": "0x15c15b5",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c159e",
+      "bytes": "eb15",
+      "text": "jmp    0x15c15b5",
+      "target": "0x15c15b5",
+      "target_is_instruction_start": true
+    },
+    {
+      "va": "0x15c15a6",
+      "bytes": "eb00",
+      "text": "jmp    0x15c15a8",
+      "target": "0x15c15a8",
+      "target_is_instruction_start": true
+    }
+  ],
+  "direct_calls": [
+    {
+      "va": "0x15c0e0f",
+      "bytes": "e87c80ffff",
+      "text": "call   0x15b8e90",
+      "target": "0x15b8e90",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c104e",
+      "bytes": "e8add2ffff",
+      "text": "call   0x15be300",
+      "target": "0x15be300",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1135",
+      "bytes": "e8567dffff",
+      "text": "call   0x15b8e90",
+      "target": "0x15b8e90",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c114f",
+      "bytes": "e8ecd30400",
+      "text": "call   0x160e540",
+      "target": "0x160e540",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1185",
+      "bytes": "e8568bffff",
+      "text": "call   0x15b9ce0",
+      "target": "0x15b9ce0",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c127d",
+      "bytes": "e89e850500",
+      "text": "call   0x1619820",
+      "target": "0x1619820",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c12fe",
+      "bytes": "e83dd20400",
+      "text": "call   0x160e540",
+      "target": "0x160e540",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1319",
+      "bytes": "e8727bffff",
+      "text": "call   0x15b8e90",
+      "target": "0x15b8e90",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1333",
+      "bytes": "e8d8bdffff",
+      "text": "call   0x15bd110",
+      "target": "0x15bd110",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1381",
+      "bytes": "e8eabbffff",
+      "text": "call   0x15bcf70",
+      "target": "0x15bcf70",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c138f",
+      "bytes": "e82cde0400",
+      "text": "call   0x160f1c0",
+      "target": "0x160f1c0",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c13b7",
+      "bytes": "e8d47affff",
+      "text": "call   0x15b8e90",
+      "target": "0x15b8e90",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c13d4",
+      "bytes": "e8a7c2ffff",
+      "text": "call   0x15bd680",
+      "target": "0x15bd680",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1418",
+      "bytes": "e8f384ffff",
+      "text": "call   0x15b9910",
+      "target": "0x15b9910",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1441",
+      "bytes": "e84a7affff",
+      "text": "call   0x15b8e90",
+      "target": "0x15b8e90",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1465",
+      "bytes": "e8267affff",
+      "text": "call   0x15b8e90",
+      "target": "0x15b8e90",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1480",
+      "bytes": "e80b7affff",
+      "text": "call   0x15b8e90",
+      "target": "0x15b8e90",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c14a1",
+      "bytes": "e8ea79ffff",
+      "text": "call   0x15b8e90",
+      "target": "0x15b8e90",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1513",
+      "bytes": "e898b8ffff",
+      "text": "call   0x15bcdb0",
+      "target": "0x15bcdb0",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1532",
+      "bytes": "e849c1ffff",
+      "text": "call   0x15bd680",
+      "target": "0x15bd680",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1551",
+      "bytes": "e8baeb0904",
+      "text": "call   0x5660110",
+      "target": "0x5660110",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1577",
+      "bytes": "e894eb0904",
+      "text": "call   0x5660110",
+      "target": "0x5660110",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1587",
+      "bytes": "e884b7ffff",
+      "text": "call   0x15bcd10",
+      "target": "0x15bcd10",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c1599",
+      "bytes": "e872b7ffff",
+      "text": "call   0x15bcd10",
+      "target": "0x15bcd10",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c15b0",
+      "bytes": "e84bb8ffff",
+      "text": "call   0x15bce00",
+      "target": "0x15bce00",
+      "target_is_instruction_start": false
+    },
+    {
+      "va": "0x15c15b8",
+      "bytes": "e853eb0904",
+      "text": "call   0x5660110",
+      "target": "0x5660110",
+      "target_is_instruction_start": false
+    }
+  ],
+  "indirect_calls": [
+    {
+      "va": "0x15c0f31",
+      "bytes": "41ffd1",
+      "text": "call   r9"
+    },
+    {
+      "va": "0x15c0f6c",
+      "bytes": "ff1566d01a04",
+      "text": "call   QWORD PTR [rip+0x41ad066]        # 0x576dfd8"
+    },
+    {
+      "va": "0x15c0f9b",
+      "bytes": "ff153fd01a04",
+      "text": "call   QWORD PTR [rip+0x41ad03f]        # 0x576dfe0"
+    },
+    {
+      "va": "0x15c10be",
+      "bytes": "ffd0",
+      "text": "call   rax"
+    },
+    {
+      "va": "0x15c1169",
+      "bytes": "ff15a1ce1a04",
+      "text": "call   QWORD PTR [rip+0x41acea1]        # 0x576e010"
+    },
+    {
+      "va": "0x15c1342",
+      "bytes": "ff15c8cc1a04",
+      "text": "call   QWORD PTR [rip+0x41accc8]        # 0x576e010"
+    },
+    {
+      "va": "0x15c1365",
+      "bytes": "ff15a5cc1a04",
+      "text": "call   QWORD PTR [rip+0x41acca5]        # 0x576e010"
+    },
+    {
+      "va": "0x15c14b2",
+      "bytes": "ff1598cc1a04",
+      "text": "call   QWORD PTR [rip+0x41acc98]        # 0x576e150"
+    },
+    {
+      "va": "0x15c14bf",
+      "bytes": "ff1553cc1a04",
+      "text": "call   QWORD PTR [rip+0x41acc53]        # 0x576e118"
+    },
+    {
+      "va": "0x15c14cc",
+      "bytes": "ff1546cc1a04",
+      "text": "call   QWORD PTR [rip+0x41acc46]        # 0x576e118"
+    },
+    {
+      "va": "0x15c14db",
+      "bytes": "ff1537cc1a04",
+      "text": "call   QWORD PTR [rip+0x41acc37]        # 0x576e118"
+    },
+    {
+      "va": "0x15c14ea",
+      "bytes": "ff1528cc1a04",
+      "text": "call   QWORD PTR [rip+0x41acc28]        # 0x576e118"
+    },
+    {
+      "va": "0x15c1503",
+      "bytes": "ff15afca1a04",
+      "text": "call   QWORD PTR [rip+0x41acaaf]        # 0x576dfb8"
+    },
+    {
+      "va": "0x15c151d",
+      "bytes": "ff1505cc1a04",
+      "text": "call   QWORD PTR [rip+0x41acc05]        # 0x576e128"
+    },
+    {
+      "va": "0x15c1548",
+      "bytes": "ff15c2ca1a04",
+      "text": "call   QWORD PTR [rip+0x41acac2]        # 0x576e010"
+    },
+    {
+      "va": "0x15c156e",
+      "bytes": "ff159cca1a04",
+      "text": "call   QWORD PTR [rip+0x41aca9c]        # 0x576e010"
+    },
+    {
+      "va": "0x15c15a0",
+      "bytes": "ff1582cb1a04",
+      "text": "call   QWORD PTR [rip+0x41acb82]        # 0x576e128"
+    },
+    {
+      "va": "0x15c15bd",
+      "bytes": "ff1565cb1a04",
+      "text": "call   QWORD PTR [rip+0x41acb65]        # 0x576e128"
+    }
+  ],
+  "all_direct_branch_targets_are_known_instruction_starts": true,
+  "limit": "Direct syntactic edges within the selected PC range, not a complete CFG or exception/callee closure."
+}

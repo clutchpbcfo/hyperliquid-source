@@ -1,0 +1,4 @@
+Error cleaning Git LFS object: open /tmp/hyper-git-diagnostic-pk8aMwb9/source/.git/modules/references/can1357-hl/lfs/tmp/3364156006: read-only file system
+error: packet write failed: Broken pipe
+error: external filter 'git-lfs filter-process' failed
+fatal: bin/hl-node-mainnet-new: clean filter 'lfs' failed

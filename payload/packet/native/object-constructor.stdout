@@ -1,0 +1,86 @@
+
+/tmp/node94-result-helpers-QL5IiPF9/fixtures/object-constructor.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000001619820 <.data>:
+ 1619820:	41 56                                           	push   r14
+ 1619822:	53                                              	push   rbx
+ 1619823:	48 81 ec 88 00 00 00                            	sub    rsp,0x88
+ 161982a:	48 89 fb                                        	mov    rbx,rdi
+ 161982d:	48 8b 46 08                                     	mov    rax,QWORD PTR [rsi+0x8]
+ 1619831:	48 8b 4e 10                                     	mov    rcx,QWORD PTR [rsi+0x10]
+ 1619835:	48 c1 e1 06                                     	shl    rcx,0x6
+ 1619839:	48 01 c1                                        	add    rcx,rax
+ 161983c:	48 89 04 24                                     	mov    QWORD PTR [rsp],rax
+ 1619840:	48 89 4c 24 08                                  	mov    QWORD PTR [rsp+0x8],rcx
+ 1619845:	48 c7 44 24 10 00 00 00 00                      	mov    QWORD PTR [rsp+0x10],0x0
+ 161984e:	48 8d 7c 24 20                                  	lea    rdi,[rsp+0x20]
+ 1619853:	48 89 e6                                        	mov    rsi,rsp
+ 1619856:	e8 75 69 f9 ff                                  	call   0x15b01d0
+ 161985b:	0f b6 44 24 20                                  	movzx  eax,BYTE PTR [rsp+0x20]
+ 1619860:	3c 16                                           	cmp    al,0x16
+ 1619862:	75 1b                                           	jne    0x161987f
+ 1619864:	48 8b 44 24 28                                  	mov    rax,QWORD PTR [rsp+0x28]
+ 1619869:	48 89 43 08                                     	mov    QWORD PTR [rbx+0x8],rax
+ 161986d:	48 b8 01 00 00 00 00 00 00 80                   	movabs rax,0x8000000000000001
+ 1619877:	48 89 03                                        	mov    QWORD PTR [rbx],rax
+ 161987a:	e9 d0 00 00 00                                  	jmp    0x161994f
+ 161987f:	8b 4c 24 21                                     	mov    ecx,DWORD PTR [rsp+0x21]
+ 1619883:	8b 54 24 24                                     	mov    edx,DWORD PTR [rsp+0x24]
+ 1619887:	89 54 24 04                                     	mov    DWORD PTR [rsp+0x4],edx
+ 161988b:	89 4c 24 01                                     	mov    DWORD PTR [rsp+0x1],ecx
+ 161988f:	48 8b 4c 24 28                                  	mov    rcx,QWORD PTR [rsp+0x28]
+ 1619894:	0f 10 44 24 30                                  	movups xmm0,XMMWORD PTR [rsp+0x30]
+ 1619899:	0f 11 44 24 10                                  	movups XMMWORD PTR [rsp+0x10],xmm0
+ 161989e:	88 04 24                                        	mov    BYTE PTR [rsp],al
+ 16198a1:	48 89 4c 24 08                                  	mov    QWORD PTR [rsp+0x8],rcx
+ 16198a6:	48 8d 7c 24 20                                  	lea    rdi,[rsp+0x20]
+ 16198ab:	48 89 e6                                        	mov    rsi,rsp
+ 16198ae:	e8 0d f6 f8 ff                                  	call   0x15a8ec0
+ 16198b3:	49 be 01 00 00 00 00 00 00 80                   	movabs r14,0x8000000000000001
+ 16198bd:	4c 39 74 24 20                                  	cmp    QWORD PTR [rsp+0x20],r14
+ 16198c2:	75 42                                           	jne    0x1619906
+ 16198c4:	48 8d 7c 24 28                                  	lea    rdi,[rsp+0x28]
+ 16198c9:	e8 42 d7 ff ff                                  	call   0x1617010
+ 16198ce:	48 8d 7c 24 20                                  	lea    rdi,[rsp+0x20]
+ 16198d3:	48 89 e6                                        	mov    rsi,rsp
+ 16198d6:	e8 f5 f0 f8 ff                                  	call   0x15a89d0
+ 16198db:	4c 39 74 24 20                                  	cmp    QWORD PTR [rsp+0x20],r14
+ 16198e0:	75 24                                           	jne    0x1619906
+ 16198e2:	48 8d 7c 24 28                                  	lea    rdi,[rsp+0x28]
+ 16198e7:	e8 24 d7 ff ff                                  	call   0x1617010
+ 16198ec:	48 8d 3d 47 a0 c4 fe                            	lea    rdi,[rip+0xfffffffffec4a047]        # 0x26393a
+ 16198f3:	be 3d 00 00 00                                  	mov    esi,0x3d
+ 16198f8:	e8 93 fd ff ff                                  	call   0x1619690
+ 16198fd:	48 89 43 08                                     	mov    QWORD PTR [rbx+0x8],rax
+ 1619901:	4c 89 33                                        	mov    QWORD PTR [rbx],r14
+ 1619904:	eb 41                                           	jmp    0x1619947
+ 1619906:	48 8b 84 24 80 00 00 00                         	mov    rax,QWORD PTR [rsp+0x80]
+ 161990e:	48 89 43 60                                     	mov    QWORD PTR [rbx+0x60],rax
+ 1619912:	0f 10 44 24 70                                  	movups xmm0,XMMWORD PTR [rsp+0x70]
+ 1619917:	0f 11 43 50                                     	movups XMMWORD PTR [rbx+0x50],xmm0
+ 161991b:	0f 10 44 24 60                                  	movups xmm0,XMMWORD PTR [rsp+0x60]
+ 1619920:	0f 11 43 40                                     	movups XMMWORD PTR [rbx+0x40],xmm0
+ 1619924:	0f 10 44 24 20                                  	movups xmm0,XMMWORD PTR [rsp+0x20]
+ 1619929:	0f 10 4c 24 30                                  	movups xmm1,XMMWORD PTR [rsp+0x30]
+ 161992e:	0f 10 54 24 40                                  	movups xmm2,XMMWORD PTR [rsp+0x40]
+ 1619933:	0f 10 5c 24 50                                  	movups xmm3,XMMWORD PTR [rsp+0x50]
+ 1619938:	0f 11 5b 30                                     	movups XMMWORD PTR [rbx+0x30],xmm3
+ 161993c:	0f 11 53 20                                     	movups XMMWORD PTR [rbx+0x20],xmm2
+ 1619940:	0f 11 4b 10                                     	movups XMMWORD PTR [rbx+0x10],xmm1
+ 1619944:	0f 11 03                                        	movups XMMWORD PTR [rbx],xmm0
+ 1619947:	48 89 e7                                        	mov    rdi,rsp
+ 161994a:	e8 91 de ff ff                                  	call   0x16177e0
+ 161994f:	48 89 d8                                        	mov    rax,rbx
+ 1619952:	48 81 c4 88 00 00 00                            	add    rsp,0x88
+ 1619959:	5b                                              	pop    rbx
+ 161995a:	41 5e                                           	pop    r14
+ 161995c:	c3                                              	ret
+ 161995d:	48 89 c3                                        	mov    rbx,rax
+ 1619960:	48 89 e7                                        	mov    rdi,rsp
+ 1619963:	e8 78 de ff ff                                  	call   0x16177e0
+ 1619968:	48 89 df                                        	mov    rdi,rbx
+ 161996b:	e8 a0 67 04 04                                  	call   0x5660110
+ 1619970:	ff 15 b2 47 15 04                               	call   QWORD PTR [rip+0x41547b2]        # 0x576e128

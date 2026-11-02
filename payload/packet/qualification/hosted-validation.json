@@ -1,0 +1,34 @@
+{
+  "phase": "before_repository_execution",
+  "repository_commands_started": 0,
+  "parent_network_namespace": "net:[4026531833]",
+  "uid": 65534,
+  "gid": 65534,
+  "groups": [],
+  "capabilities": {
+    "CapInh": "0000000000000000",
+    "CapPrm": "0000000000000000",
+    "CapEff": "0000000000000000",
+    "CapBnd": "0000000000000000",
+    "CapAmb": "0000000000000000"
+  },
+  "no_new_privileges": "1",
+  "current_network_namespace": "net:[4026532316]",
+  "interfaces": [
+    "lo"
+  ],
+  "python": "3.12.3 (main, Sep 26 2024, 18:18:55) [GCC 13.2.0]",
+  "capstone_version": "5.0.7",
+  "unicorn_available": false,
+  "compiler_paths": {
+    "cargo": null,
+    "rustc": null,
+    "rustup": null,
+    "cc": null,
+    "gcc": null,
+    "clang": null
+  },
+  "captured_emulation_flags": {},
+  "ripgrep_binary_sha256": "f401154e2393f9002ac77e419f9ee5521c18f4f8cd3e32293972f493ba06fce7",
+  "read_only_canaries_EROFS": true
+}

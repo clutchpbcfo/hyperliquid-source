@@ -1,0 +1,51 @@
+{
+  "status": "LOCAL_DRAFT_HOSTED_PACKET_PASS_REQUIRED_CHECKS_INCOMPLETE",
+  "created_utc": "2026-11-02T00:24:46.343334+00:00",
+  "current_base": "e5c9b6436876b2a4a39daef813171f9879317699",
+  "repository_checks_run": true,
+  "hosted_full_input_replay_run": true,
+  "native_runs_reused": 2,
+  "upstream_pr": false,
+  "no_source_from_unlicensed_reference_copied": true,
+  "full_schema_recovered": false,
+  "updated_utc": "2026-11-02T14:19:14.670016+00:00",
+  "owned_stdlib_full_input_reader_passed": true,
+  "full_input_replay": {
+    "region_count": 4,
+    "bytes": 3060,
+    "recorded_instructions": 674,
+    "evidence_corruptions_rejected": 71
+  },
+  "repo_code_executed_on_mac": false,
+  "existing_repository_imports": false,
+  "hosted_run": 41371054867,
+  "hosted_execution_commit": "5ce47c05b0ccc4b5bf1f9ca50cc25fa06f0fab17",
+  "hosted_conclusion": "failure",
+  "all_required_checks_passed": false,
+  "passed_checks": [
+    "packet-full-input",
+    "doctor",
+    "catalogue-check",
+    "reproduce"
+  ],
+  "failed_checks": [
+    "verify"
+  ],
+  "timed_out_checks": [
+    "test"
+  ],
+  "test_files_completed": 175,
+  "test_files_started": 176,
+  "test_inventory": 971,
+  "reported_tests_in_complete_prefix": 2779,
+  "reported_skips_in_complete_prefix": 27,
+  "hosted_packet_files": 25,
+  "post_hosted_changes": "Evidence receipts and status/prose only; research reader and observations unchanged",
+  "git_diagnostic_run": 41374009882,
+  "git_diagnostic_passed": true,
+  "git_failure_cause": "Git LFS clean-filter temporary file creation under read-only reference metadata",
+  "private_lfs_cache_control_passed_all_seven_pins": true,
+  "full_make_verify_after_cache_correction_run": false,
+  "previous_validation_source": "56c0ec672bd8fdcfaa80f2db700a61e6240b3663",
+  "current_source_refresh": "Four reviewed commits; accounting/docs plus four Python-file changes; no input/pin or test-inventory changes"
+}

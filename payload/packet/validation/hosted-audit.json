@@ -1,0 +1,113 @@
+{
+  "run_id": 41371054867,
+  "run_conclusion": "failure",
+  "receipt_bytes_match_verified_archive": true,
+  "repository_code_executed_on_mac": false,
+  "status": "OBSERVED_VALIDATION_FAILURE",
+  "isolation_preflight_verified": true,
+  "inputs_unchanged": true,
+  "source_commit": "56c0ec672bd8fdcfaa80f2db700a61e6240b3663",
+  "commands": [
+    {
+      "label": "packet-full-input",
+      "argv": [
+        "/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "-I",
+        "-B",
+        "research/work-items/RE-001-json-rpc-result-dispatch-94/verify_packet.py",
+        "--binary",
+        "artifacts/node/94/hl-node"
+      ],
+      "timeout_seconds": 180,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.414
+    },
+    {
+      "label": "doctor",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "doctor"
+      ],
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.164
+    },
+    {
+      "label": "verify",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "verify"
+      ],
+      "timeout_seconds": 240,
+      "exit_code": 2,
+      "timed_out": false,
+      "seconds": 0.565
+    },
+    {
+      "label": "catalogue-check",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "catalogue-check"
+      ],
+      "timeout_seconds": 240,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.516
+    },
+    {
+      "label": "reproduce",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "reproduce"
+      ],
+      "timeout_seconds": 360,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 25.07
+    },
+    {
+      "label": "test",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "test"
+      ],
+      "timeout_seconds": 1200,
+      "exit_code": -9,
+      "timed_out": true,
+      "seconds": 1200.001
+    }
+  ],
+  "packet_matches_local_replay_except_python": true,
+  "tests": {
+    "file_headers_observed": 176,
+    "inventory_complete": false,
+    "failed_files_reported": null,
+    "all_file_summaries_parsed": false,
+    "tests_reported": null,
+    "skips_reported": null,
+    "completed_file_summaries": 175,
+    "tests_in_completed_file_summaries": 2779,
+    "skips_in_completed_file_summaries": 27,
+    "incomplete_file_summaries": [
+      "test_consensus_config_static.py"
+    ],
+    "failed_modules": [],
+    "skip_reasons": [
+      "'LLVM is optional for repository checks; packet reproduction requires it'",
+      "'captured emulation not explicitly enabled or Unicorn absent'",
+      "'captured emulation requires explicit authorization and opt-in'",
+      "'captured-code execution requires explicit HL_RE027_EMULATION=1 and prior authorization'",
+      "'llvm-objdump not found (set LLVM_OBJDUMP)'"
+    ]
+  },
+  "limitations": "Observed command results only. Full make test may skip unavailable optional capabilities. No Rust build, fresh original native decode, captured execution, schema equivalence, progress gate or scoring result is implied.",
+  "upstream_pr": false,
+  "additional_retry_launched": false
+}

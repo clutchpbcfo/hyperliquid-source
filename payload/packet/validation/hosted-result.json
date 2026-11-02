@@ -1,0 +1,89 @@
+{
+  "status": "VALIDATION_COMMANDS_OBSERVED",
+  "source_commit": "56c0ec672bd8fdcfaa80f2db700a61e6240b3663",
+  "commands": [
+    {
+      "label": "packet-full-input",
+      "argv": [
+        "/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "-I",
+        "-B",
+        "research/work-items/RE-001-json-rpc-result-dispatch-94/verify_packet.py",
+        "--binary",
+        "artifacts/node/94/hl-node"
+      ],
+      "timeout_seconds": 180,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.414
+    },
+    {
+      "label": "doctor",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "doctor"
+      ],
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.164
+    },
+    {
+      "label": "verify",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "verify"
+      ],
+      "timeout_seconds": 240,
+      "exit_code": 2,
+      "timed_out": false,
+      "seconds": 0.565
+    },
+    {
+      "label": "catalogue-check",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "catalogue-check"
+      ],
+      "timeout_seconds": 240,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.516
+    },
+    {
+      "label": "reproduce",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "reproduce"
+      ],
+      "timeout_seconds": 360,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 25.07
+    },
+    {
+      "label": "test",
+      "argv": [
+        "make",
+        "PYTHON=/tmp/hyper-jsonrpc-validation-5YFxPGWB/venv/bin/python",
+        "test"
+      ],
+      "timeout_seconds": 1200,
+      "exit_code": -9,
+      "timed_out": true,
+      "seconds": 1200.001
+    }
+  ],
+  "all_commands_passed": false,
+  "inputs_unchanged": true,
+  "test_inventory": 971,
+  "captured_program_execution": false,
+  "emulator_installed": false,
+  "compiler_on_analysis_PATH": false,
+  "native_decoding_package": "capstone==5.0.7",
+  "limits": "Observed command results only. Full make test may skip unavailable optional capabilities. No Rust build, fresh original native decode, captured execution, schema equivalence, progress gate or scoring result is implied."
+}

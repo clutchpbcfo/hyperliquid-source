@@ -1,0 +1,194 @@
+{
+  "length-field": [
+    22810033,
+    "488b4e20"
+  ],
+  "cursor-field": [
+    22810037,
+    "488b4628"
+  ],
+  "error-sentinel": [
+    22810023,
+    "49bd0100000000000080"
+  ],
+  "whitespace-mask": [
+    22810063,
+    "49bc0026000001000000"
+  ],
+  "whitespace-upper-bound": [
+    22810078,
+    "4883ff20"
+  ],
+  "whitespace-bound-branch": [
+    22810082,
+    "7735"
+  ],
+  "whitespace-bit-test": [
+    22810084,
+    "490fa3fc"
+  ],
+  "whitespace-cursor-store": [
+    22810090,
+    "49894628"
+  ],
+  "object-open-byte": [
+    22810137,
+    "83ff7b"
+  ],
+  "object-open-branch": [
+    22810140,
+    "0f85e7050000"
+  ],
+  "state-byte-load": [
+    22810146,
+    "410fb65648"
+  ],
+  "state-byte-decrement": [
+    22810159,
+    "feca"
+  ],
+  "state-byte-store": [
+    22810161,
+    "41885648"
+  ],
+  "state-byte-zero-branch": [
+    22810165,
+    "0f84e7050000"
+  ],
+  "first-entry-flag": [
+    22810220,
+    "b201"
+  ],
+  "object-close-byte": [
+    22810354,
+    "4183f87d"
+  ],
+  "object-close-branch": [
+    22810358,
+    "0f8477030000"
+  ],
+  "quoted-key-byte": [
+    22810373,
+    "4180f822"
+  ],
+  "quoted-key-branch": [
+    22810377,
+    "0f853c050000"
+  ],
+  "colon-byte": [
+    22810663,
+    "4883fe3a"
+  ],
+  "colon-branch": [
+    22810667,
+    "0f8559040000"
+  ],
+  "value-helper-call": [
+    22810702,
+    "e8add2ffff"
+  ],
+  "value-special-tag": [
+    22810715,
+    "3c16"
+  ],
+  "value-special-tag-branch": [
+    22810717,
+    "0f8492030000"
+  ],
+  "append-stride": [
+    22810824,
+    "48c1e106"
+  ],
+  "append-count-increment": [
+    22810867,
+    "49ffc5"
+  ],
+  "subsequent-entry-flag": [
+    22810883,
+    "31d2"
+  ],
+  "depth-restore-increment": [
+    22811004,
+    "fec0"
+  ],
+  "depth-restore-store": [
+    22811006,
+    "41884648"
+  ],
+  "post-object-helper-call": [
+    22811013,
+    "e8568bffff"
+  ],
+  "object-constructor-call": [
+    22811261,
+    "e89e850500"
+  ],
+  "output-high-qword": [
+    22811159,
+    "48894b60"
+  ],
+  "output-xmm-50": [
+    22811171,
+    "0f114350"
+  ],
+  "output-xmm-40": [
+    22811207,
+    "0f115b40"
+  ],
+  "output-xmm-30": [
+    22811211,
+    "0f115330"
+  ],
+  "output-xmm-20": [
+    22811215,
+    "0f114b20"
+  ],
+  "output-xmm-10": [
+    22811219,
+    "0f114310"
+  ],
+  "output-first-qword": [
+    22811223,
+    "488933"
+  ],
+  "output-second-qword": [
+    22811226,
+    "48894308"
+  ],
+  "error-second-qword": [
+    22811540,
+    "48894308"
+  ],
+  "error-first-qword": [
+    22811544,
+    "4c892b"
+  ],
+  "returns-output-pointer": [
+    22811230,
+    "4889d8"
+  ],
+  "empty-input-error-code": [
+    22810110,
+    "48c744243005000000"
+  ],
+  "state-limit-error-code": [
+    22811682,
+    "48c744243018000000"
+  ],
+  "separator-error-code": [
+    22811696,
+    "48c744243008000000"
+  ],
+  "post-comma-close-error-code": [
+    22811732,
+    "48c744243015000000"
+  ],
+  "key-error-code": [
+    22811759,
+    "48c744243011000000"
+  ],
+  "colon-error-code": [
+    22811786,
+    "48c784243001000006000000"
+  ]
+}

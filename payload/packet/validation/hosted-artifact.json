@@ -1,0 +1,123 @@
+{
+  "run_id": 41371054867,
+  "url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/41371054867",
+  "conclusion": "failure",
+  "head_sha": "5ce47c05b0ccc4b5bf1f9ca50cc25fa06f0fab17",
+  "attempt": 1,
+  "runs_for_head": 1,
+  "jobs": 1,
+  "artifact_id": 13110316033,
+  "artifact_bytes": 62132,
+  "artifact_sha256": "0e2cee3a792e0268c886b1fc24034dcabc01b5500373ad4203b40fe367acebd4",
+  "artifact_digest_matches": true,
+  "receipt_files": [
+    {
+      "name": "acquisition.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "catalogue-check.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "acquisition.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "catalogue-check.stdout",
+      "bytes": 133,
+      "sha256": "752a03f3cf951502c903410c1433ba109f116857ffc63c30ba62348362744966"
+    },
+    {
+      "name": "doctor.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "doctor.stdout",
+      "bytes": 2094,
+      "sha256": "678dadd67c28c5341d4e2f7f1124e90a12fa200d707a28eb333c01db391398e0"
+    },
+    {
+      "name": "isolation-preflight.json",
+      "bytes": 780,
+      "sha256": "b150373616b83073d0e8a395694cf2d8967630ed820d6660138dc80cf0dc52c9"
+    },
+    {
+      "name": "namespace.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "namespace.stdout",
+      "bytes": 1284,
+      "sha256": "5cd3f126b6dc25a8e5c853e2eeebfaf6bb8bfef79c923012a28f5448bb3f2895"
+    },
+    {
+      "name": "packet-full-input.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "packet-full-input.stdout",
+      "bytes": 9979,
+      "sha256": "d3717b36f8593b8d427bc0c1038e2d14c38fe9290f77781c9160de39b8a277ab"
+    },
+    {
+      "name": "preparation.json",
+      "bytes": 235,
+      "sha256": "6e747d0e7c6f367db4ce734347f49e5ad7f82ee1f952e9ab51dc98e223b1c6cc"
+    },
+    {
+      "name": "progress.json",
+      "bytes": 1805,
+      "sha256": "cfe6626cac8f1e74363c725136308bbb43dec62d9b9284639d61b5d91068256b"
+    },
+    {
+      "name": "qualification.json",
+      "bytes": 911,
+      "sha256": "c6930039eec537728d8a3b739974abd9a3b48e71e932e7056c98f666e8b9dbf8"
+    },
+    {
+      "name": "reproduce.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "reproduce.stdout",
+      "bytes": 12606,
+      "sha256": "1e9b45e4af284d31045bfe61ace6de795fc38af84b84dccfd82422078f952b94"
+    },
+    {
+      "name": "result.json",
+      "bytes": 2387,
+      "sha256": "b86c4c2d22370dda81dcbdb07e0874bf7011f2ff18639eece707f76a4997e4b8"
+    },
+    {
+      "name": "test.stderr",
+      "bytes": 350092,
+      "sha256": "5c133788e242f83e9ba6211203fc68c7938fbd9109a4b6fb105c5d43547f83e3"
+    },
+    {
+      "name": "test.stdout",
+      "bytes": 693,
+      "sha256": "9ed8d2f102c6ce36fe8e5678be79330848888194b1184f8c0fd3b8cdf2a0eb9e"
+    },
+    {
+      "name": "verify.stderr",
+      "bytes": 149,
+      "sha256": "e732df804a5ab65971ab132c78a88dfc0c414d048a23276f8d6fdc83fa61d114"
+    },
+    {
+      "name": "verify.stdout",
+      "bytes": 701,
+      "sha256": "b0e280f3a80e9bafafd37a6cd88ffbd75037e026ce9d8bf9610c65ca0b837d55"
+    }
+  ],
+  "additional_retry_launched": false,
+  "upstream_pr": false,
+  "original_failed_receipts_modified": false
+}

@@ -1,0 +1,69 @@
+{
+  "status": "LFS_READONLY_TEMP_FAILURE_REPRODUCED_PRIVATE_CACHE_CONTROL_PASSED",
+  "run_id": 41374009882,
+  "url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/41374009882",
+  "execution_commit": "5563804b5f4e8d7e50a2900299a8516d5600146d",
+  "source_commit": "56c0ec672bd8fdcfaa80f2db700a61e6240b3663",
+  "artifact_sha256": "7034cc1a57826ea6dbcd6599247f62d8084fc38bb49bc2bf20efea35bf7cddc7",
+  "artifact_digest_matches": true,
+  "receipt_files": 119,
+  "commands_observed": 51,
+  "qualification_verified": true,
+  "source_artifact_inputs_unchanged": true,
+  "failed_baseline_commands": [
+    "ref1-baseline-status",
+    "ref1-baseline-fresh-status"
+  ],
+  "references": [
+    {
+      "path": "references/can1357-hl",
+      "pin_matches": true,
+      "baseline_strict_clean": false,
+      "private_cache_strict_clean": true
+    },
+    {
+      "path": "upstream/block-importer",
+      "pin_matches": true,
+      "baseline_strict_clean": true,
+      "private_cache_strict_clean": true
+    },
+    {
+      "path": "upstream/contracts",
+      "pin_matches": true,
+      "baseline_strict_clean": true,
+      "private_cache_strict_clean": true
+    },
+    {
+      "path": "upstream/historical_data",
+      "pin_matches": true,
+      "baseline_strict_clean": true,
+      "private_cache_strict_clean": true
+    },
+    {
+      "path": "upstream/hyper-evm-sync",
+      "pin_matches": true,
+      "baseline_strict_clean": true,
+      "private_cache_strict_clean": true
+    },
+    {
+      "path": "upstream/node",
+      "pin_matches": true,
+      "baseline_strict_clean": true,
+      "private_cache_strict_clean": true
+    },
+    {
+      "path": "upstream/order_book_server",
+      "pin_matches": true,
+      "baseline_strict_clean": true,
+      "private_cache_strict_clean": true
+    }
+  ],
+  "diagnosis": "Git LFS clean filter cannot create its temporary file in the read-only reference metadata directory.",
+  "private_cache_result": "All seven exact HEAD pins and ordinary/fresh-index status checks pass with an external writable cache.",
+  "full_make_verify_run": false,
+  "full_test_suite_repeated": false,
+  "mac_repository_code_execution": false,
+  "additional_run_launched": false,
+  "upstream_pr": false,
+  "limits": "The harness correction is proved for these Git operations. It is not a complete make verify or test-suite pass."
+}
