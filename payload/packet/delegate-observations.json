@@ -1,0 +1,609 @@
+{
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+  "body_sha256": "11b6ac618f848362971f5e10e4f2cf4e89f070a5ba2eb9ca3be4596bc17eecc2",
+  "run_url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/41285258547",
+  "execution_commit": "5b8ef7fc76ba4df64091c82cc79ac17567f78f3a",
+  "artifact_sha256": "61a94b962691fe63b90eaeb56b2090b40b4b2ff672498c20ca6fa9c3041d921c",
+  "annotations": [
+    {
+      "id": "input-and-output-aliases",
+      "classification": "observed local data flow",
+      "observation": "State retained in R14 and output pointer in RBX; local input/length/cursor fields.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c0da1",
+          "bytes": "4989f6",
+          "text": "mov    r14,rsi"
+        },
+        {
+          "va": "0x15c0da4",
+          "bytes": "4889fb",
+          "text": "mov    rbx,rdi"
+        },
+        {
+          "va": "0x15c0db1",
+          "bytes": "488b4e20",
+          "text": "mov    rcx,QWORD PTR [rsi+0x20]"
+        },
+        {
+          "va": "0x15c0db5",
+          "bytes": "488b4628",
+          "text": "mov    rax,QWORD PTR [rsi+0x28]"
+        },
+        {
+          "va": "0x15c0dc2",
+          "bytes": "498b5618",
+          "text": "mov    rdx,QWORD PTR [r14+0x18]"
+        }
+      ],
+      "limit": "No complete state layout or source type recovered."
+    },
+    {
+      "id": "leading-whitespace-and-open",
+      "classification": "observed local predicate",
+      "observation": "Leading mask/bound selects bytes 9,10,13,32; next comparison is with 0x7b.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c0dcf",
+          "bytes": "49bc0026000001000000",
+          "text": "movabs r12,0x100002600"
+        },
+        {
+          "va": "0x15c0dde",
+          "bytes": "4883ff20",
+          "text": "cmp    rdi,0x20"
+        },
+        {
+          "va": "0x15c0de2",
+          "bytes": "7735",
+          "text": "ja     0x15c0e19"
+        },
+        {
+          "va": "0x15c0de4",
+          "bytes": "490fa3fc",
+          "text": "bt     r12,rdi"
+        },
+        {
+          "va": "0x15c0de8",
+          "bytes": "732f",
+          "text": "jae    0x15c0e19"
+        },
+        {
+          "va": "0x15c0dea",
+          "bytes": "49894628",
+          "text": "mov    QWORD PTR [r14+0x28],rax"
+        },
+        {
+          "va": "0x15c0e19",
+          "bytes": "83ff7b",
+          "text": "cmp    edi,0x7b"
+        },
+        {
+          "va": "0x15c0e1c",
+          "bytes": "0f85e7050000",
+          "text": "jne    0x15c1409"
+        }
+      ],
+      "limit": "Not a complete-input acceptance or JSON-compliance claim."
+    },
+    {
+      "id": "nonobject-path",
+      "classification": "observed branch and calls",
+      "observation": "Non-0x7b local branch calls 0x15b9910 and reaches conversion helper 0x160f1c0.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c0e1c",
+          "bytes": "0f85e7050000",
+          "text": "jne    0x15c1409"
+        },
+        {
+          "va": "0x15c1409",
+          "bytes": "488d1510550b04",
+          "text": "lea    rdx,[rip+0x40b5510]        # 0x5676920"
+        },
+        {
+          "va": "0x15c1418",
+          "bytes": "e8f384ffff",
+          "text": "call   0x15b9910"
+        },
+        {
+          "va": "0x15c141d",
+          "bytes": "e967ffffff",
+          "text": "jmp    0x15c1389"
+        },
+        {
+          "va": "0x15c138f",
+          "bytes": "e82cde0400",
+          "text": "call   0x160f1c0"
+        }
+      ],
+      "limit": "The called helpers remain opaque; do not assign an error enum name."
+    },
+    {
+      "id": "state-byte-budget",
+      "classification": "observed local arithmetic; depth interpretation inferred",
+      "observation": "State +0x48 checked, decremented and stored; zero selects raw code 0x18; later guarded increment/store.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c0e22",
+          "bytes": "410fb65648",
+          "text": "movzx  edx,BYTE PTR [r14+0x48]"
+        },
+        {
+          "va": "0x15c0e27",
+          "bytes": "84d2",
+          "text": "test   dl,dl"
+        },
+        {
+          "va": "0x15c0e29",
+          "bytes": "0f847c060000",
+          "text": "je     0x15c14ab"
+        },
+        {
+          "va": "0x15c0e2f",
+          "bytes": "feca",
+          "text": "dec    dl"
+        },
+        {
+          "va": "0x15c0e31",
+          "bytes": "41885648",
+          "text": "mov    BYTE PTR [r14+0x48],dl"
+        },
+        {
+          "va": "0x15c0e35",
+          "bytes": "0f84e7050000",
+          "text": "je     0x15c1422"
+        },
+        {
+          "va": "0x15c1422",
+          "bytes": "48c744243018000000",
+          "text": "mov    QWORD PTR [rsp+0x30],0x18"
+        },
+        {
+          "va": "0x15c116f",
+          "bytes": "410fb64648",
+          "text": "movzx  eax,BYTE PTR [r14+0x48]"
+        },
+        {
+          "va": "0x15c1174",
+          "bytes": "3cff",
+          "text": "cmp    al,0xff"
+        },
+        {
+          "va": "0x15c1176",
+          "bytes": "0f8449030000",
+          "text": "je     0x15c14c5"
+        },
+        {
+          "va": "0x15c117c",
+          "bytes": "fec0",
+          "text": "inc    al"
+        },
+        {
+          "va": "0x15c117e",
+          "bytes": "41884648",
+          "text": "mov    BYTE PTR [r14+0x48],al"
+        }
+      ],
+      "limit": "No proof of all reachable values, complete nesting policy or opaque helper behavior."
+    },
+    {
+      "id": "object-entry-guards",
+      "classification": "observed local comparisons and branches",
+      "observation": "Initial/subsequent flag, comma, close brace and quoted-key gates.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c0e6c",
+          "bytes": "b201",
+          "text": "mov    dl,0x1"
+        },
+        {
+          "va": "0x15c0ea2",
+          "bytes": "4983f82c",
+          "text": "cmp    r8,0x2c"
+        },
+        {
+          "va": "0x15c0ea8",
+          "bytes": "f6c201",
+          "text": "test   dl,0x1"
+        },
+        {
+          "va": "0x15c0eab",
+          "bytes": "0f85be050000",
+          "text": "jne    0x15c146f"
+        },
+        {
+          "va": "0x15c0ef2",
+          "bytes": "4183f87d",
+          "text": "cmp    r8d,0x7d"
+        },
+        {
+          "va": "0x15c0ef6",
+          "bytes": "0f8477030000",
+          "text": "je     0x15c1273"
+        },
+        {
+          "va": "0x15c0efc",
+          "bytes": "f6c201",
+          "text": "test   dl,0x1"
+        },
+        {
+          "va": "0x15c0eff",
+          "bytes": "0f842b050000",
+          "text": "je     0x15c1430"
+        },
+        {
+          "va": "0x15c0f05",
+          "bytes": "4180f822",
+          "text": "cmp    r8b,0x22"
+        },
+        {
+          "va": "0x15c0f09",
+          "bytes": "0f853c050000",
+          "text": "jne    0x15c144b"
+        },
+        {
+          "va": "0x15c1103",
+          "bytes": "31d2",
+          "text": "xor    edx,edx"
+        }
+      ],
+      "limit": "Key names, escapes, Unicode and duplicate-key semantics unresolved."
+    },
+    {
+      "id": "key-colon-value-boundary",
+      "classification": "observed helper edges and local guards",
+      "observation": "Indirect key call, colon requirement and direct value call to 0x15be300; raw returned tag compared with 0x16.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c0e73",
+          "bytes": "4c8b0d26de1a04",
+          "text": "mov    r9,QWORD PTR [rip+0x41ade26]        # 0x576eca0"
+        },
+        {
+          "va": "0x15c0f31",
+          "bytes": "41ffd1",
+          "text": "call   r9"
+        },
+        {
+          "va": "0x15c1027",
+          "bytes": "4883fe3a",
+          "text": "cmp    rsi,0x3a"
+        },
+        {
+          "va": "0x15c102b",
+          "bytes": "0f8559040000",
+          "text": "jne    0x15c148a"
+        },
+        {
+          "va": "0x15c104e",
+          "bytes": "e8add2ffff",
+          "text": "call   0x15be300"
+        },
+        {
+          "va": "0x15c105b",
+          "bytes": "3c16",
+          "text": "cmp    al,0x16"
+        },
+        {
+          "va": "0x15c105d",
+          "bytes": "0f8492030000",
+          "text": "je     0x15c13f5"
+        }
+      ],
+      "limit": "No concrete tag names or full key/value grammar recovered."
+    },
+    {
+      "id": "append-record-stride",
+      "classification": "observed local address arithmetic and stores",
+      "observation": "Count is shifted by six; four 16-byte stores form a 64-byte append record; count increments.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c10a6",
+          "bytes": "4c8b6c2420",
+          "text": "mov    r13,QWORD PTR [rsp+0x20]"
+        },
+        {
+          "va": "0x15c10ab",
+          "bytes": "4c3b6c2410",
+          "text": "cmp    r13,QWORD PTR [rsp+0x10]"
+        },
+        {
+          "va": "0x15c10b5",
+          "bytes": "488b05acd61a04",
+          "text": "mov    rax,QWORD PTR [rip+0x41ad6ac]        # 0x576e768"
+        },
+        {
+          "va": "0x15c10be",
+          "bytes": "ffd0",
+          "text": "call   rax"
+        },
+        {
+          "va": "0x15c10c0",
+          "bytes": "488b442418",
+          "text": "mov    rax,QWORD PTR [rsp+0x18]"
+        },
+        {
+          "va": "0x15c10c8",
+          "bytes": "48c1e106",
+          "text": "shl    rcx,0x6"
+        },
+        {
+          "va": "0x15c10e0",
+          "bytes": "0f115c0830",
+          "text": "movups XMMWORD PTR [rax+rcx*1+0x30],xmm3"
+        },
+        {
+          "va": "0x15c10e5",
+          "bytes": "0f11540820",
+          "text": "movups XMMWORD PTR [rax+rcx*1+0x20],xmm2"
+        },
+        {
+          "va": "0x15c10ea",
+          "bytes": "0f114c0810",
+          "text": "movups XMMWORD PTR [rax+rcx*1+0x10],xmm1"
+        },
+        {
+          "va": "0x15c10ef",
+          "bytes": "0f110408",
+          "text": "movups XMMWORD PTR [rax+rcx*1],xmm0"
+        },
+        {
+          "va": "0x15c10f3",
+          "bytes": "49ffc5",
+          "text": "inc    r13"
+        },
+        {
+          "va": "0x15c10f6",
+          "bytes": "4c896c2420",
+          "text": "mov    QWORD PTR [rsp+0x20],r13"
+        }
+      ],
+      "limit": "Record type and capacity-helper behavior unresolved."
+    },
+    {
+      "id": "result-shape-helper-blockers",
+      "classification": "observed direct calls and local selection",
+      "observation": "Close-brace path calls 0x1619820; later 0x15b9ce0 returns a value used for output selection.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c1273",
+          "bytes": "488d7c2430",
+          "text": "lea    rdi,[rsp+0x30]"
+        },
+        {
+          "va": "0x15c1278",
+          "bytes": "488d742410",
+          "text": "lea    rsi,[rsp+0x10]"
+        },
+        {
+          "va": "0x15c127d",
+          "bytes": "e89e850500",
+          "text": "call   0x1619820"
+        },
+        {
+          "va": "0x15c128c",
+          "bytes": "4c39e9",
+          "text": "cmp    rcx,r13"
+        },
+        {
+          "va": "0x15c128f",
+          "bytes": "0f84a5feffff",
+          "text": "je     0x15c113a"
+        },
+        {
+          "va": "0x15c12fe",
+          "bytes": "e83dd20400",
+          "text": "call   0x160e540"
+        },
+        {
+          "va": "0x15c1185",
+          "bytes": "e8568bffff",
+          "text": "call   0x15b9ce0"
+        },
+        {
+          "va": "0x15c11f8",
+          "bytes": "4c39ee",
+          "text": "cmp    rsi,r13"
+        },
+        {
+          "va": "0x15c11fb",
+          "bytes": "0f8422010000",
+          "text": "je     0x15c1323"
+        },
+        {
+          "va": "0x15c1201",
+          "bytes": "4885c0",
+          "text": "test   rax,rax"
+        },
+        {
+          "va": "0x15c1204",
+          "bytes": "0f8543010000",
+          "text": "jne    0x15c134d"
+        }
+      ],
+      "limit": "Reaching these calls does not prove any specific object is accepted."
+    },
+    {
+      "id": "ordinary-output-stores",
+      "classification": "observed local write layout",
+      "observation": "Eight stores cover offsets 0..103 of the retained output pointer.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c1217",
+          "bytes": "48894b60",
+          "text": "mov    QWORD PTR [rbx+0x60],rcx"
+        },
+        {
+          "va": "0x15c1223",
+          "bytes": "0f114350",
+          "text": "movups XMMWORD PTR [rbx+0x50],xmm0"
+        },
+        {
+          "va": "0x15c1247",
+          "bytes": "0f115b40",
+          "text": "movups XMMWORD PTR [rbx+0x40],xmm3"
+        },
+        {
+          "va": "0x15c124b",
+          "bytes": "0f115330",
+          "text": "movups XMMWORD PTR [rbx+0x30],xmm2"
+        },
+        {
+          "va": "0x15c124f",
+          "bytes": "0f114b20",
+          "text": "movups XMMWORD PTR [rbx+0x20],xmm1"
+        },
+        {
+          "va": "0x15c1253",
+          "bytes": "0f114310",
+          "text": "movups XMMWORD PTR [rbx+0x10],xmm0"
+        },
+        {
+          "va": "0x15c1257",
+          "bytes": "488933",
+          "text": "mov    QWORD PTR [rbx],rsi"
+        },
+        {
+          "va": "0x15c125a",
+          "bytes": "48894308",
+          "text": "mov    QWORD PTR [rbx+0x8],rax"
+        }
+      ],
+      "limit": "104-byte local store layout; concrete fields and Rust result type unknown."
+    },
+    {
+      "id": "sentinel-output-and-return",
+      "classification": "observed local write layout and return",
+      "observation": "Raw sentinel 0x8000000000000001 stored at +0, RAX at +8; shared epilogue returns output pointer.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c0da7",
+          "bytes": "49bd0100000000000080",
+          "text": "movabs r13,0x8000000000000001"
+        },
+        {
+          "va": "0x15c1394",
+          "bytes": "48894308",
+          "text": "mov    QWORD PTR [rbx+0x8],rax"
+        },
+        {
+          "va": "0x15c1398",
+          "bytes": "4c892b",
+          "text": "mov    QWORD PTR [rbx],r13"
+        },
+        {
+          "va": "0x15c139b",
+          "bytes": "e9befeffff",
+          "text": "jmp    0x15c125e"
+        },
+        {
+          "va": "0x15c125e",
+          "bytes": "4889d8",
+          "text": "mov    rax,rbx"
+        },
+        {
+          "va": "0x15c1272",
+          "bytes": "c3",
+          "text": "ret"
+        }
+      ],
+      "limit": "16 local store bytes only; no guarantee about initialization or helper side effects."
+    },
+    {
+      "id": "raw-local-diagnostic-codes",
+      "classification": "observed immediates",
+      "observation": "Locally selected raw codes 5,24,3,5,8,21,17,3,6 precede helper calls.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c0dfe",
+          "bytes": "48c744243005000000",
+          "text": "mov    QWORD PTR [rsp+0x30],0x5"
+        },
+        {
+          "va": "0x15c1422",
+          "bytes": "48c744243018000000",
+          "text": "mov    QWORD PTR [rsp+0x30],0x18"
+        },
+        {
+          "va": "0x15c1124",
+          "bytes": "48c744243003000000",
+          "text": "mov    QWORD PTR [rsp+0x30],0x3"
+        },
+        {
+          "va": "0x15c1308",
+          "bytes": "48c744243005000000",
+          "text": "mov    QWORD PTR [rsp+0x30],0x5"
+        },
+        {
+          "va": "0x15c1430",
+          "bytes": "48c744243008000000",
+          "text": "mov    QWORD PTR [rsp+0x30],0x8"
+        },
+        {
+          "va": "0x15c1454",
+          "bytes": "48c744243015000000",
+          "text": "mov    QWORD PTR [rsp+0x30],0x15"
+        },
+        {
+          "va": "0x15c146f",
+          "bytes": "48c744243011000000",
+          "text": "mov    QWORD PTR [rsp+0x30],0x11"
+        },
+        {
+          "va": "0x15c13a0",
+          "bytes": "48c784243001000003000000",
+          "text": "mov    QWORD PTR [rsp+0x130],0x3"
+        },
+        {
+          "va": "0x15c148a",
+          "bytes": "48c784243001000006000000",
+          "text": "mov    QWORD PTR [rsp+0x130],0x6"
+        }
+      ],
+      "limit": "No recovered dependency enum variants or executed diagnostic messages."
+    },
+    {
+      "id": "unclosed-exception-paths",
+      "classification": "observed instruction inventory",
+      "observation": "One RET and one UD2; apparent cleanup code follows UD2 within the unwind-described region.",
+      "instruction_anchors": [
+        {
+          "va": "0x15c1272",
+          "bytes": "c3",
+          "text": "ret"
+        },
+        {
+          "va": "0x15c1509",
+          "bytes": "0f0b",
+          "text": "ud2"
+        },
+        {
+          "va": "0x15c150b",
+          "bytes": "4889c3",
+          "text": "mov    rbx,rax"
+        },
+        {
+          "va": "0x15c1513",
+          "bytes": "e898b8ffff",
+          "text": "call   0x15bcdb0"
+        },
+        {
+          "va": "0x15c15b8",
+          "bytes": "e853eb0904",
+          "text": "call   0x5660110"
+        },
+        {
+          "va": "0x15c15bd",
+          "bytes": "ff1565cb1a04",
+          "text": "call   QWORD PTR [rip+0x41acb65]        # 0x576e128"
+        }
+      ],
+      "limit": "LSDA, unwind entry edges and complete CFG/callee closure are not recovered."
+    }
+  ],
+  "target_execution": false,
+  "native_execution_in_this_assembler": false,
+  "repository_imports": false,
+  "complete_accepted_format_recovered": false
+}

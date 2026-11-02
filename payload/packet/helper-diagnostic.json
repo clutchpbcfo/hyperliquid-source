@@ -1,0 +1,10 @@
+{
+  "va": "0x26393a",
+  "file_offset": "0x26393a",
+  "bytes": 61,
+  "hex": "6461746120646964206e6f74206d6174636820616e792076617269616e74206f6620756e74616767656420656e756d204a736f6e527063526573756c74",
+  "ascii": "data did not match any variant of untagged enum JsonRpcResult",
+  "section_flags": "0x32",
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+  "target_execution": false
+}

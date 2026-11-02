@@ -1,0 +1,21 @@
+{
+  "status": "LOCAL_DRAFT_NOT_SUBMITTED",
+  "created_utc": "2026-11-02T00:24:46.343334+00:00",
+  "current_base": "56c0ec672bd8fdcfaa80f2db700a61e6240b3663",
+  "repository_checks_run": false,
+  "hosted_full_input_replay_run": false,
+  "native_runs_reused": 2,
+  "upstream_pr": false,
+  "no_source_from_unlicensed_reference_copied": true,
+  "full_schema_recovered": false,
+  "updated_utc": "2026-11-02T00:26:43.561918+00:00",
+  "owned_stdlib_full_input_reader_passed": true,
+  "full_input_replay": {
+    "region_count": 4,
+    "bytes": 3060,
+    "recorded_instructions": 674,
+    "evidence_corruptions_rejected": 71
+  },
+  "repo_code_executed_on_mac": false,
+  "existing_repository_imports": false
+}
