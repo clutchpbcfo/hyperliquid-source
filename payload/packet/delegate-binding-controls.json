@@ -1,0 +1,265 @@
+{
+  "status": "OBSERVED_LOCAL_BYTE_BINDINGS_CHECKED",
+  "body_sha256": "11b6ac618f848362971f5e10e4f2cf4e89f070a5ba2eb9ca3be4596bc17eecc2",
+  "positive_instruction_sites": 48,
+  "single_byte_corruptions_rejected": 48,
+  "corruption_controls": [
+    {
+      "control": "length-field",
+      "mutated_va": "0x15c0db4",
+      "rejection": "field binding drift: length-field"
+    },
+    {
+      "control": "cursor-field",
+      "mutated_va": "0x15c0db8",
+      "rejection": "field binding drift: cursor-field"
+    },
+    {
+      "control": "error-sentinel",
+      "mutated_va": "0x15c0db0",
+      "rejection": "field binding drift: error-sentinel"
+    },
+    {
+      "control": "whitespace-mask",
+      "mutated_va": "0x15c0dd8",
+      "rejection": "field binding drift: whitespace-mask"
+    },
+    {
+      "control": "whitespace-upper-bound",
+      "mutated_va": "0x15c0de1",
+      "rejection": "field binding drift: whitespace-upper-bound"
+    },
+    {
+      "control": "whitespace-bound-branch",
+      "mutated_va": "0x15c0de3",
+      "rejection": "field binding drift: whitespace-bound-branch"
+    },
+    {
+      "control": "whitespace-bit-test",
+      "mutated_va": "0x15c0de7",
+      "rejection": "field binding drift: whitespace-bit-test"
+    },
+    {
+      "control": "whitespace-cursor-store",
+      "mutated_va": "0x15c0ded",
+      "rejection": "field binding drift: whitespace-cursor-store"
+    },
+    {
+      "control": "object-open-byte",
+      "mutated_va": "0x15c0e1b",
+      "rejection": "field binding drift: object-open-byte"
+    },
+    {
+      "control": "object-open-branch",
+      "mutated_va": "0x15c0e21",
+      "rejection": "field binding drift: object-open-branch"
+    },
+    {
+      "control": "state-byte-load",
+      "mutated_va": "0x15c0e26",
+      "rejection": "field binding drift: state-byte-load"
+    },
+    {
+      "control": "state-byte-decrement",
+      "mutated_va": "0x15c0e30",
+      "rejection": "field binding drift: state-byte-decrement"
+    },
+    {
+      "control": "state-byte-store",
+      "mutated_va": "0x15c0e34",
+      "rejection": "field binding drift: state-byte-store"
+    },
+    {
+      "control": "state-byte-zero-branch",
+      "mutated_va": "0x15c0e3a",
+      "rejection": "field binding drift: state-byte-zero-branch"
+    },
+    {
+      "control": "first-entry-flag",
+      "mutated_va": "0x15c0e6d",
+      "rejection": "field binding drift: first-entry-flag"
+    },
+    {
+      "control": "object-close-byte",
+      "mutated_va": "0x15c0ef5",
+      "rejection": "field binding drift: object-close-byte"
+    },
+    {
+      "control": "object-close-branch",
+      "mutated_va": "0x15c0efb",
+      "rejection": "field binding drift: object-close-branch"
+    },
+    {
+      "control": "quoted-key-byte",
+      "mutated_va": "0x15c0f08",
+      "rejection": "field binding drift: quoted-key-byte"
+    },
+    {
+      "control": "quoted-key-branch",
+      "mutated_va": "0x15c0f0e",
+      "rejection": "field binding drift: quoted-key-branch"
+    },
+    {
+      "control": "colon-byte",
+      "mutated_va": "0x15c102a",
+      "rejection": "field binding drift: colon-byte"
+    },
+    {
+      "control": "colon-branch",
+      "mutated_va": "0x15c1030",
+      "rejection": "field binding drift: colon-branch"
+    },
+    {
+      "control": "value-helper-call",
+      "mutated_va": "0x15c1052",
+      "rejection": "field binding drift: value-helper-call"
+    },
+    {
+      "control": "value-special-tag",
+      "mutated_va": "0x15c105c",
+      "rejection": "field binding drift: value-special-tag"
+    },
+    {
+      "control": "value-special-tag-branch",
+      "mutated_va": "0x15c1062",
+      "rejection": "field binding drift: value-special-tag-branch"
+    },
+    {
+      "control": "append-stride",
+      "mutated_va": "0x15c10cb",
+      "rejection": "field binding drift: append-stride"
+    },
+    {
+      "control": "append-count-increment",
+      "mutated_va": "0x15c10f5",
+      "rejection": "field binding drift: append-count-increment"
+    },
+    {
+      "control": "subsequent-entry-flag",
+      "mutated_va": "0x15c1104",
+      "rejection": "field binding drift: subsequent-entry-flag"
+    },
+    {
+      "control": "depth-restore-increment",
+      "mutated_va": "0x15c117d",
+      "rejection": "field binding drift: depth-restore-increment"
+    },
+    {
+      "control": "depth-restore-store",
+      "mutated_va": "0x15c1181",
+      "rejection": "field binding drift: depth-restore-store"
+    },
+    {
+      "control": "post-object-helper-call",
+      "mutated_va": "0x15c1189",
+      "rejection": "field binding drift: post-object-helper-call"
+    },
+    {
+      "control": "object-constructor-call",
+      "mutated_va": "0x15c1281",
+      "rejection": "field binding drift: object-constructor-call"
+    },
+    {
+      "control": "output-high-qword",
+      "mutated_va": "0x15c121a",
+      "rejection": "field binding drift: output-high-qword"
+    },
+    {
+      "control": "output-xmm-50",
+      "mutated_va": "0x15c1226",
+      "rejection": "field binding drift: output-xmm-50"
+    },
+    {
+      "control": "output-xmm-40",
+      "mutated_va": "0x15c124a",
+      "rejection": "field binding drift: output-xmm-40"
+    },
+    {
+      "control": "output-xmm-30",
+      "mutated_va": "0x15c124e",
+      "rejection": "field binding drift: output-xmm-30"
+    },
+    {
+      "control": "output-xmm-20",
+      "mutated_va": "0x15c1252",
+      "rejection": "field binding drift: output-xmm-20"
+    },
+    {
+      "control": "output-xmm-10",
+      "mutated_va": "0x15c1256",
+      "rejection": "field binding drift: output-xmm-10"
+    },
+    {
+      "control": "output-first-qword",
+      "mutated_va": "0x15c1259",
+      "rejection": "field binding drift: output-first-qword"
+    },
+    {
+      "control": "output-second-qword",
+      "mutated_va": "0x15c125d",
+      "rejection": "field binding drift: output-second-qword"
+    },
+    {
+      "control": "error-second-qword",
+      "mutated_va": "0x15c1397",
+      "rejection": "field binding drift: error-second-qword"
+    },
+    {
+      "control": "error-first-qword",
+      "mutated_va": "0x15c139a",
+      "rejection": "field binding drift: error-first-qword"
+    },
+    {
+      "control": "returns-output-pointer",
+      "mutated_va": "0x15c1260",
+      "rejection": "field binding drift: returns-output-pointer"
+    },
+    {
+      "control": "empty-input-error-code",
+      "mutated_va": "0x15c0e06",
+      "rejection": "field binding drift: empty-input-error-code"
+    },
+    {
+      "control": "state-limit-error-code",
+      "mutated_va": "0x15c142a",
+      "rejection": "field binding drift: state-limit-error-code"
+    },
+    {
+      "control": "separator-error-code",
+      "mutated_va": "0x15c1438",
+      "rejection": "field binding drift: separator-error-code"
+    },
+    {
+      "control": "post-comma-close-error-code",
+      "mutated_va": "0x15c145c",
+      "rejection": "field binding drift: post-comma-close-error-code"
+    },
+    {
+      "control": "key-error-code",
+      "mutated_va": "0x15c1477",
+      "rejection": "field binding drift: key-error-code"
+    },
+    {
+      "control": "colon-error-code",
+      "mutated_va": "0x15c1495",
+      "rejection": "field binding drift: colon-error-code"
+    }
+  ],
+  "global_digest_gate_used_for_corruption_checks": false,
+  "relative_calls_recalculated": 3,
+  "conditional_branches_recalculated": 7,
+  "whitespace_domain_checked": 256,
+  "admitted_whitespace_byte_values": [
+    9,
+    10,
+    13,
+    32
+  ],
+  "whitespace_reference": "RFC 8259 section 2: https://datatracker.ietf.org/doc/html/rfc8259#section-2",
+  "ordinary_output_write_bytes": 104,
+  "sentinel_arm_output_write_bytes": 16,
+  "target_execution": false,
+  "native_execution": false,
+  "repository_module_execution": false,
+  "limits": "Bindings and static local predicates only. Does not execute or emulate the parser, prove complete input acceptance, identify concrete Rust result types, qualify opaque callees or establish runtime equivalence."
+}

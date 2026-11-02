@@ -1,0 +1,329 @@
+{
+  "status": "COMPLETE_INPUT_STATIC_BINDINGS_REPRODUCED",
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+  "region_count": 4,
+  "region_bytes": 3060,
+  "recorded_native_instructions": 674,
+  "instruction_counts": {
+    "delegate": 449,
+    "caller-wrapper": 99,
+    "object-constructor": 79,
+    "post-object": 47
+  },
+  "unwind_index_rows_checked": 121299,
+  "selected_relocation_records_bound": 12,
+  "corruptions_rejected": 71,
+  "controls": [
+    {
+      "control": "FDE extent: delegate",
+      "rejection": "FDE decoded range drift"
+    },
+    {
+      "control": "FDE extent: caller-wrapper",
+      "rejection": "FDE decoded range drift"
+    },
+    {
+      "control": "FDE extent: object-constructor",
+      "rejection": "FDE decoded range drift"
+    },
+    {
+      "control": "FDE extent: post-object",
+      "rejection": "FDE decoded range drift"
+    },
+    {
+      "control": "delegate field: length-field",
+      "rejection": "field binding drift: length-field"
+    },
+    {
+      "control": "delegate field: cursor-field",
+      "rejection": "field binding drift: cursor-field"
+    },
+    {
+      "control": "delegate field: error-sentinel",
+      "rejection": "field binding drift: error-sentinel"
+    },
+    {
+      "control": "delegate field: whitespace-mask",
+      "rejection": "field binding drift: whitespace-mask"
+    },
+    {
+      "control": "delegate field: whitespace-upper-bound",
+      "rejection": "field binding drift: whitespace-upper-bound"
+    },
+    {
+      "control": "delegate field: whitespace-bound-branch",
+      "rejection": "field binding drift: whitespace-bound-branch"
+    },
+    {
+      "control": "delegate field: whitespace-bit-test",
+      "rejection": "field binding drift: whitespace-bit-test"
+    },
+    {
+      "control": "delegate field: whitespace-cursor-store",
+      "rejection": "field binding drift: whitespace-cursor-store"
+    },
+    {
+      "control": "delegate field: object-open-byte",
+      "rejection": "field binding drift: object-open-byte"
+    },
+    {
+      "control": "delegate field: object-open-branch",
+      "rejection": "field binding drift: object-open-branch"
+    },
+    {
+      "control": "delegate field: state-byte-load",
+      "rejection": "field binding drift: state-byte-load"
+    },
+    {
+      "control": "delegate field: state-byte-decrement",
+      "rejection": "field binding drift: state-byte-decrement"
+    },
+    {
+      "control": "delegate field: state-byte-store",
+      "rejection": "field binding drift: state-byte-store"
+    },
+    {
+      "control": "delegate field: state-byte-zero-branch",
+      "rejection": "field binding drift: state-byte-zero-branch"
+    },
+    {
+      "control": "delegate field: first-entry-flag",
+      "rejection": "field binding drift: first-entry-flag"
+    },
+    {
+      "control": "delegate field: object-close-byte",
+      "rejection": "field binding drift: object-close-byte"
+    },
+    {
+      "control": "delegate field: object-close-branch",
+      "rejection": "field binding drift: object-close-branch"
+    },
+    {
+      "control": "delegate field: quoted-key-byte",
+      "rejection": "field binding drift: quoted-key-byte"
+    },
+    {
+      "control": "delegate field: quoted-key-branch",
+      "rejection": "field binding drift: quoted-key-branch"
+    },
+    {
+      "control": "delegate field: colon-byte",
+      "rejection": "field binding drift: colon-byte"
+    },
+    {
+      "control": "delegate field: colon-branch",
+      "rejection": "field binding drift: colon-branch"
+    },
+    {
+      "control": "delegate field: value-helper-call",
+      "rejection": "field binding drift: value-helper-call"
+    },
+    {
+      "control": "delegate field: value-special-tag",
+      "rejection": "field binding drift: value-special-tag"
+    },
+    {
+      "control": "delegate field: value-special-tag-branch",
+      "rejection": "field binding drift: value-special-tag-branch"
+    },
+    {
+      "control": "delegate field: append-stride",
+      "rejection": "field binding drift: append-stride"
+    },
+    {
+      "control": "delegate field: append-count-increment",
+      "rejection": "field binding drift: append-count-increment"
+    },
+    {
+      "control": "delegate field: subsequent-entry-flag",
+      "rejection": "field binding drift: subsequent-entry-flag"
+    },
+    {
+      "control": "delegate field: depth-restore-increment",
+      "rejection": "field binding drift: depth-restore-increment"
+    },
+    {
+      "control": "delegate field: depth-restore-store",
+      "rejection": "field binding drift: depth-restore-store"
+    },
+    {
+      "control": "delegate field: post-object-helper-call",
+      "rejection": "field binding drift: post-object-helper-call"
+    },
+    {
+      "control": "delegate field: object-constructor-call",
+      "rejection": "field binding drift: object-constructor-call"
+    },
+    {
+      "control": "delegate field: output-high-qword",
+      "rejection": "field binding drift: output-high-qword"
+    },
+    {
+      "control": "delegate field: output-xmm-50",
+      "rejection": "field binding drift: output-xmm-50"
+    },
+    {
+      "control": "delegate field: output-xmm-40",
+      "rejection": "field binding drift: output-xmm-40"
+    },
+    {
+      "control": "delegate field: output-xmm-30",
+      "rejection": "field binding drift: output-xmm-30"
+    },
+    {
+      "control": "delegate field: output-xmm-20",
+      "rejection": "field binding drift: output-xmm-20"
+    },
+    {
+      "control": "delegate field: output-xmm-10",
+      "rejection": "field binding drift: output-xmm-10"
+    },
+    {
+      "control": "delegate field: output-first-qword",
+      "rejection": "field binding drift: output-first-qword"
+    },
+    {
+      "control": "delegate field: output-second-qword",
+      "rejection": "field binding drift: output-second-qword"
+    },
+    {
+      "control": "delegate field: error-second-qword",
+      "rejection": "field binding drift: error-second-qword"
+    },
+    {
+      "control": "delegate field: error-first-qword",
+      "rejection": "field binding drift: error-first-qword"
+    },
+    {
+      "control": "delegate field: returns-output-pointer",
+      "rejection": "field binding drift: returns-output-pointer"
+    },
+    {
+      "control": "delegate field: empty-input-error-code",
+      "rejection": "field binding drift: empty-input-error-code"
+    },
+    {
+      "control": "delegate field: state-limit-error-code",
+      "rejection": "field binding drift: state-limit-error-code"
+    },
+    {
+      "control": "delegate field: separator-error-code",
+      "rejection": "field binding drift: separator-error-code"
+    },
+    {
+      "control": "delegate field: post-comma-close-error-code",
+      "rejection": "field binding drift: post-comma-close-error-code"
+    },
+    {
+      "control": "delegate field: key-error-code",
+      "rejection": "field binding drift: key-error-code"
+    },
+    {
+      "control": "delegate field: colon-error-code",
+      "rejection": "field binding drift: colon-error-code"
+    },
+    {
+      "control": "helper field: iterator-stride",
+      "rejection": "64-byte iterator stride"
+    },
+    {
+      "control": "helper field: special-tag",
+      "rejection": "initial raw special tag"
+    },
+    {
+      "control": "helper field: first-alternative-call",
+      "rejection": "direct helper destination"
+    },
+    {
+      "control": "helper field: second-alternative-call",
+      "rejection": "direct helper destination"
+    },
+    {
+      "control": "helper field: raw-sentinel",
+      "rejection": "raw sentinel"
+    },
+    {
+      "control": "helper field: first-alternative-branch",
+      "rejection": "first alternative sentinel branch"
+    },
+    {
+      "control": "helper field: second-alternative-branch",
+      "rejection": "second alternative sentinel branch"
+    },
+    {
+      "control": "helper field: diagnostic-address",
+      "rejection": "diagnostic RIP binding"
+    },
+    {
+      "control": "helper field: diagnostic-length",
+      "rejection": "diagnostic length"
+    },
+    {
+      "control": "helper field: ordinary-output-coverage",
+      "rejection": "104-byte output coverage"
+    },
+    {
+      "control": "helper field: whitespace-mask",
+      "rejection": "local whitespace predicate"
+    },
+    {
+      "control": "helper field: closing-byte",
+      "rejection": "closing brace predicate"
+    },
+    {
+      "control": "helper field: closing-branch",
+      "rejection": "closing brace branch"
+    },
+    {
+      "control": "helper field: cursor-field",
+      "rejection": "closing cursor store"
+    },
+    {
+      "control": "helper field: zero-return",
+      "rejection": "closing local zero return"
+    },
+    {
+      "control": "helper field: raw-eof-code",
+      "rejection": "raw local diagnostic code"
+    },
+    {
+      "control": "helper field: raw-comma-code",
+      "rejection": "raw local diagnostic code"
+    },
+    {
+      "control": "helper field: raw-other-code",
+      "rejection": "raw local diagnostic code"
+    },
+    {
+      "control": "helper field: diagnostic-type-name",
+      "rejection": "diagnostic bytes/name"
+    }
+  ],
+  "helper_observations": {
+    "whitespace_domain": 256,
+    "whitespace_bytes": [
+      9,
+      10,
+      13,
+      32
+    ],
+    "ordinary_output_bytes": 104,
+    "constructor_diagnostic": "data did not match any variant of untagged enum JsonRpcResult",
+    "alternative_targets": [
+      "0x15a8ec0",
+      "0x15a89d0"
+    ],
+    "closing_byte": 125,
+    "explicit_local_closing_return": 0,
+    "postobject_raw_codes": [
+      3,
+      21,
+      22
+    ]
+  },
+  "python": "3.14.7",
+  "fresh_native_decoder_run": false,
+  "target_executed": false,
+  "repository_imports": false,
+  "limits": "Full-input authentication of retained static exports/fields and 71 evidence-binding controls; not fresh native decoding, complete schemas, runtime parser tests, helper/exception closure or whole-node equivalence."
+}

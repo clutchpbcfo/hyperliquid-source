@@ -1,0 +1,54 @@
+
+/tmp/node94-result-helpers-QL5IiPF9/fixtures/post-object.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00000000015b9ce0 <.data>:
+ 15b9ce0:	48 83 ec 18                                     	sub    rsp,0x18
+ 15b9ce4:	48 8b 4f 20                                     	mov    rcx,QWORD PTR [rdi+0x20]
+ 15b9ce8:	48 8b 47 28                                     	mov    rax,QWORD PTR [rdi+0x28]
+ 15b9cec:	48 39 c8                                        	cmp    rax,rcx
+ 15b9cef:	73 3a                                           	jae    0x15b9d2b
+ 15b9cf1:	48 8b 57 18                                     	mov    rdx,QWORD PTR [rdi+0x18]
+ 15b9cf5:	48 ff c0                                        	inc    rax
+ 15b9cf8:	48 f7 d9                                        	neg    rcx
+ 15b9cfb:	48 be 00 26 00 00 01 00 00 00                   	movabs rsi,0x100002600
+ 15b9d05:	44 0f b6 44 02 ff                               	movzx  r8d,BYTE PTR [rdx+rax*1-0x1]
+ 15b9d0b:	49 83 f8 2c                                     	cmp    r8,0x2c
+ 15b9d0f:	77 4a                                           	ja     0x15b9d5b
+ 15b9d11:	4c 0f a3 c6                                     	bt     rsi,r8
+ 15b9d15:	73 29                                           	jae    0x15b9d40
+ 15b9d17:	48 89 47 28                                     	mov    QWORD PTR [rdi+0x28],rax
+ 15b9d1b:	4c 8d 04 01                                     	lea    r8,[rcx+rax*1]
+ 15b9d1f:	49 ff c0                                        	inc    r8
+ 15b9d22:	48 ff c0                                        	inc    rax
+ 15b9d25:	49 83 f8 01                                     	cmp    r8,0x1
+ 15b9d29:	75 da                                           	jne    0x15b9d05
+ 15b9d2b:	48 c7 04 24 03 00 00 00                         	mov    QWORD PTR [rsp],0x3
+ 15b9d33:	48 89 e6                                        	mov    rsi,rsp
+ 15b9d36:	e8 55 f1 ff ff                                  	call   0x15b8e90
+ 15b9d3b:	48 83 c4 18                                     	add    rsp,0x18
+ 15b9d3f:	c3                                              	ret
+ 15b9d40:	49 83 f8 2c                                     	cmp    r8,0x2c
+ 15b9d44:	75 15                                           	jne    0x15b9d5b
+ 15b9d46:	48 c7 04 24 15 00 00 00                         	mov    QWORD PTR [rsp],0x15
+ 15b9d4e:	48 89 e6                                        	mov    rsi,rsp
+ 15b9d51:	e8 3a f1 ff ff                                  	call   0x15b8e90
+ 15b9d56:	48 83 c4 18                                     	add    rsp,0x18
+ 15b9d5a:	c3                                              	ret
+ 15b9d5b:	41 83 f8 7d                                     	cmp    r8d,0x7d
+ 15b9d5f:	75 10                                           	jne    0x15b9d71
+ 15b9d61:	48 85 c0                                        	test   rax,rax
+ 15b9d64:	74 20                                           	je     0x15b9d86
+ 15b9d66:	48 89 47 28                                     	mov    QWORD PTR [rdi+0x28],rax
+ 15b9d6a:	31 c0                                           	xor    eax,eax
+ 15b9d6c:	48 83 c4 18                                     	add    rsp,0x18
+ 15b9d70:	c3                                              	ret
+ 15b9d71:	48 c7 04 24 16 00 00 00                         	mov    QWORD PTR [rsp],0x16
+ 15b9d79:	48 89 e6                                        	mov    rsi,rsp
+ 15b9d7c:	e8 0f f1 ff ff                                  	call   0x15b8e90
+ 15b9d81:	48 83 c4 18                                     	add    rsp,0x18
+ 15b9d85:	c3                                              	ret
+ 15b9d86:	48 8d 3d eb ca 0b 04                            	lea    rdi,[rip+0x40bcaeb]        # 0x5676878
+ 15b9d8d:	ff 15 85 43 1b 04                               	call   QWORD PTR [rip+0x41b4385]        # 0x576e118
