@@ -1,0 +1,25 @@
+{
+  "repository": "lalalune/hyperliquid-source",
+  "source_commit": "8fd8db680ec4bfef40996e5616bce3d5156d0b86",
+  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
+  "target_bytes": 105896032,
+  "total_excerpt_bytes": 2296,
+  "native_program": "/usr/bin/objdump",
+  "native_version_queries": 1,
+  "native_decodes": 2,
+  "repository_python_modules_executed": 0,
+  "captured_program_executions": 0,
+  "third_party_python_packages": [],
+  "whole_elf_reauthenticated_in_job": true,
+  "input_binding_receipt": "REMAP_CANDIDATES.json; complete target hashed locally before extraction",
+  "payload_files": {
+    "isolate.sh": "d41354dab48207ca91a5a00ac43fed1cdd9848d810fb02155a44e60a1c62b019",
+    "bootstrap.sh": "05bf2b8366c1db8f27ca79bacf9cfd42c6d2b1a59c346a8ac0c82aa1dddb2121",
+    "WINDOWS.json": "d6352467bcb5f447de9407cf7e7a474d0eb50048f41a1f21e742faac76257d33",
+    "probe.py": "16541e25d42afaafca97f74cb29fe58acda8a2f111661a1d060ffebfa4189ceb",
+    "remap_probe.py": "11f43b7a38919644015b8a80abee3906e6b418c4f9ac4eca4f492bf4938546f8"
+  },
+  "acquisition": "Official Git LFS for one capture at immutable upstream revision; no repository source executed",
+  "owned_full_input_reader": "remap_probe.py",
+  "bounded_question": "Which field-name and presence conditions are locally established by first variant helper 0x16fdba0?"
+}

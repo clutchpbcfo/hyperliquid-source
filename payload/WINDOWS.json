@@ -1,0 +1,121 @@
+{
+  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
+  "target_bytes": 105896032,
+  "regions": [
+    {
+      "start_va": "0x16fdba0",
+      "end_va": "0x16fdf82",
+      "bytes": 994,
+      "file_offset": "0x16fcba0",
+      "body_sha256": "12a4e82b20981e20545a6f9326cca50c7bd2796cc0edd893c4328e1e76aefa63",
+      "unwind_index_row": 6859,
+      "fde_va": "0xcc8978",
+      "fde_file_offset": "0xcc8978",
+      "fde_hex": "4c000000a41a02002052a300e203000000410e10420e18420e20420e28420e30410e38440ea00183078c068d058e048f038602037c030e38410e30420e28420e20420e18420e10410e08410ea0010000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership",
+      "label": "variant-candidate",
+      "body_hex": "554157415641554154534883ec684889fb0fb606488d0de101d8fe486304814801c8ffe04c8b66184d85e40f84740100004c8b761049c1e4064c8d6c240931c9488d2d0d02d8fe4c8d7c2408eb2049837e08000f84b00000000f1f80000000004983c6404983c4c00f84e6000000410fb616ffca83fa0e0f874f03000048635495004801eaffe241807e010075d2eb7949837e100675c9498b5608eb5149837e100675bc498b5608803a7275b3eb1049837e180675aa498b5610803a7275a1807a0165759b807a02737595807a0375758f807a046c7589807a05747583eb2a49837e18060f8576ffffff498b56108b32bf7265737531fe0fb7520481f26c74000009f20f8557ffffff80f9010f8483020000498d76204c89ffe8f2fbffff807c240801746c418b4500418b4d03894c244b89442448488b442410410fb64d1f410f10450f0f29442450884c2460b101e90cfffffff6c101744c8b4c24488b54244b89530b894b080f284424500f1143170fb64c2460884b2748b9010000000000008048ffc948890b4889430fe9f2010000488b442410e9d7010000c644240808e9b6010000488d05dd07d8fe488944243048c744243806000000488d4424304889442408488d05359efcff4889442410488d3d4d48d3fe488d742408e80f430400e98c0100000f104610eb468b4e04c74424300000000081f9800000000f83d0000000884c2430b801000000e936010000488b4608eb4b0f104610eb5ff30f104604f30f5ac0eb6a0fb74602eb340f1046080f11442410c644240806e91a0100008b4604eb1c48634604eb5a0fb6460188442409c644240800e9fd0000000fb646014889442410c644240801e9ea000000480fbe4601eb2e0f1046080f11442410e9d0000000480fbf4602eb19f20f104608f20f11442410c644240803e9b9000000488b46084889442410c644240802e9a6000000c64424080ae99c000000c644240807e992000000c644240809e98800000089c8243f0c8089cac1ea0681f900080000731280cac08854243088442431b802000000eb4f80e23f80ca8089cec1ee0c81f9ffff000077184080cee040887424308854243188442432b803000000eb244080e63f4080ce80c1e91280c9f0884c243040887424318854243288442433b804000000488d4c243048894c24104889442418c644240805488d15c609d104488d7c2408488d742407ff15ee29de044889430848b801000000000000804889034889d84883c4685b415c415d415e415f5dc3488d05ed05d8fe488944243048c744243806000000488d4424304889442408488d05459cfcff4889442410488d3db355d3fee90bfeffff488d157dddd004488d7424074c89f7e8606e0000eb90"
+    },
+    {
+      "start_va": "0x1751380",
+      "end_va": "0x17514d6",
+      "bytes": 342,
+      "file_offset": "0x1750380",
+      "body_sha256": "88db64695fb557ae826e8b211efa8a0ba9f94151c643db8d9db13c508f6e61ce",
+      "unwind_index_row": 7654,
+      "fde_va": "0x107f8b8",
+      "fde_file_offset": "0x107f8b8",
+      "fde_hex": "30000000b8220400c01a6d005601000004fbda11ff420e10410e18470ea00183038e02032f010e18410e10420e08410ea0010000",
+      "cie_file_offset": "0x103d604",
+      "cie_hex": "1c00000000000000017a504c5200017810079b11244b051b1b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zPLR",
+        "personality_pointer_encoding": "0x9b",
+        "lsda_pointer_encoding": "0x1b",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership",
+      "label": "constructor-candidate",
+      "body_hex": "4156534881ec880000004889fb488b4608488b4e1048c1e1064801c14889042448894c240848c744241000000000488d7c24204889e6e89549fbff0fb64424203c16751b488b4424284889430848b80100000000000080488903e9d00000008b4c24218b54242489542404894c2401488b4c24280f104424300f1144241088042448894c2408488d7c24204889e6e88dc7faff49be01000000000000804c397424207542488d7c2420e8a2bdffff488d7c24204889e6e855cbfaff4c397424207524488d7c2420e884bdffff488d3deef7d2febe3d000000e8930dffff488943084c8933eb41488b842480000000488943600f104424700f1143500f104424600f1143400f104424200f104c24300f105424400f105c24500f115b300f1153200f114b100f11034889e7e811d4ffff4889d84881c4880000005b415ec34889c34889e7e8f8d3ffff4889dfe880f5c904ff15eadfd804"
+    }
+  ],
+  "selected_fde_candidates": {
+    "0x16fdba0": {
+      "start_va": "0x16fdba0",
+      "end_va": "0x16fdf82",
+      "bytes": 994,
+      "file_offset": "0x16fcba0",
+      "body_sha256": "12a4e82b20981e20545a6f9326cca50c7bd2796cc0edd893c4328e1e76aefa63",
+      "unwind_index_row": 6859,
+      "fde_va": "0xcc8978",
+      "fde_file_offset": "0xcc8978",
+      "fde_hex": "4c000000a41a02002052a300e203000000410e10420e18420e20420e28420e30410e38440ea00183078c068d058e048f038602037c030e38410e30420e28420e20420e18420e10410e08410ea0010000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+    },
+    "0x175140e": {
+      "start_va": "0x1751380",
+      "end_va": "0x17514d6",
+      "bytes": 342,
+      "file_offset": "0x1750380",
+      "body_sha256": "88db64695fb557ae826e8b211efa8a0ba9f94151c643db8d9db13c508f6e61ce",
+      "unwind_index_row": 7654,
+      "fde_va": "0x107f8b8",
+      "fde_file_offset": "0x107f8b8",
+      "fde_hex": "30000000b8220400c01a6d005601000004fbda11ff420e10410e18470ea00183038e02032f010e18410e10420e08410ea0010000",
+      "cie_file_offset": "0x103d604",
+      "cie_hex": "1c00000000000000017a504c5200017810079b11244b051b1b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zPLR",
+        "personality_pointer_encoding": "0x9b",
+        "lsda_pointer_encoding": "0x1b",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+    }
+  },
+  "encoded_candidates": {
+    "variant_call": {
+      "candidate_va": "0x175140e",
+      "bytes": "e88dc7faff",
+      "destination_va": "0x16fdba0",
+      "instruction_boundary_validated": false,
+      "fde": {
+        "start_va": "0x1751380",
+        "end_va": "0x17514d6",
+        "bytes": 342,
+        "file_offset": "0x1750380",
+        "body_sha256": "88db64695fb557ae826e8b211efa8a0ba9f94151c643db8d9db13c508f6e61ce",
+        "unwind_index_row": 7654,
+        "fde_va": "0x107f8b8",
+        "fde_file_offset": "0x107f8b8",
+        "fde_hex": "30000000b8220400c01a6d005601000004fbda11ff420e10410e18470ea00183038e02032f010e18410e10420e08410ea0010000",
+        "cie_file_offset": "0x103d604",
+        "cie_hex": "1c00000000000000017a504c5200017810079b11244b051b1b0c070890010000",
+        "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+        "cie_fields": {
+          "augmentation": "zPLR",
+          "personality_pointer_encoding": "0x9b",
+          "lsda_pointer_encoding": "0x1b",
+          "fde_pointer_encoding": 27
+        },
+        "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+      }
+    }
+  }
+}
