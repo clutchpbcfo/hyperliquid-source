@@ -1,0 +1,209 @@
+{
+  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
+  "target_bytes": 105896032,
+  "regions": [
+    {
+      "start_va": "0x141e251",
+      "end_va": "0x141e264",
+      "bytes": 19,
+      "file_offset": "0x141d251",
+      "body_sha256": "8443a2a6c5074055f5abdf1b4b2041c6434ff00ba23ebfcb33a91176170035b9",
+      "unwind_index_row": 63,
+      "fde_va": "0xca71ec",
+      "fde_file_offset": "0xca71ec",
+      "fde_hex": "18000000180300005d7077001300000000410e108602430d06000000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership",
+      "label": "nonzero-handler",
+      "body_hex": "554889e54889f84889f74889c6ff1544140c05"
+    },
+    {
+      "start_va": "0x141e280",
+      "end_va": "0x141e29d",
+      "bytes": 29,
+      "file_offset": "0x141d280",
+      "body_sha256": "c4fe38d0a9a537a5e54f13c759da6082e0f29b5952c078c86ebce3ed2686f4d1",
+      "unwind_index_row": 65,
+      "fde_va": "0xca7224",
+      "fde_file_offset": "0xca7224",
+      "fde_hex": "1800000050030000547077001d00000000410e108602430d06000000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership",
+      "label": "zero-handler",
+      "body_hex": "554889e5488d3de88a03ff488d155e5afd04be23000000ff151b140c05"
+    }
+  ],
+  "selected_fde_candidates": {
+    "0x141e251": {
+      "start_va": "0x141e251",
+      "end_va": "0x141e264",
+      "bytes": 19,
+      "file_offset": "0x141d251",
+      "body_sha256": "8443a2a6c5074055f5abdf1b4b2041c6434ff00ba23ebfcb33a91176170035b9",
+      "unwind_index_row": 63,
+      "fde_va": "0xca71ec",
+      "fde_file_offset": "0xca71ec",
+      "fde_hex": "18000000180300005d7077001300000000410e108602430d06000000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+    },
+    "0x141e280": {
+      "start_va": "0x141e280",
+      "end_va": "0x141e29d",
+      "bytes": 29,
+      "file_offset": "0x141d280",
+      "body_sha256": "c4fe38d0a9a537a5e54f13c759da6082e0f29b5952c078c86ebce3ed2686f4d1",
+      "unwind_index_row": 65,
+      "fde_va": "0xca7224",
+      "fde_file_offset": "0xca7224",
+      "fde_hex": "1800000050030000547077001d00000000410e108602430d06000000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+    },
+    "0x141e264": {
+      "start_va": "0x141e264",
+      "end_va": "0x141e279",
+      "bytes": 21,
+      "file_offset": "0x141d264",
+      "body_sha256": "0ebfd9ba496f95eb3b50668da6bdfb6f60cdfea033bc8736545f457d87a46af0",
+      "unwind_index_row": 64,
+      "fde_va": "0xca7208",
+      "fde_file_offset": "0xca7208",
+      "fde_hex": "1800000034030000547077001500000000410e108602430d06000000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+    }
+  },
+  "encoded_candidates": {
+    "nonzero_call": {
+      "candidate_va": "0x141e273",
+      "bytes": "ff1517120c05",
+      "destination_va": "0x141e251",
+      "slot_va": "0x64df490",
+      "relocation_file_offset": "0x134988",
+      "relocation_hex": "90f44d0600000000080000000000000051e2410100000000",
+      "instruction_boundary_validated": false
+    },
+    "zero_call": {
+      "candidate_va": "0x141e26d",
+      "bytes": "ff153d140c05",
+      "destination_va": "0x141e280",
+      "slot_va": "0x64df6b0",
+      "relocation_file_offset": "0x134fa0",
+      "relocation_hex": "b0f64d0600000000080000000000000080e2410100000000",
+      "instruction_boundary_validated": false
+    }
+  },
+  "retained_dispatcher": {
+    "fde": {
+      "start_va": "0x141e264",
+      "end_va": "0x141e279",
+      "bytes": 21,
+      "file_offset": "0x141d264",
+      "body_sha256": "0ebfd9ba496f95eb3b50668da6bdfb6f60cdfea033bc8736545f457d87a46af0",
+      "unwind_index_row": 64,
+      "fde_va": "0xca7208",
+      "fde_file_offset": "0xca7208",
+      "fde_hex": "1800000034030000547077001500000000410e108602430d06000000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+    },
+    "region": {
+      "label": "failure-candidate",
+      "start_va": "0x141e264",
+      "end_va": "0x141e279",
+      "body_sha256": "0ebfd9ba496f95eb3b50668da6bdfb6f60cdfea033bc8736545f457d87a46af0",
+      "bytes": 21,
+      "instructions": 6,
+      "instruction_rows": [
+        {
+          "va": "0x141e264",
+          "bytes": "55",
+          "text": "push   rbp"
+        },
+        {
+          "va": "0x141e265",
+          "bytes": "4889e5",
+          "text": "mov    rbp,rsp"
+        },
+        {
+          "va": "0x141e268",
+          "bytes": "4885ff",
+          "text": "test   rdi,rdi"
+        },
+        {
+          "va": "0x141e26b",
+          "bytes": "7506",
+          "text": "jne    0x141e273"
+        },
+        {
+          "va": "0x141e26d",
+          "bytes": "ff153d140c05",
+          "text": "call   QWORD PTR [rip+0x50c143d]        # 0x64df6b0"
+        },
+        {
+          "va": "0x141e273",
+          "bytes": "ff1517120c05",
+          "text": "call   QWORD PTR [rip+0x50c1217]        # 0x64df490"
+        }
+      ],
+      "control_transfer_rows_uninterpreted": [
+        {
+          "va": "0x141e26b",
+          "bytes": "7506",
+          "text": "jne    0x141e273"
+        },
+        {
+          "va": "0x141e26d",
+          "bytes": "ff153d140c05",
+          "text": "call   QWORD PTR [rip+0x50c143d]        # 0x64df6b0"
+        },
+        {
+          "va": "0x141e273",
+          "bytes": "ff1517120c05",
+          "text": "call   QWORD PTR [rip+0x50c1217]        # 0x64df490"
+        }
+      ],
+      "all_bytes_contiguously_accounted": true
+    },
+    "prior_native_run": 41726809941,
+    "prior_execution_commit": "4d54bc950c79e93e214a7bfb9fbb6483cff4a228",
+    "prior_archive_sha256": "5258ab944aea1aeaef78a6d8cd88d3e121743a094c470fb9175c5a5f4ebcbb84"
+  }
+}
