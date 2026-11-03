@@ -1,0 +1,187 @@
+{
+  "source_commit": "8fd8db680ec4bfef40996e5616bce3d5156d0b86",
+  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
+  "run_id": 41499013810,
+  "execution_commit": "a50750f0da242beda28002f1662c7eab735ae02e",
+  "instruction_counts": {
+    "constructor-candidate": 79,
+    "delegate-candidate": 410,
+    "completion-candidate": 47,
+    "variant-candidate": 245,
+    "value-candidate": 185,
+    "text-candidate": 143
+  },
+  "regions": [
+    {
+      "label": "constructor-candidate",
+      "start_va": "0x1751380",
+      "end_va": "0x17514d6",
+      "bytes": 342,
+      "body_sha256": "88db64695fb557ae826e8b211efa8a0ba9f94151c643db8d9db13c508f6e61ce",
+      "instructions": 79
+    },
+    {
+      "label": "delegate-candidate",
+      "start_va": "0x1707010",
+      "end_va": "0x17077b2",
+      "bytes": 1954,
+      "body_sha256": "b903849f30c32d9a7eb967a61bd064afd4e4cc8d314b15744ccf31285bb07690",
+      "instructions": 410
+    },
+    {
+      "label": "completion-candidate",
+      "start_va": "0x1700a10",
+      "end_va": "0x1700ac3",
+      "bytes": 179,
+      "body_sha256": "3c612d6f3160a5d4cb1a030c1d1922c4a164671e93a1f561d786a2d22cc8e958",
+      "instructions": 47
+    },
+    {
+      "label": "variant-candidate",
+      "start_va": "0x16fdba0",
+      "end_va": "0x16fdf82",
+      "bytes": 994,
+      "body_sha256": "12a4e82b20981e20545a6f9326cca50c7bd2796cc0edd893c4328e1e76aefa63",
+      "instructions": 245
+    },
+    {
+      "label": "value-candidate",
+      "start_va": "0x16fd8b0",
+      "end_va": "0x16fdb94",
+      "bytes": 740,
+      "body_sha256": "3f8f4d7322ec9af2c97dd9251885a240946560d97d455b8de00e0930491223c2",
+      "instructions": 185
+    },
+    {
+      "label": "text-candidate",
+      "start_va": "0x167a9c0",
+      "end_va": "0x167abfb",
+      "bytes": 571,
+      "body_sha256": "3154d2ed5168d9e3ffc358e817ef9342c6e2cc5e3974104eebdbe225d0207e7d",
+      "instructions": 143
+    }
+  ],
+  "native_candidate_edges": [
+    {
+      "candidate_va": "0x175144c",
+      "bytes": "488d3deef7d2fe",
+      "target_va": "0x480c41",
+      "instruction_boundary_validated": false,
+      "fde": {
+        "start_va": "0x1751380",
+        "end_va": "0x17514d6",
+        "bytes": 342,
+        "file_offset": "0x1750380",
+        "body_sha256": "88db64695fb557ae826e8b211efa8a0ba9f94151c643db8d9db13c508f6e61ce",
+        "unwind_index_row": 7654,
+        "fde_va": "0x107f8b8",
+        "fde_file_offset": "0x107f8b8",
+        "fde_hex": "30000000b8220400c01a6d005601000004fbda11ff420e10410e18470ea00183038e02032f010e18410e10420e08410ea0010000",
+        "cie_file_offset": "0x103d604",
+        "cie_hex": "1c00000000000000017a504c5200017810079b11244b051b1b0c070890010000",
+        "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+        "cie_fields": {
+          "augmentation": "zPLR",
+          "personality_pointer_encoding": "0x9b",
+          "lsda_pointer_encoding": "0x1b",
+          "fde_pointer_encoding": 27
+        },
+        "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+      },
+      "native_instruction_boundary_validated": true,
+      "native_text": "lea    rdi,[rip+0xfffffffffed2f7ee]        # 0x480c41"
+    },
+    {
+      "candidate_va": "0x17074ee",
+      "bytes": "e88d9e0400",
+      "destination_va": "0x1751380",
+      "instruction_boundary_validated": false,
+      "fde": {
+        "start_va": "0x1707010",
+        "end_va": "0x17077b2",
+        "bytes": 1954,
+        "file_offset": "0x1706010",
+        "body_sha256": "b903849f30c32d9a7eb967a61bd064afd4e4cc8d314b15744ccf31285bb07690",
+        "unwind_index_row": 6939,
+        "fde_va": "0x10784fc",
+        "fde_file_offset": "0x10784fc",
+        "fde_hex": "50000000fcae03000ceb6800a207000004ebef11ff410e10420e18420e20420e28420e30410e38470ec00383078c068d058e048f0386020325060e38410e30420e28420e20420e18420e10410e08410ec0030000",
+        "cie_file_offset": "0x103d604",
+        "cie_hex": "1c00000000000000017a504c5200017810079b11244b051b1b0c070890010000",
+        "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+        "cie_fields": {
+          "augmentation": "zPLR",
+          "personality_pointer_encoding": "0x9b",
+          "lsda_pointer_encoding": "0x1b",
+          "fde_pointer_encoding": 27
+        },
+        "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+      },
+      "native_instruction_boundary_validated": true,
+      "native_text": "call   0x1751380"
+    }
+  ],
+  "scope": "Six node115 FDE ranges: dispatch/caller/completion, first result field, selected value paths and local fixed-size text guards. No full schema, helper or gate closure.",
+  "prior_work": "Historical #94 packet supplies the question only; no #94 address, acceptance credit or semantics transferred",
+  "repository_checks_run": true,
+  "compiled_code_comparison": false,
+  "progress_gate_requested": false,
+  "completion_native_run": 41532996012,
+  "completion_execution_commit": "07da73ed0221822dbeaa8f78f1b3c5ad9b0065de",
+  "completion_native_candidate_edge": {
+    "candidate_va": "0x17073f9",
+    "bytes": "e81296ffff",
+    "destination_va": "0x1700a10",
+    "instruction_boundary_validated": false,
+    "fde": {
+      "start_va": "0x1707010",
+      "end_va": "0x17077b2",
+      "bytes": 1954,
+      "file_offset": "0x1706010",
+      "body_sha256": "b903849f30c32d9a7eb967a61bd064afd4e4cc8d314b15744ccf31285bb07690",
+      "unwind_index_row": 6939,
+      "fde_va": "0x10784fc",
+      "fde_file_offset": "0x10784fc",
+      "fde_hex": "50000000fcae03000ceb6800a207000004ebef11ff410e10420e18420e20420e28420e30410e38470ec00383078c068d058e048f0386020325060e38410e30420e28420e20420e18420e10410e08410ec0030000",
+      "cie_file_offset": "0x103d604",
+      "cie_hex": "1c00000000000000017a504c5200017810079b11244b051b1b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zPLR",
+        "personality_pointer_encoding": "0x9b",
+        "lsda_pointer_encoding": "0x1b",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+    },
+    "native_instruction_boundary_validated": true,
+    "native_text": "call   0x1700a10"
+  },
+  "unique_native_rows": 1109,
+  "unique_native_bytes": 4780,
+  "renewed_caller_counted_once": true,
+  "first_variant_native_run": 41543424275,
+  "first_variant_execution_commit": "27e83067013d617b1f7c40073ed1689009baecfc",
+  "renewed_constructor_counted_once": true,
+  "first_variant_field": "result",
+  "first_variant_value_schema_recovered": false,
+  "value_helper_native_run": 41563843042,
+  "value_helper_execution_commit": "f2dc73ffabe940c8103c463f10c56a1f7e31675d",
+  "value_helper_native_candidate_edge": {
+    "candidate_va": "0x16fdcb9",
+    "bytes": "e8f2fbffff",
+    "destination_va": "0x16fd8b0",
+    "instruction_boundary_validated": false,
+    "native_instruction_boundary_validated": true,
+    "native_text": "call   0x16fd8b0"
+  },
+  "renewed_first_variant_counted_once": true,
+  "historical_required_repository_run": 41544793824,
+  "historical_required_execution_commit": "055c4cbcfb0643376a33cbab1d05aad137e4874a",
+  "repository_checks_scope": "Historical checks cover earlier snapshots. Exact frozen six-range candidate validation is recorded on PR2127 with retained hosted receipts.",
+  "text_decoder_native_run": 41571968425,
+  "text_decoder_execution_commit": "ecd4b9cef519055e13e7c843761e2b0a23388cdd",
+  "renewed_value_helper_counted_once": true,
+  "local_fixed_size_text_guards_recovered": true,
+  "full_text_vector_and_error_helpers_recovered": false
+}
