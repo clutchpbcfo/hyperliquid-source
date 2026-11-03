@@ -1,0 +1,6 @@
+tree a672d4fe0cbf5eba95c5928f44fe4254c78cbe33
+parent dcc3684a4bf66c008e8c6acb72ad7fee095d816a
+author clutchpbcfo <205850674+clutchpbcfo@users.noreply.github.com> 1793739403 +0000
+committer clutchpbcfo <205850674+clutchpbcfo@users.noreply.github.com> 1793739403 +0000
+
+RE-001: bind message words and conditional marker bound [skip ci]
