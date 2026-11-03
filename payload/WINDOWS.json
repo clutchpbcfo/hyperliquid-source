@@ -1,0 +1,100 @@
+{
+  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
+  "target_bytes": 105896032,
+  "regions": [
+    {
+      "start_va": "0x173fe30",
+      "end_va": "0x173ff4e",
+      "bytes": 286,
+      "file_offset": "0x173ee30",
+      "body_sha256": "8f0ecd6d3445f0841229f88e243b90bf3eaeb05325a08aa05f6f64e8f6db0197",
+      "unwind_index_row": 7463,
+      "fde_va": "0x107de68",
+      "fde_file_offset": "0x107de68",
+      "fde_hex": "3c00000068080400c01f6c001e0100000423e011ff420e10420e18420e20410e28440e6083058c048e038f0202df0e28410e20420e18420e10420e08410e6000",
+      "cie_file_offset": "0x103d604",
+      "cie_hex": "1c00000000000000017a504c5200017810079b11244b051b1b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zPLR",
+        "personality_pointer_encoding": "0x9b",
+        "lsda_pointer_encoding": "0x1b",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership",
+      "label": "sequence-candidate",
+      "body_hex": "415741564154534883ec384989f64889fb0f57c00f294424200f294424104531ff4989e46666662e0f1f8400000000004c89e74c89f6e8a5cffbff803c24007566807c2401010f85a60000000fb64424024288443c1049ffc74983ff2075d14889e74c89f6e876cffbff0fb6042484c07507807c240100757e84c074514c8b742408498b064883f801742a4885c0752e498b76104885f67425498b7e0831d2ff15cbf5d904eb17488b44240848894308c60301eb2e498d7e08e8f2100000be280000004c89f731d2ff15a2f5d9040f284424100f284c24200f114b110f114301c603004889d84883c4385b415c415e415fc34c89ffeb05bf21000000e81f000000eba94889c3be280000004c89f731d2ff155af5d9044889dfe8020bcb04"
+    },
+    {
+      "start_va": "0x16fd8b0",
+      "end_va": "0x16fdb94",
+      "bytes": 740,
+      "file_offset": "0x16fc8b0",
+      "body_sha256": "3f8f4d7322ec9af2c97dd9251885a240946560d97d455b8de00e0930491223c2",
+      "unwind_index_row": 6858,
+      "fde_va": "0xcc8930",
+      "fde_file_offset": "0xcc8930",
+      "fde_hex": "440000005c1a0200784fa300e402000000410e10470ea0018302028d0e10410e08410ea00102890e10410e08410ea00102d60e10410e08410ea00102a50e10410e08410ea0010000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership",
+      "label": "value-candidate",
+      "body_hex": "534881ec900000004889fb0fb606488d0d7f04d8fe486304814801c8ffe08b4e04c744240c0000000081f9800000000f83ed000000884c240cba01000000e953010000488b4610488b4e1848c1e1054801c1488944241048894c241848c744242000000000488d7424104889dfe80e250400803b007514488b7c2418482b7c24100f852102000031c088034889d84881c4900000005bc3488b4610488b5618eb08488b4608488b5610488d7c2430488d4c241041b8200000004889c6ff15d644de04837c2430030f85ef0000000f104424100f104c24200f294424500f294c2460eb2748837e18200f85f3000000488b4610eb0f48837e10200f85e2000000488b46080f10000f1048100f114b110f11430131c088034889d84881c4900000005bc389c8243f0c8089cac1ea0681f900080000731280cac08854240c8844240dba02000000eb4f80e23f80ca8089cec1ee0c81f9ffff000077184080cee0408874240c8854240d8844240eba03000000eb244080e63f4080ce80c1e91280c9f0884c240c408874240d8854240e8844240fba04000000488d7c2430488d74240c488d4c241041b820000000ff15e743de04837c2430030f8411ffffff0f104424300f114424570f29442440488d7c2440e88b490400eb0fc644241008e996000000e88a46040048894308b00188034889d84881c4900000005bc3c644241007eb76c644241009eb6f488b4608eb2ff30f104604f30f5ac0eb430fb74602eb1e8b4604eb1948634604eb430fb6460188442411c644241000eb3e0fb646014889442418c644241001eb2e480fbe4601eb1d480fbf4602eb16f20f104608f20f11442418c644241003eb0e488b46084889442418c644241002488d156208d104488d7c2410488d74240bff15c22dde0448894308c603014889d84881c4900000005bc3c64424100bebcf488b44242048c1ef054801c772214889442470488d1596e4d004488d742470e8b4fc030048894308b001e93dfeffff488d3d62e4d004ff158c19de04"
+    }
+  ],
+  "selected_fde_candidates": {
+    "0x173fe30": {
+      "start_va": "0x173fe30",
+      "end_va": "0x173ff4e",
+      "bytes": 286,
+      "file_offset": "0x173ee30",
+      "body_sha256": "8f0ecd6d3445f0841229f88e243b90bf3eaeb05325a08aa05f6f64e8f6db0197",
+      "unwind_index_row": 7463,
+      "fde_va": "0x107de68",
+      "fde_file_offset": "0x107de68",
+      "fde_hex": "3c00000068080400c01f6c001e0100000423e011ff420e10420e18420e20410e28440e6083058c048e038f0202df0e28410e20420e18420e10420e08410e6000",
+      "cie_file_offset": "0x103d604",
+      "cie_hex": "1c00000000000000017a504c5200017810079b11244b051b1b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zPLR",
+        "personality_pointer_encoding": "0x9b",
+        "lsda_pointer_encoding": "0x1b",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+    },
+    "0x16fd91d": {
+      "start_va": "0x16fd8b0",
+      "end_va": "0x16fdb94",
+      "bytes": 740,
+      "file_offset": "0x16fc8b0",
+      "body_sha256": "3f8f4d7322ec9af2c97dd9251885a240946560d97d455b8de00e0930491223c2",
+      "unwind_index_row": 6858,
+      "fde_va": "0xcc8930",
+      "fde_file_offset": "0xcc8930",
+      "fde_hex": "440000005c1a0200784fa300e402000000410e10470ea0018302028d0e10410e08410ea00102890e10410e08410ea00102d60e10410e08410ea00102a50e10410e08410ea0010000",
+      "cie_file_offset": "0xca6ed8",
+      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
+      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
+      "cie_fields": {
+        "augmentation": "zR",
+        "fde_pointer_encoding": 27
+      },
+      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
+    }
+  },
+  "encoded_candidates": {
+    "sequence_call": {
+      "candidate_va": "0x16fd91d",
+      "bytes": "e80e250400",
+      "destination_va": "0x173fe30",
+      "instruction_boundary_validated": false
+    }
+  }
+}
