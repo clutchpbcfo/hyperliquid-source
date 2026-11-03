@@ -1,0 +1,39 @@
+name: Bounded node115 message helper
+on:
+  push:
+    branches: [validation/node115-message-helper-native-20261103-1346]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.3'
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: lalalune/hyperliquid-source
+          ref: 8fd8db680ec4bfef40996e5616bce3d5156d0b86
+          path: capture-data
+          persist-credentials: false
+          lfs: false
+          submodules: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: artifacts/node/115/hl-node
+      - name: Acquire only the pinned public node115 LFS input
+        run: git -C capture-data lfs pull --include=artifacts/node/115/hl-node --exclude=""
+      - name: Qualify and decode two captured byte excerpts as data
+        run: bash payload/bootstrap.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: node115-message-helper-native-receipts
+          path: |
+            probe-receipts/*.json
+            probe-receipts/*.stdout
+            probe-receipts/*.stderr
