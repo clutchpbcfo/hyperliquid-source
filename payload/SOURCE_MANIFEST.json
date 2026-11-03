@@ -1,0 +1,16 @@
+{
+  "source_commit": "8fd8db680ec4bfef40996e5616bce3d5156d0b86",
+  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
+  "payload_files": {
+    "isolate.sh": "d41354dab48207ca91a5a00ac43fed1cdd9848d810fb02155a44e60a1c62b019",
+    "bootstrap.sh": "d194e0224c3bd1fe87668e62c64e3578b41a6e6bafba8c0c820d99ccb52e60bc",
+    "WINDOWS.json": "37f5e8f4fbb0813d9253f5460ff9d342be1d11679d08e3cbe05211e5b78cfb78",
+    "probe.py": "742f129b7187ca1d691d466a7eb579b82a396f6c4e96ef57391b145019565404",
+    "remap_probe.py": "309346f87941d65b934e2a4796818656d71ebed49fc51e329ade7e3683caab37"
+  },
+  "captured_execution": false,
+  "repository_execution": false,
+  "native_commands": 3,
+  "job_timeout_minutes": 12,
+  "automatic_retry": false
+}
