@@ -1,0 +1,55 @@
+{
+  "status": "PATCH_READY_PUBLICATION_HELD",
+  "checked_utc": "2026-11-04T04:29:02.520812+00:00",
+  "base": "05bc2de303c05525b71e7e257426e741bc66a390",
+  "all_prior_packet_git_blobs_verified": 166,
+  "changed_paths": {
+    "research/work-items/RE-001-node115-jsonrpc-result-dispatch/MANIFEST.sha256": {
+      "git_blob": "4987ecaea9cc17c0373bf3ec9c46a507425a2d52",
+      "sha256": "132c1c4025a709c01780fd38595903d05c9aa88aa2333913a0b9c9a80443f0f7"
+    },
+    "research/work-items/RE-001-node115-jsonrpc-result-dispatch/README.md": {
+      "git_blob": "1303b91ed61d6b596bd25075635b5eb90bc48167",
+      "sha256": "7781c7ef621523e20d3795e1ce3627b0137ba9f4b71e639e4bfc61573a238e76"
+    },
+    "research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/census-replay.json": {
+      "git_blob": "7038b7609cb85d5ef95481fac51d57e53739caac",
+      "sha256": "d41861d420fd408f8c9c96ba85fa9f509541e4258bdd0d0f810c679c188241a6"
+    },
+    "research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/commands.json": {
+      "git_blob": "67bf3f6ea864ae48e64533dbd005ca96c30563f3",
+      "sha256": "d7fb7219a23239d5f0e449b049e497893c9c6ff93a4ff2edda3718ba158675f5"
+    },
+    "research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/decode-result.json": {
+      "git_blob": "6d7df79fe2c2e13817a2634bb01ed7d3e3f4baeb",
+      "sha256": "c36ef37f7ca8ca7f25cb8f457bd6f92790041fda7671f2a79f406a17100979fd"
+    },
+    "research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/full-input-replay.json": {
+      "git_blob": "afd25a8b2fb7417c80317cac611c9f96794b98c4",
+      "sha256": "08e20a2bc7d4e9b451d93a0484b41f5a3c05fb0c80f12bc651ff2379141b6f03"
+    },
+    "research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/observations.md": {
+      "git_blob": "de2885cce121906a8b607fc467bd0807457084d2",
+      "sha256": "43c0bc695953a2857850b3c67771d2895659b8d841661b8a301432ba7dc259d2"
+    },
+    "research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/provenance.json": {
+      "git_blob": "eba48533b9f04cdd70b48345e59d02cd28bd037f",
+      "sha256": "9949b9db506c08dc52eeaacec09e37f4051d237014d125ba04da06ad9091c5d2"
+    },
+    "research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/relocation-audit.json": {
+      "git_blob": "65cbf8636bc4074217e6278c04e9921d55bc392e",
+      "sha256": "00de94b143d8942f7fb06eb28de08ee14db5db10e468317957c30f0ea0340326"
+    }
+  },
+  "manifest_entries_verified": 172,
+  "patch_sha256": "e6561c5e3be9e68000c9c5632e4b83d556c7687e3955d54d114bcdc50553b742",
+  "patch_bytes": 41400,
+  "git_apply_round_trip": "pass",
+  "full_repository_validation": "pending feasible hosted run",
+  "new_hosted_jobs": 0,
+  "new_prs": 0,
+  "new_worktrees": 0,
+  "temporary_worktrees_remaining": 0,
+  "temporary_patch_check_directory_removed": true,
+  "repository_code_executed_on_mac": false
+}
