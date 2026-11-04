@@ -1,0 +1,17 @@
+name: Node115 addendum bounded split validation
+on:
+  push:
+    branches: [validation/node115-panic-addendum-split-20261103]
+permissions:
+  contents: read
+jobs:
+  short:
+    uses: ./.github/workflows/node115-shard.yml
+    with:
+      shard: short
+      minutes: 12
+  long:
+    uses: ./.github/workflows/node115-shard.yml
+    with:
+      shard: long
+      minutes: 25

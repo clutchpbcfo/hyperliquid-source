@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+probe_root=$1
+shard=$2
+parent_namespace=$3
+for input in frozen source venv bin tools; do
+  mount --bind "$probe_root/$input" "$probe_root/$input"
+  mount -o remount,bind,ro,nosuid,nodev "$probe_root/$input"
+done
+mount -o remount,bind,ro,nosuid,nodev,noexec "$probe_root/frozen"
+mount -o remount,bind,ro,nosuid,nodev,noexec "$probe_root/source"
+for copy in "$probe_root"/worker-*/tree "$probe_root"/checks/tree; do
+  if [ ! -d "$copy" ]; then continue; fi
+  for area in artifacts upstream; do
+    mount --bind "$copy/$area" "$copy/$area"
+    mount -o remount,bind,ro,nosuid,nodev,noexec "$copy/$area"
+  done
+done
+exec setpriv --reuid=65534 --regid=65534 --clear-groups \
+  --inh-caps=-all --ambient-caps=-all --bounding-set=-all --no-new-privs \
+  env -i PATH="$probe_root/bin" LANG=C.UTF-8 LC_ALL=C.UTF-8 HOME="$probe_root/home" \
+    TMPDIR="$probe_root/tmp" PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 \
+    GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null GIT_OPTIONAL_LOCKS=0 \
+    "$probe_root/venv/bin/python" -I -B "$probe_root/frozen/controller.py" analyze "$probe_root" "$shard" "$parent_namespace"
