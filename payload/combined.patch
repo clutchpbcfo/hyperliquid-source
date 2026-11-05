@@ -1,0 +1,944 @@
+diff --git a/README.md b/README.md
+index 18a993f..e88d6f9 100644
+--- a/README.md
++++ b/README.md
+@@ -16,7 +16,7 @@ an integrated, runnable node remains in progress.
+ 
+ ![Node #115 progress](docs/assets/research-progress.svg)
+ 
+-**34 active Rust implementation areas · 19 Cargo manifests · 559 #115 research work items.**
++**34 active Rust implementation areas · 19 Cargo manifests · 560 #115 research work items.**
+ 
+ These inventory counts describe available work, not completed components.
+ 
+diff --git a/docs/assets/research-progress.svg b/docs/assets/research-progress.svg
+index a7c1e9e..267f5c7 100644
+--- a/docs/assets/research-progress.svg
++++ b/docs/assets/research-progress.svg
+@@ -16,7 +16,7 @@
+ <text x="338" y="180" fill="#71f1c6" font-size="11" font-weight="700" letter-spacing=".6">STANDALONE CARGO MANIFESTS</text>
+ <text x="338" y="204" fill="#b0c9cb" font-size="11">Build scopes recorded in source</text>
+ <rect x="608" y="103" width="272" height="121" rx="10" fill="#102c33" stroke="#21434a"/>
+-<text x="626" y="151" fill="#f0faf7" font-size="38" font-weight="700">559</text>
++<text x="626" y="151" fill="#f0faf7" font-size="38" font-weight="700">560</text>
+ <text x="626" y="180" fill="#71f1c6" font-size="11" font-weight="700" letter-spacing=".6">DOCUMENTED WORK ITEMS</text>
+ <text x="626" y="204" fill="#b0c9cb" font-size="11">Research, evidence and limitations</text>
+ <rect x="896" y="103" width="272" height="121" rx="10" fill="#102c33" stroke="#21434a"/>
+diff --git a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/MANIFEST.sha256 b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/MANIFEST.sha256
+--- a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/MANIFEST.sha256
++++ b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/MANIFEST.sha256
+@@ -1,5 +1,5 @@
+ 22cc9150d479f5f33bb2f901d8e03054cdad182d111e3fcb5bfe9ad486d301ce  DRAFT_STATUS.json
+-5a157c9c376d2ba1567789aa7632521aa7b3c7f7395c913e2ae5559cf459e1bd  README.md
++7781c7ef621523e20d3795e1ce3627b0137ba9f4b71e639e4bfc61573a238e76  README.md
+ 1e4285b5aba59481b7179f1b5d332e133ac4d34836764f5e325e0e1f2b463606  artifact-audit.json
+ 06d0283e3dc1d46284d2eb81d43a12652569798f32b91ba2d1ca49352563b8e5  candidates.json
+ bbe42dc86bd3618494fcbd9ff35fb24f2b20cd291b574a89eae23c7a23daf20d  completion/artifact-audit.json
+@@ -163,3 +163,10 @@
+ dc93dbf15c2d66f0fd8b0462842f680ecdb3900b2e99bc2b88c5e5bf29e4859f  value-helper/receipts/variant-candidate.stdout
+ 5424cadd8cee45754d367090d3d431c8d3938ce77b21163bf1f45e42917477db  value-helper/referenced-data.json
+ 0b11b730d60ec283bc861839e34b533afc7d26c56d9e676ab64f9e0d41727418  verify_packet.py
++d41861d420fd408f8c9c96ba85fa9f509541e4258bdd0d0f810c679c188241a6  failure-callees/census-replay.json
++d7fb7219a23239d5f0e449b049e497893c9c6ff93a4ff2edda3718ba158675f5  failure-callees/commands.json
++c36ef37f7ca8ca7f25cb8f457bd6f92790041fda7671f2a79f406a17100979fd  failure-callees/decode-result.json
++08e20a2bc7d4e9b451d93a0484b41f5a3c05fb0c80f12bc651ff2379141b6f03  failure-callees/full-input-replay.json
++43c0bc695953a2857850b3c67771d2895659b8d841661b8a301432ba7dc259d2  failure-callees/observations.md
++9949b9db506c08dc52eeaacec09e37f4051d237014d125ba04da06ad9091c5d2  failure-callees/provenance.json
++00de94b143d8942f7fb06eb28de08ee14db5db10e468317957c30f0ea0340326  failure-callees/relocation-audit.json
+diff --git a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/README.md b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/README.md
+--- a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/README.md
++++ b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/README.md
+@@ -32,6 +32,13 @@
+ 
+ No RET appears in the two new extents. A normal return from the nonzero handler's child enters the known dispatcher;the zero handler's continuation lies outside the decoded ranges. Neither fact proves nonreturn. Callee ABI/continuation,global word domain,validation/allocation/copy/ownership,default-data storage,source types and runtime behavior remain open. First alternative stores40bytes,nested error ordinary stores100,while second/constructor copies104;copied tails40..103 and100..103 remain unclassified. Store coverage is not initialization,padding or undefined-behavior proof.
+ 
++## Follow-up on the failure paths
++
++The [failure path addendum](failure-callees/observations.md) traces both further
++callees to Rust standard library body matches and explains the tagged literal
++length. Its two fresh native ranges and controls are reported separately from
++the fourteen ranges checked by the original verifier.
++
+ ## Reproduce and controls
+ 
+ With the complete pinned capture,from repository root:
+@@ -50,4 +57,4 @@
+ 
+ ## Limits and next step
+ 
+-Further targets0x5c827a0/0x1680e80 and the zero handler's continuation remain unproved. Scalar35/message encoding and boundary,Source Location/type/source ownership,nonreturn/global B,dependent memory/ownership,copied tails,exception/signal and runtime equivalence remain open. No gate,compiled reconstruction,Points,payment or security impact is claimed. Next:inspect the further callees and establish the fixed-operand interpretation before stronger return/schema claims.
++The original verifier leaves the further callees open. The addendum maps their outgoing edges and leaves the zero handler's continuation open. The addendum interprets scalar 35 under the matched format layout. Actual message emission, Source Location and type ownership, nonreturn, global B, dependent memory and ownership, copied tails, exceptions, signals and runtime equivalence remain open. No gate,compiled reconstruction,Points,payment or security impact is claimed. Next: inspect the relocation-bound endpoints before making stronger return or runtime claims.
+diff --git a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/census-replay.json b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/census-replay.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/census-replay.json
+@@ -0,0 +1,231 @@
++{
++  "base": "05bc2de303c05525b71e7e257426e741bc66a390",
++  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
++  "census_url": "https://raw.githubusercontent.com/lalalune/hyperliquid-source/05bc2de303c05525b71e7e257426e741bc66a390/research/work-items/RE-002-node115-std-census/census.json",
++  "census_sha256": "08f67f5d5e55e50093f766f87a4ff858e8e9e589841c0fb3ed06578a7feccc5c",
++  "bodies_sha256": "bd37a3ea1e0b98ab9ca75862409dd3daea9ca29e63f926626ab5e9e316eeed39",
++  "toolchain": {
++    "rustc": "1.95.0 (59807616e 2026-04-14)",
++    "target_triple": "x86_64-unknown-linux-gnu",
++    "basis": "node115 .comment rustc version string"
++  },
++  "normalized_matches": [
++    {
++      "record_index": 5,
++      "census_record": {
++        "symbol": "_RNvNtCslNYArtu3iFV_5alloc7raw_vec17capacity_overflow",
++        "member": "alloc-6e6df4ffe0af4d15.alloc.fdfd2bd8633a6659-cgu.0.rcgu.o",
++        "rlib": "liballoc-6e6df4ffe0af4d15.rlib",
++        "dependency": "rust-alloc",
++        "start": 21095040,
++        "end": 21095069,
++        "target_body_sha256": "c4fe38d0a9a537a5e54f13c759da6082e0f29b5952c078c86ebce3ed2686f4d1",
++        "source_offset": 586,
++        "source_body_sha256": "2d2badb281b4e253c2655a0a57ec8b3eb365bb93752592f694db30e3c6e53cca",
++        "raw_equal": false,
++        "relocations": [
++          {
++            "offset": 7,
++            "kind": 2,
++            "width": 4,
++            "addend": -4
++          },
++          {
++            "offset": 14,
++            "kind": 2,
++            "width": 4,
++            "addend": -4
++          },
++          {
++            "offset": 25,
++            "kind": 9,
++            "width": 4,
++            "addend": -4
++          }
++        ],
++        "identical_sources": [
++          {
++            "symbol": "_RNvNvNtCslNYArtu3iFV_5alloc5alloc18handle_alloc_error8ct_error",
++            "member": "alloc-6e6df4ffe0af4d15.alloc.fdfd2bd8633a6659-cgu.0.rcgu.o",
++            "rlib": "liballoc-6e6df4ffe0af4d15.rlib"
++          }
++        ]
++      },
++      "source_hex": "554889e5488d3d00000000488d1500000000be23000000ff1500000000",
++      "target_hex": "554889e5488d3de88a03ff488d155e5afd04be23000000ff151b140c05",
++      "extent": 29,
++      "mask_offsets": [
++        7,
++        8,
++        9,
++        10,
++        14,
++        15,
++        16,
++        17,
++        25,
++        26,
++        27,
++        28
++      ],
++      "different_offsets": [
++        7,
++        8,
++        9,
++        10,
++        14,
++        15,
++        16,
++        17,
++        25,
++        26,
++        27,
++        28
++      ],
++      "matched_unmasked_bytes": 17,
++      "raw_equal": false,
++      "normalized_equal": true,
++      "unmasked_corruption_rejected": true
++    },
++    {
++      "record_index": 52,
++      "census_record": {
++        "symbol": "_RNvNtCsgEmfK2I1SDS_4core9panicking9panic_fmt",
++        "member": "core-120cbae4e86ec454.core.c1f1a4ba060b9bfa-cgu.0.rcgu.o",
++        "rlib": "libcore-120cbae4e86ec454.rlib",
++        "dependency": "rust-core",
++        "start": 23596672,
++        "end": 23596716,
++        "target_body_sha256": "28fc3434a04bb9e49d5a0164306a5c31abf6bce26425d99d27031ac1c9beb2e3",
++        "source_offset": 16670,
++        "source_body_sha256": "f660ff9a893dd65db089f41130f896c2a79707388a674b2479b8ffd90c6b230b",
++        "raw_equal": false,
++        "relocations": [
++          {
++            "offset": 40,
++            "kind": 9,
++            "width": 4,
++            "addend": -4
++          }
++        ]
++      },
++      "source_hex": "554889e54883ec3048897df0488975f8488d45f0488945d8488955e066c745e80100488d7dd8ff1500000000",
++      "target_hex": "554889e54883ec3048897df0488975f8488d45f0488945d8488955e066c745e80100488d7dd8ff158410e604",
++      "extent": 44,
++      "mask_offsets": [
++        40,
++        41,
++        42,
++        43
++      ],
++      "different_offsets": [
++        40,
++        41,
++        42,
++        43
++      ],
++      "matched_unmasked_bytes": 40,
++      "raw_equal": false,
++      "normalized_equal": true,
++      "unmasked_corruption_rejected": true
++    },
++    {
++      "record_index": 271,
++      "census_record": {
++        "symbol": "_RNvCsfLfy6EI15iL_7___rustc17rust_begin_unwind",
++        "member": "std-d1237ef7159db0a2.std.e28293b1aa0f68bd-cgu.0.rcgu.o",
++        "rlib": "libstd-d1237ef7159db0a2.rlib",
++        "dependency": "rust-std",
++        "start": 97003200,
++        "end": 97003229,
++        "target_body_sha256": "ae57c1f06e3254ce7cd3518d42154be71831103b748b6f19f74cacc64c5fb766",
++        "source_offset": 96862,
++        "source_body_sha256": "b410c5ab4ca4377e2464480ce6f616e5a6bdca318c54b2aedb6f4960288e2922",
++        "raw_equal": false,
++        "relocations": [
++          {
++            "offset": 25,
++            "kind": 9,
++            "width": 4,
++            "addend": -4
++          }
++        ]
++      },
++      "source_hex": "554889e54883ec200f10070f1145e848897df8488d7de8ff1500000000",
++      "target_hex": "554889e54883ec200f10070f1145e848897df8488d7de8ff15fb9e8600",
++      "extent": 29,
++      "mask_offsets": [
++        25,
++        26,
++        27,
++        28
++      ],
++      "different_offsets": [
++        25,
++        26,
++        27
++      ],
++      "matched_unmasked_bytes": 25,
++      "raw_equal": false,
++      "normalized_equal": true,
++      "unmasked_corruption_rejected": true
++    },
++    {
++      "record_index": 272,
++      "census_record": {
++        "symbol": "_RNvNtCsjrHSEGnQ3l9_3std5alloc8rust_oom",
++        "member": "std-d1237ef7159db0a2.std.e28293b1aa0f68bd-cgu.0.rcgu.o",
++        "rlib": "libstd-d1237ef7159db0a2.rlib",
++        "dependency": "rust-std",
++        "start": 97103616,
++        "end": 97103642,
++        "target_body_sha256": "71d3421bd0a2be2d3ac71aa5d26d74f6bb647ed7eb9cb1a3c3924c7dab35fd6d",
++        "source_offset": 96891,
++        "source_body_sha256": "ea8132524bca7c44bef86e46377bd89e3c5510d379675ba6fac600ce714841c1",
++        "raw_equal": false,
++        "relocations": [
++          {
++            "offset": 22,
++            "kind": 9,
++            "width": 4,
++            "addend": -4
++          }
++        ]
++      },
++      "source_hex": "554889e54883ec1048897df0488975f8488d7df0ff1500000000",
++      "target_hex": "554889e54883ec1048897df0488975f8488d7df0ff15b6168500",
++      "extent": 26,
++      "mask_offsets": [
++        22,
++        23,
++        24,
++        25
++      ],
++      "different_offsets": [
++        22,
++        23,
++        24
++      ],
++      "matched_unmasked_bytes": 22,
++      "raw_equal": false,
++      "normalized_equal": true,
++      "unmasked_corruption_rejected": true
++    }
++  ],
++  "rust_format_source": {
++    "url": "https://raw.githubusercontent.com/rust-lang/rust/59807616e1fa2540724bfbac14d7976d7e4a3860/library/core/src/fmt/mod.rs",
++    "sha256": "ff56f0d7f3ce245b6171f2b742bfa07e1a7596158e43a9917a0340c7e9eb8a27"
++  },
++  "rust_panic_source": {
++    "url": "https://raw.githubusercontent.com/rust-lang/rust/59807616e1fa2540724bfbac14d7976d7e4a3860/library/core/src/panicking.rs",
++    "sha256": "805a33d479ebcdf2c640f43fb01b7a6707038bc248b4830d15f30a8a60d40303"
++  },
++  "scalar": {
++    "observed": 35,
++    "source_literal_tag": 1,
++    "decoded_source_layout_length": 17,
++    "capture_prefix_hex": "6361706163697479206f766572666c6f77",
++    "next_pool_bytes_hex": "6120666f726d617474696e67207472616974"
++  },
++  "limit": "Replayed existing published artifact byte masks. The last two ranges use authenticated FDE bytes and have no new native decode. Runtime emission, callee return, and unique alias ownership are separate questions."
++}
+diff --git a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/commands.json b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/commands.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/commands.json
+@@ -0,0 +1,55 @@
++{
++  "native_invocations": 3,
++  "observations": [
++    {
++      "label": "objdump-version",
++      "argv": [
++        "/usr/bin/objdump",
++        "--version"
++      ],
++      "exit_code": 0,
++      "stdout": "GNU objdump (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
++      "stderr": ""
++    },
++    {
++      "label": "nonzero-child",
++      "argv": [
++        "/usr/bin/objdump",
++        "-D",
++        "-z",
++        "-b",
++        "binary",
++        "-m",
++        "i386:x86-64",
++        "-M",
++        "intel",
++        "--insn-width=16",
++        "--adjust-vma=0x5c827a0",
++        "/tmp/node115-panic-bridge-levMJRto/fixtures/nonzero-child.bin"
++      ],
++      "exit_code": 0,
++      "stdout": "\n/tmp/node115-panic-bridge-levMJRto/fixtures/nonzero-child.bin:     file format binary\n\n\nDisassembly of section .data:\n\n0000000005c827a0 <.data>:\n 5c827a0:\t55                                              \tpush   rbp\n 5c827a1:\t48 89 e5                                        \tmov    rbp,rsp\n 5c827a4:\t48 89 f8                                        \tmov    rax,rdi\n 5c827a7:\t48 89 f7                                        \tmov    rdi,rsi\n 5c827aa:\t48 89 c6                                        \tmov    rsi,rax\n 5c827ad:\tff 15 4d 9f 86 00                               \tcall   QWORD PTR [rip+0x869f4d]        # 0x64ec700\n",
++      "stderr": ""
++    },
++    {
++      "label": "zero-child",
++      "argv": [
++        "/usr/bin/objdump",
++        "-D",
++        "-z",
++        "-b",
++        "binary",
++        "-m",
++        "i386:x86-64",
++        "-M",
++        "intel",
++        "--insn-width=16",
++        "--adjust-vma=0x1680e80",
++        "/tmp/node115-panic-bridge-levMJRto/fixtures/zero-child.bin"
++      ],
++      "exit_code": 0,
++      "stdout": "\n/tmp/node115-panic-bridge-levMJRto/fixtures/zero-child.bin:     file format binary\n\n\nDisassembly of section .data:\n\n0000000001680e80 <.data>:\n 1680e80:\t55                                              \tpush   rbp\n 1680e81:\t48 89 e5                                        \tmov    rbp,rsp\n 1680e84:\t48 83 ec 30                                     \tsub    rsp,0x30\n 1680e88:\t48 89 7d f0                                     \tmov    QWORD PTR [rbp-0x10],rdi\n 1680e8c:\t48 89 75 f8                                     \tmov    QWORD PTR [rbp-0x8],rsi\n 1680e90:\t48 8d 45 f0                                     \tlea    rax,[rbp-0x10]\n 1680e94:\t48 89 45 d8                                     \tmov    QWORD PTR [rbp-0x28],rax\n 1680e98:\t48 89 55 e0                                     \tmov    QWORD PTR [rbp-0x20],rdx\n 1680e9c:\t66 c7 45 e8 01 00                               \tmov    WORD PTR [rbp-0x18],0x1\n 1680ea2:\t48 8d 7d d8                                     \tlea    rdi,[rbp-0x28]\n 1680ea6:\tff 15 84 10 e6 04                               \tcall   QWORD PTR [rip+0x4e61084]        # 0x64e1f30\n",
++      "stderr": ""
++    }
++  ]
++}
+diff --git a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/decode-result.json b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/decode-result.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/decode-result.json
+@@ -0,0 +1,285 @@
++{
++  "status": "SELECTED_EXCERPTS_DECODED",
++  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
++  "source_commit": "05bc2de303c05525b71e7e257426e741bc66a390",
++  "objdump_version": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
++  "native_invocations": 3,
++  "native_decode_invocations": 2,
++  "retained_handler_replay": [
++    {
++      "region": {
++        "label": "nonzero-handler",
++        "start_va": "0x141e251",
++        "end_va": "0x141e264",
++        "body_sha256": "8443a2a6c5074055f5abdf1b4b2041c6434ff00ba23ebfcb33a91176170035b9",
++        "bytes": 19,
++        "instructions": 6,
++        "instruction_rows": [
++          {
++            "va": "0x141e251",
++            "bytes": "55",
++            "text": "push   rbp"
++          },
++          {
++            "va": "0x141e252",
++            "bytes": "4889e5",
++            "text": "mov    rbp,rsp"
++          },
++          {
++            "va": "0x141e255",
++            "bytes": "4889f8",
++            "text": "mov    rax,rdi"
++          },
++          {
++            "va": "0x141e258",
++            "bytes": "4889f7",
++            "text": "mov    rdi,rsi"
++          },
++          {
++            "va": "0x141e25b",
++            "bytes": "4889c6",
++            "text": "mov    rsi,rax"
++          },
++          {
++            "va": "0x141e25e",
++            "bytes": "ff1544140c05",
++            "text": "call   QWORD PTR [rip+0x50c1444]        # 0x64df6a8"
++          }
++        ],
++        "control_transfer_rows_uninterpreted": [
++          {
++            "va": "0x141e25e",
++            "bytes": "ff1544140c05",
++            "text": "call   QWORD PTR [rip+0x50c1444]        # 0x64df6a8"
++          }
++        ],
++        "all_bytes_contiguously_accounted": true
++      },
++      "fde": {
++        "start_va": "0x141e251",
++        "end_va": "0x141e264",
++        "bytes": 19,
++        "file_offset": "0x141d251",
++        "body_sha256": "8443a2a6c5074055f5abdf1b4b2041c6434ff00ba23ebfcb33a91176170035b9",
++        "unwind_index_row": 63,
++        "fde_va": "0xca71ec",
++        "fde_file_offset": "0xca71ec",
++        "fde_hex": "18000000180300005d7077001300000000410e108602430d06000000",
++        "cie_file_offset": "0xca6ed8",
++        "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
++        "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
++        "cie_fields": {
++          "augmentation": "zR",
++          "fde_pointer_encoding": 27
++        },
++        "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
++      },
++      "run_id": 41735408655,
++      "execution_commit": "2e4446a01413b193487948f8e559205fd0896c56",
++      "archive_sha256": "390dc36dc9303eb4fecfa04e482ad5b3fbe0de58809200b03b2fd9310af9474d",
++      "full_capture_replay_checked": true
++    },
++    {
++      "region": {
++        "label": "zero-handler",
++        "start_va": "0x141e280",
++        "end_va": "0x141e29d",
++        "body_sha256": "c4fe38d0a9a537a5e54f13c759da6082e0f29b5952c078c86ebce3ed2686f4d1",
++        "bytes": 29,
++        "instructions": 6,
++        "instruction_rows": [
++          {
++            "va": "0x141e280",
++            "bytes": "55",
++            "text": "push   rbp"
++          },
++          {
++            "va": "0x141e281",
++            "bytes": "4889e5",
++            "text": "mov    rbp,rsp"
++          },
++          {
++            "va": "0x141e284",
++            "bytes": "488d3de88a03ff",
++            "text": "lea    rdi,[rip+0xffffffffff038ae8]        # 0x456d73"
++          },
++          {
++            "va": "0x141e28b",
++            "bytes": "488d155e5afd04",
++            "text": "lea    rdx,[rip+0x4fd5a5e]        # 0x63f3cf0"
++          },
++          {
++            "va": "0x141e292",
++            "bytes": "be23000000",
++            "text": "mov    esi,0x23"
++          },
++          {
++            "va": "0x141e297",
++            "bytes": "ff151b140c05",
++            "text": "call   QWORD PTR [rip+0x50c141b]        # 0x64df6b8"
++          }
++        ],
++        "control_transfer_rows_uninterpreted": [
++          {
++            "va": "0x141e297",
++            "bytes": "ff151b140c05",
++            "text": "call   QWORD PTR [rip+0x50c141b]        # 0x64df6b8"
++          }
++        ],
++        "all_bytes_contiguously_accounted": true
++      },
++      "fde": {
++        "start_va": "0x141e280",
++        "end_va": "0x141e29d",
++        "bytes": 29,
++        "file_offset": "0x141d280",
++        "body_sha256": "c4fe38d0a9a537a5e54f13c759da6082e0f29b5952c078c86ebce3ed2686f4d1",
++        "unwind_index_row": 65,
++        "fde_va": "0xca7224",
++        "fde_file_offset": "0xca7224",
++        "fde_hex": "1800000050030000547077001d00000000410e108602430d06000000",
++        "cie_file_offset": "0xca6ed8",
++        "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
++        "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
++        "cie_fields": {
++          "augmentation": "zR",
++          "fde_pointer_encoding": 27
++        },
++        "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
++      },
++      "run_id": 41735408655,
++      "execution_commit": "2e4446a01413b193487948f8e559205fd0896c56",
++      "archive_sha256": "390dc36dc9303eb4fecfa04e482ad5b3fbe0de58809200b03b2fd9310af9474d",
++      "full_capture_replay_checked": true
++    }
++  ],
++  "regions": [
++    {
++      "label": "nonzero-child",
++      "start_va": "0x5c827a0",
++      "end_va": "0x5c827b3",
++      "body_sha256": "0c812a743791010c3c3ec26bb02400d2081851a700c58237af89161da151228e",
++      "bytes": 19,
++      "instructions": 6,
++      "instruction_rows": [
++        {
++          "va": "0x5c827a0",
++          "bytes": "55",
++          "text": "push   rbp"
++        },
++        {
++          "va": "0x5c827a1",
++          "bytes": "4889e5",
++          "text": "mov    rbp,rsp"
++        },
++        {
++          "va": "0x5c827a4",
++          "bytes": "4889f8",
++          "text": "mov    rax,rdi"
++        },
++        {
++          "va": "0x5c827a7",
++          "bytes": "4889f7",
++          "text": "mov    rdi,rsi"
++        },
++        {
++          "va": "0x5c827aa",
++          "bytes": "4889c6",
++          "text": "mov    rsi,rax"
++        },
++        {
++          "va": "0x5c827ad",
++          "bytes": "ff154d9f8600",
++          "text": "call   QWORD PTR [rip+0x869f4d]        # 0x64ec700"
++        }
++      ],
++      "control_transfer_rows_uninterpreted": [
++        {
++          "va": "0x5c827ad",
++          "bytes": "ff154d9f8600",
++          "text": "call   QWORD PTR [rip+0x869f4d]        # 0x64ec700"
++        }
++      ],
++      "all_bytes_contiguously_accounted": true
++    },
++    {
++      "label": "zero-child",
++      "start_va": "0x1680e80",
++      "end_va": "0x1680eac",
++      "body_sha256": "28fc3434a04bb9e49d5a0164306a5c31abf6bce26425d99d27031ac1c9beb2e3",
++      "bytes": 44,
++      "instructions": 11,
++      "instruction_rows": [
++        {
++          "va": "0x1680e80",
++          "bytes": "55",
++          "text": "push   rbp"
++        },
++        {
++          "va": "0x1680e81",
++          "bytes": "4889e5",
++          "text": "mov    rbp,rsp"
++        },
++        {
++          "va": "0x1680e84",
++          "bytes": "4883ec30",
++          "text": "sub    rsp,0x30"
++        },
++        {
++          "va": "0x1680e88",
++          "bytes": "48897df0",
++          "text": "mov    QWORD PTR [rbp-0x10],rdi"
++        },
++        {
++          "va": "0x1680e8c",
++          "bytes": "488975f8",
++          "text": "mov    QWORD PTR [rbp-0x8],rsi"
++        },
++        {
++          "va": "0x1680e90",
++          "bytes": "488d45f0",
++          "text": "lea    rax,[rbp-0x10]"
++        },
++        {
++          "va": "0x1680e94",
++          "bytes": "488945d8",
++          "text": "mov    QWORD PTR [rbp-0x28],rax"
++        },
++        {
++          "va": "0x1680e98",
++          "bytes": "488955e0",
++          "text": "mov    QWORD PTR [rbp-0x20],rdx"
++        },
++        {
++          "va": "0x1680e9c",
++          "bytes": "66c745e80100",
++          "text": "mov    WORD PTR [rbp-0x18],0x1"
++        },
++        {
++          "va": "0x1680ea2",
++          "bytes": "488d7dd8",
++          "text": "lea    rdi,[rbp-0x28]"
++        },
++        {
++          "va": "0x1680ea6",
++          "bytes": "ff158410e604",
++          "text": "call   QWORD PTR [rip+0x4e61084]        # 0x64e1f30"
++        }
++      ],
++      "control_transfer_rows_uninterpreted": [
++        {
++          "va": "0x1680ea6",
++          "bytes": "ff158410e604",
++          "text": "call   QWORD PTR [rip+0x4e61084]        # 0x64e1f30"
++        }
++      ],
++      "all_bytes_contiguously_accounted": true
++    }
++  ],
++  "input_hashes_unchanged": true,
++  "repository_source_executed": false,
++  "captured_program_executed": false,
++  "compiler_or_vm": false,
++  "whole_elf_reauthenticated_in_job": true,
++  "limit": "Complete-input FDE replay plus two child static decodes and previously decoded handler boundary replay with RIP/RELATIVE binding. Does not establish complete helper semantics, complete CFG/call closure, accepted inputs, result types, reconstruction or milestone completion."
++}
+diff --git a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/full-input-replay.json b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/full-input-replay.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/full-input-replay.json
+@@ -0,0 +1,83 @@
++{
++  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
++  "target_bytes": 105896032,
++  "selected_fde_candidates": {
++    "0x5c827a0": {
++      "start_va": "0x5c827a0",
++      "end_va": "0x5c827b3",
++      "bytes": 19,
++      "file_offset": "0x5c817a0",
++      "body_sha256": "0c812a743791010c3c3ec26bb02400d2081851a700c58237af89161da151228e",
++      "unwind_index_row": 121719,
++      "fde_va": "0xfe18a4",
++      "fde_file_offset": "0xfe18a4",
++      "fde_hex": "18000000d0a93300f40eca041300000000410e108602430d06000000",
++      "cie_file_offset": "0xca6ed8",
++      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
++      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
++      "cie_fields": {
++        "augmentation": "zR",
++        "fde_pointer_encoding": 27
++      },
++      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
++    },
++    "0x1680e80": {
++      "start_va": "0x1680e80",
++      "end_va": "0x1680eac",
++      "bytes": 44,
++      "file_offset": "0x167fe80",
++      "body_sha256": "28fc3434a04bb9e49d5a0164306a5c31abf6bce26425d99d27031ac1c9beb2e3",
++      "unwind_index_row": 5397,
++      "fde_va": "0xcc3104",
++      "fde_file_offset": "0xcc3104",
++      "fde_hex": "1800000030c2010074dd9b002c00000000410e108602430d06000000",
++      "cie_file_offset": "0xca6ed8",
++      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
++      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
++      "cie_fields": {
++        "augmentation": "zR",
++        "fde_pointer_encoding": 27
++      },
++      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
++    },
++    "0x141e251": {
++      "start_va": "0x141e251",
++      "end_va": "0x141e264",
++      "bytes": 19,
++      "file_offset": "0x141d251",
++      "body_sha256": "8443a2a6c5074055f5abdf1b4b2041c6434ff00ba23ebfcb33a91176170035b9",
++      "unwind_index_row": 63,
++      "fde_va": "0xca71ec",
++      "fde_file_offset": "0xca71ec",
++      "fde_hex": "18000000180300005d7077001300000000410e108602430d06000000",
++      "cie_file_offset": "0xca6ed8",
++      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
++      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
++      "cie_fields": {
++        "augmentation": "zR",
++        "fde_pointer_encoding": 27
++      },
++      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
++    },
++    "0x141e280": {
++      "start_va": "0x141e280",
++      "end_va": "0x141e29d",
++      "bytes": 29,
++      "file_offset": "0x141d280",
++      "body_sha256": "c4fe38d0a9a537a5e54f13c759da6082e0f29b5952c078c86ebce3ed2686f4d1",
++      "unwind_index_row": 65,
++      "fde_va": "0xca7224",
++      "fde_file_offset": "0xca7224",
++      "fde_hex": "1800000050030000547077001d00000000410e108602430d06000000",
++      "cie_file_offset": "0xca6ed8",
++      "cie_hex": "1400000000000000017a5200017810011b0c070890010000",
++      "fde_pointer_encoding": "0x1b (pcrel signed-4-byte)",
++      "cie_fields": {
++        "augmentation": "zR",
++        "fde_pointer_encoding": 27
++      },
++      "limits": "Actual unwind record extent, not complete CFG/exception closure or source ownership"
++    }
++  },
++  "unwind_index_starts": 135313
++}
+diff --git a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/observations.md b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/observations.md
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/observations.md
+@@ -0,0 +1,18 @@
++# Node #115 failure paths after the dispatcher
++
++This addendum joins the caller evidence from PR #2127 to the standard library body census already on main. The target is Linux x86-64 node #115, 105,896,032 bytes, SHA-256 `a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301`. Addresses below are ELF virtual addresses unless marked file offsets. The reference tree is `05bc2de303c05525b71e7e257426e741bc66a390`.
++
++| Path | Fresh decoded FDE | Bytes / rows | Outgoing RELATIVE slot and target |
++| --- | --- | ---: | --- |
++| Nonzero | `[0x5c827a0,0x5c827b3)` | 19 / 6 | `0x64ec700 → 0x5c9af00` |
++| Zero | `[0x1680e80,0x1680eac)` | 44 / 11 | `0x64e1f30 → 0x5c826c0` |
++
++On the message allocation failure route, the first handler passes `(n,1)`. The next handler swaps RDI and RSI again and forwards `(1,n)` through the call at `0x5c827ad`. Its RELATIVE record is at file offset `0x15b490`. The destination matches the census entry for `rust_oom` across 22 unmasked bytes of a complete 26-byte FDE.
++
++The zero route passes a literal pointer, scalar `35` and a location-like descriptor. Its callee stores the first two words at `rbp-0x10` and `rbp-0x8`. It writes a pointer to those words, the incoming descriptor and a word containing `01 00` into a stack record at `rbp-0x28`. The call at `0x1680ea6` passes that record by address. Its RELATIVE record at file offset `0x13c488` resolves to the census match for `rust_begin_unwind` across 25 unmasked bytes of a complete 29-byte FDE.
++
++The zero callee matches the census entry for `panic_fmt` across 40 unmasked bytes of its complete 44-byte FDE. The pinned Rust source encodes literal arguments as `(length << 1) | 1`. This supports interpreting the observed `35` as the tagged length of the 17-byte `capacity overflow` literal at `0x456d73`. The subsequent string pool bytes lie beyond that source-layout length. The caller itself matches the capacity-overflow source body over 17 unmasked bytes of 29, with a second equivalent source body in the census. [Pinned Rust format layout](https://github.com/rust-lang/rust/blob/59807616e1fa2540724bfbac14d7976d7e4a3860/library/core/src/fmt/mod.rs#L583) · [Merged standard library census](https://github.com/lalalune/hyperliquid-source/blob/05bc2de303c05525b71e7e257426e741bc66a390/research/work-items/RE-002-node115-std-census/census.json)
++
++[Native result](decode-result.json) records both FDE decodes and replay of the retained incoming handler boundaries. [Commands and output](commands.json) include the GNU objdump 2.42 version query and both complete 45-second-capped decode commands. [Provenance](provenance.json) binds the run, execution commit, archive and isolation qualification. [Relocation audit](relocation-audit.json) binds the two outgoing calls to the complete image. [Census replay](census-replay.json) preserves four comparisons, exact relocation mask offsets, raw differences and one rejected unmasked mutation per comparison. The two outgoing endpoint comparisons reuse published reference bodies and the complete captured FDE bytes. Only the two ranges in the table received fresh native decoding. [Hosted run](https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/41772473150)
++
++The parent verifier checks this addendum's manifest digests and retains its earlier fourteen-range semantic scope. The new static evidence covers argument forwarding and the published body matches. Exact source ownership, diagnostic emission, endpoint callees, continuation and global nonreturn remain open. Any additional control-flow work should start from the two relocation-bound endpoint addresses.
+diff --git a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/provenance.json b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/provenance.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/provenance.json
+@@ -0,0 +1,60 @@
++{
++  "receipt_index": {
++    "collected_utc": "2026-11-04T04:21:05.452061+00:00",
++    "run_id": 41772473150,
++    "url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/41772473150",
++    "conclusion": "success",
++    "attempt": 1,
++    "execution_commit": "672ac7b336289e5d59e18d9b43d578103aebf2a7",
++    "artifact_id": 13295278013,
++    "artifact_name": "node115-panic-bridge-native-receipts",
++    "artifact_bytes": 7346,
++    "artifact_sha256": "dd3d38e3f592cd0b7e8bf0422002dfe4b293b877c2b7417bcb433532339fff55",
++    "files": {
++      "decode-result.json": "c36ef37f7ca8ca7f25cb8f457bd6f92790041fda7671f2a79f406a17100979fd",
++      "full-input-replay.json": "08e20a2bc7d4e9b451d93a0484b41f5a3c05fb0c80f12bc651ff2379141b6f03",
++      "isolation-preflight.json": "7e67d7372c3a8dcdb6c86db22be273931b2c769e736f4aa672cfcef6bb6335ea",
++      "namespace.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++      "namespace.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++      "nonzero-child.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++      "nonzero-child.stdout": "c86de4ae86d00300070d6801a76b939b2f1cae19f744dd35a9adee50c7f6b6d3",
++      "objdump-version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++      "objdump-version.stdout": "8feb2cb2830955a0c282e6abca2b512dcf52cb9380e6b0263a481bf1c6349d8d",
++      "progress.json": "d7fb7219a23239d5f0e449b049e497893c9c6ff93a4ff2edda3718ba158675f5",
++      "qualification.json": "6953d90045c2da451992d226aaf616e8bcf164e75b68194bd1c3a7384ee6629c",
++      "qualified-candidate-edges.json": "64a738176a63ef4fe3080b4f21011f2b934c5bb1d78fb725d4f7f5709a771e43",
++      "zero-child.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++      "zero-child.stdout": "43322f5850585b15aba90803d1962ebff20689bb4ae4e79f5279eb8d1ab75318"
++    },
++    "archive_paths_validated": true,
++    "repository_or_native_execution_on_mac": false
++  },
++  "qualification": {
++    "phase": "before_native_decoder",
++    "native_invocations_started": 0,
++    "parent_network_namespace": "net:[4026531833]",
++    "uid": 65534,
++    "gid": 65534,
++    "groups": [],
++    "capabilities": {
++      "CapInh": "0000000000000000",
++      "CapPrm": "0000000000000000",
++      "CapEff": "0000000000000000",
++      "CapBnd": "0000000000000000",
++      "CapAmb": "0000000000000000"
++    },
++    "no_new_privileges": "1",
++    "current_network_namespace": "net:[4026532316]",
++    "proc_net_interfaces": [
++      "lo"
++    ],
++    "proc_net_dev": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
++    "payload_and_fixture_writes_rejected_EROFS": true,
++    "python": "3.12.3 (main, Sep 26 2024, 18:18:55) [GCC 13.2.0]",
++    "captured_image_execution": false,
++    "third_party_python_packages_installed": false,
++    "native_program_sha256": "325c4205a4c658a9d1e1ebc469ae55975a2b897a3d3c1e79d9b158612d37f745"
++  },
++  "commands_receipt": "commands.json is an exact copy of progress.json from the hosted archive.",
++  "base": "05bc2de303c05525b71e7e257426e741bc66a390"
++}
+diff --git a/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/relocation-audit.json b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/relocation-audit.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-001-node115-jsonrpc-result-dispatch/failure-callees/relocation-audit.json
+@@ -0,0 +1,107 @@
++{
++  "source_commit": "05bc2de303c05525b71e7e257426e741bc66a390",
++  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
++  "run": {
++    "checked_utc": "2026-11-04T04:20:51.813890+00:00",
++    "mode": "native",
++    "run_id": 41772473150,
++    "url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/41772473150",
++    "status": "completed",
++    "conclusion": "success",
++    "attempt": 1,
++    "execution_commit": "672ac7b336289e5d59e18d9b43d578103aebf2a7",
++    "jobs": [
++      {
++        "id": 126385128806,
++        "status": "completed",
++        "conclusion": "success"
++      }
++    ]
++  },
++  "archive_sha256": "dd3d38e3f592cd0b7e8bf0422002dfe4b293b877c2b7417bcb433532339fff55",
++  "native_unique_ranges": 2,
++  "native_bytes": 63,
++  "native_rows": 17,
++  "fresh_decoder": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
++  "qualified_incoming_calls": [
++    {
++      "candidate_va": "0x141e25e",
++      "destination_va": "0x5c827a0",
++      "slot_va": "0x64df6a8",
++      "bytes": "ff1544140c05",
++      "relocation_file_offset": "0x134f88",
++      "relocation_hex": "a8f64d06000000000800000000000000a027c80500000000",
++      "native_instruction_boundary_validated": true,
++      "fresh_native_boundary_decode": false,
++      "full_capture_replay_checked": true,
++      "native_boundary_source": 41735408655
++    },
++    {
++      "candidate_va": "0x141e297",
++      "destination_va": "0x1680e80",
++      "slot_va": "0x64df6b8",
++      "bytes": "ff151b140c05",
++      "relocation_file_offset": "0x134fb8",
++      "relocation_hex": "b8f64d06000000000800000000000000800e680100000000",
++      "native_instruction_boundary_validated": true,
++      "fresh_native_boundary_decode": false,
++      "full_capture_replay_checked": true,
++      "native_boundary_source": 41735408655
++    }
++  ],
++  "qualified_outgoing_calls": [
++    {
++      "label": "nonzero-child",
++      "call_va": "0x5c827ad",
++      "bytes": "ff154d9f8600",
++      "slot_va": "0x64ec700",
++      "relocation_file_offset": "0x15b490",
++      "relative_record_hex": "00c74e0600000000080000000000000000afc90500000000",
++      "relative_addend_va": "0x5c9af00",
++      "normal_return_pc": "0x5c827b3",
++      "normal_return_pc_outside_measured_fde": true
++    },
++    {
++      "label": "zero-child",
++      "call_va": "0x1680ea6",
++      "bytes": "ff158410e604",
++      "slot_va": "0x64e1f30",
++      "relocation_file_offset": "0x13c488",
++      "relative_record_hex": "301f4e06000000000800000000000000c026c80500000000",
++      "relative_addend_va": "0x5c826c0",
++      "normal_return_pc": "0x1680eac",
++      "normal_return_pc_outside_measured_fde": true
++    }
++  ],
++  "outgoing_census_matches": {
++    "0x5c9af00": "_RNvNtCsjrHSEGnQ3l9_3std5alloc8rust_oom",
++    "0x5c826c0": "_RNvCsfLfy6EI15iL_7___rustc17rust_begin_unwind"
++  },
++  "outgoing_census_match_method": "Existing published relocation-masked matches independently replayed on authenticated FDE bytes",
++  "nonzero_argument_trace": {
++    "dispatcher_entry": [
++      "1",
++      "n"
++    ],
++    "first_handler_outgoing": [
++      "n",
++      "1"
++    ],
++    "second_handler_outgoing": [
++      "1",
++      "n"
++    ],
++    "scope": "Original nonzero message allocation-failure route, before the final indirect call."
++  },
++  "zero_child_stack_fields": {
++    "rbp-0x10": "incoming RDI, literal pointer on this route",
++    "rbp-0x8": "incoming RSI, tagged literal scalar 35 on this route",
++    "rbp-0x28": "pointer to the two argument words",
++    "rbp-0x20": "incoming RDX, Location-like descriptor",
++    "rbp-0x18": "two little-endian bytes 01 00",
++    "outgoing_rdi": "address rbp-0x28"
++  },
++  "format_inference": "Normalized published panic_fmt match and pinned Rust format layout support the literal tag and 17-byte length. The target passes these words through the new stack record.",
++  "limits": "The matched endpoints' call continuations, exact source ownership, observed emission, runtime nonreturn, and global marker exclusion remain open. The source panic signature corroborates the inference without proving final target behavior.",
++  "repository_or_native_execution_on_mac": false
++}
