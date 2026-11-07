@@ -1,0 +1,43 @@
+name: BLST complete suite in two shards
+on:
+  push:
+    branches: [validation/node115-blst-suite-20261107]
+permissions:
+  contents: read
+jobs:
+  validate:
+    name: validate-${{ matrix.shard }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ['0', '1']
+    env:
+      SHARD: ${{ matrix.shard }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          path: control
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: lalalune/hyperliquid-source
+          ref: 7ff06a0973b5b8c79bde0b229c9bb2eabf8b29a6
+          path: acquired
+          lfs: true
+          submodules: recursive
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.3'
+      - name: Validate frozen candidate and assigned test shard
+        working-directory: control
+        run: bash payload/bootstrap.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: node115-blst-suite-${{ matrix.shard }}
+          path: probe-receipts
+          if-no-files-found: error
+          retention-days: 7
