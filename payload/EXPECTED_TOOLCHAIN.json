@@ -1,0 +1,16 @@
+{
+  "source": "/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu",
+  "versions": {
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+    "rustdoc": "rustdoc 1.99.1 (58cf8f9c3 2026-10-13)"
+  },
+  "installed": false,
+  "repo_rust_pin": "1.95.0",
+  "pin_equivalent_build_claim": false,
+  "sha256": {
+    "cargo": "a670e02cfa39ac2e53f77a2d911ca1fc9e2c479b0603ec956625be1daf24e3af",
+    "rustc": "b53b780f77f952062f8ca8a3b70aef2390b1e45ad91939be94afdc9543026853",
+    "rustdoc": "832e53ca262db3d3fcaca659dc6e71f0f5a924a48adc580ee4278acac75f3e80"
+  }
+}
