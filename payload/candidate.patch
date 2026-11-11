@@ -1,0 +1,1885 @@
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/MANIFEST.sha256 b/research/work-items/RE-002-node115-cfa-frame-policy/MANIFEST.sha256
+--- a/research/work-items/RE-002-node115-cfa-frame-policy/MANIFEST.sha256
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/MANIFEST.sha256
+@@ -1,5 +1,5 @@
+ 32cc246acd6a2e4c619a88a63957b3ef1814ea4ecd6c54e200aa60bdc7121143  .gitattributes
+-4c2e72203d1a9e6069c77686d2104370a74270079c7fa7eb28acf7d52cb94873  README.md
++f33d183b0744dd75f81aac8f1f02205a84d25b497bb3a53d523bf94ffa994b12  README.md
+ ed29d320cfd55586300239f6a832a286bed8cdbe79e2f095e8f36796d8fbb4ab  VALIDATION.md
+ 9f5c26e00d9849849236b08de965918b02d5ddb6d1f0fad8702e9f99b6809afe  blst-portable/.gitattributes
+ c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4  blst-portable/LICENSE.txt
+@@ -44,6 +44,31 @@
+ 1b06b0864ecbf201f0142eed6a022f19f73d25c10eb7601a3c02625206444eb2  native/llvm-0x5d20100.objdump
+ 45eead87307392acd4153041011504984c208d3cd3c31f0894692f2cd5b05f95  native/llvm-0x6367e53.objdump
+ 0097f841a4960972ee210bf0503bb90ef67190a7994dc9abbbe0c35e8e74467a  native/llvm-selected-frames.txt
++4e3c18bb1eb8294d3a85be4a390e43e1648eaf6fad5a29400f48d6488066456f  r11-fixed-hex-caller/.gitattributes
++3ce52ca60128838c355dc9abdb0970b78cd33a517b063ec2e1dbdcc01c7080ea  r11-fixed-hex-caller/README.md
++ad0800c8e715d2925c78df31e096ac5651b151e5ff4b908251944c95ca619659  r11-fixed-hex-caller/evidence.json
++9a48d3c94b217f2dfd750e01c6d9c42c5b829cbf4128e6f079ccedecad8a192a  r11-fixed-hex-caller/hosted-audit.json
++305a5974bddc2da5b7f73106623bbe6281772b78b16413c0623a573b0418df9a  r11-fixed-hex-caller/producer/bootstrap.sh.txt
++ce6982c46eab4bcf74c324428c896dcae05454f30949a3710cf7105ea1fe9e75  r11-fixed-hex-caller/producer/isolate.sh.txt
++cd2f3d5421550252a82186eb7abc6da6b7e86430e8b745ddc8c93cc53ac7eff6  r11-fixed-hex-caller/producer/probe.py.txt
++c881f0e4c952b5b80a81220f26621398f337268d471d98e7042f56d356c3a03d  r11-fixed-hex-caller/producer/r11-owner.yml.txt
++aee63ebbdbff5675a887989f8fbc889f250df6ff296b1e843b9d43b39d1052ba  r11-fixed-hex-caller/receipt-index.json
++da8550443a5af52add127a6d8352ce4baad420e710c733f3ad7557afbce0b1b6  r11-fixed-hex-caller/receipts/caller-0x250ecd0-gnu.log
++27c377ce6cb2ae170fd24b2df9602ff7deff0b5661603f10ee771a4aec58c14b  r11-fixed-hex-caller/receipts/caller-0x250ecd0-llvm.log
++1f7c54bdc8c6c2b43857176358af36efd32b6da65a2facd7fc1277403c4fc188  r11-fixed-hex-caller/receipts/commands.json
++8caa79956172227d2248f9df609b1d727c3d79f17ba99c11f60d7830e1d375f5  r11-fixed-hex-caller/receipts/controls.json
++874f1e2f65ffcadc1ca8426e96fc5940d550105bbe6523e0d8ed63cbf9a42277  r11-fixed-hex-caller/receipts/incoming-references.json
++900e852c450a92b5514c7867df6cef6e72136a54ef4a8ea68deb234a88317799  r11-fixed-hex-caller/receipts/prepared.json
++8108e9085297891a557bab9f59a9d390cd955349fac3d63fbcebfb78bb390ba0  r11-fixed-hex-caller/receipts/qualification.json
++59606e4d7793552d8ae1efb397e11b7c74f1e40d6e8349064eb16666aab7c6fa  r11-fixed-hex-caller/receipts/result.json
++13e41bf1aa2e951ef777cee3608bf7cd8fedfeb97d212068ee5d67d719773b8d  r11-fixed-hex-caller/receipts/selected-gnu.log
++d68a05b71cb809b344c8fde48e7cd6d69137231dbfe26bf9d53974b3f5a20d6c  r11-fixed-hex-caller/receipts/selected-llvm.log
++cfb9286322cccef53a692448cf4007a998d186dfb8e8313d317390a95eeb10f1  r11-fixed-hex-caller/receipts/version-llvm-dwarfdump.log
++51392c170c10af97eef3453dc5fcdf5c978f7413c95106fd742cc2474d6efa99  r11-fixed-hex-caller/receipts/version-llvm-objdump.log
++8feb2cb2830955a0c282e6abca2b512dcf52cb9380e6b0263a481bf1c6349d8d  r11-fixed-hex-caller/receipts/version-objdump.log
++6aca4321453ac381865f3d353ea7896b150c05026483cb9db0047eee6916723d  r11-fixed-hex-caller/receipts/version-readelf.log
++5e68da0b2184d79dc47d262a66f2aa11c01e2dd2ee1020e8cbf2948906cc9a55  r11-fixed-hex-caller/receipts/versions.json
++d830987838e3be28022a73b426df9540fbd7ab852519e7fb046c5b48cad29684  r11-fixed-hex-caller/reproduce.py
+ fa4ac8f4654399a71e4c3c5ffd8a3b8cc90a813a774a54a9746e800cbbd13684  reconcile.py
+ 478e9d37ac4d6aa5d0e7f754e882286ebad0b0ca948d63afa0e5d4b3bcba4dbc  selected-bodies.json
+ 3e53cb214cdad03e171a00ebcb0d1837fba6490367ee69fa6c2f60789a4aa45f  summary.json
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/README.md b/research/work-items/RE-002-node115-cfa-frame-policy/README.md
+--- a/research/work-items/RE-002-node115-cfa-frame-policy/README.md
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/README.md
+@@ -147,3 +147,7 @@
+ exact historical producer, unique release, outside references and the
+ first-party Rust frame-pointer setting remain unresolved. The registered
+ comparison is dependency evidence and changes no acceptance gate.
++
++## Direct caller of the selected R11-CFA interval
++
++The [R11 direct-caller addendum](r11-fixed-hex-caller/README.md) retains two native-qualified direct calls from interval `0x250ecd0..0x250ee44` to `0x298af40..0x298b04d` and the surrounding `0x20000` stride instructions. It records static incoming context; the original source/type owner remains unresolved. It requests no implementation-byte registration or component gate.
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/.gitattributes b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/.gitattributes
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/.gitattributes
+@@ -0,0 +1,2 @@
++receipts/* -text
++producer/* -text
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/README.md b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/README.md
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/README.md
+@@ -0,0 +1,71 @@
++# RE-002: direct caller of the selected node #115 R11-CFA interval
++
++- Component ID: foundation, as a bounded provenance/function-map allocation. Source ownership is not assigned.
++- Target: Linux x86-64 node #115, 105,896,032 bytes; SHA-256 `a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301`.
++- Repository base: `a8616af9432b8d8517b2af677880e117b7c28ef3`.
++- Claim status: static observations. The original source/type owner remains unresolved.
++- Question: which direct E8 sites reach the CFA packet's selected interval `0x298af40..0x298b04d`, and which input-stride instructions surround those calls?
++- Included: two native-qualified direct edges and the complete 372-byte caller interval. Excluded: source/type attribution, independent source-level function boundaries, delimiter values, runtime behavior and arbitrary indirect incoming references.
++
++## Reproduce
++
++The original collection is [hosted run 42886723454](https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/42886723454), control commit `c8a4700c83f811e6f7fe1074f796345a245b93d2`, tree `a91897eda42769b0132aba75e56a80a43b516698`. The job completed in 14 seconds in one attempt. There was no compiler/package installation, repository-code execution or captured-code execution.
++
++The immutable collection sources are retained as text in `producer/`, with original paths, links and SHA-256 values in `evidence.json`. The workflow, bootstrap and isolation sources specify acquisition and the rootless Linux environment. `receipts/prepared.json` records the input URL and exact capture identity. `receipts/commands.json` retains every actual native command, working input path, output length, exit code and hash; `receipts/versions.json` retains the actual GNU, LLVM and Python versions. These are original receipts, including their ephemeral Linux paths, not claims of a fresh local reproduction.
++
++Acquisition authenticated the full capture before making it readonly and nonexecutable. Analysis ran as uid/gid 65534 with no groups, zero capability sets and no-new-privileges, in a separate network namespace containing only loopback. Frozen inputs were readonly and the working mount nonexecutable. `receipts/qualification.json` records the observed environment.
++
++The selected interval and each caller interval were exported with both GNU `objdump -d -z --insn-width=16` and LLVM `llvm-objdump -d --disassemble-zeroes`, with explicit start/stop virtual addresses. GNU readelf and LLVM dwarfdump independently exported the FDE headers. Their complete working outputs were compared by the producer and retained by hash and size in `receipts/commands.json`; the approximately 310 MB of full FDE working text is not committed here. The packet includes both complete caller disassemblies and both complete selected-callee disassemblies.
++
++To replay the bounded result from an authenticated local copy, use the following from the repository root with GNU and LLVM objdump available. The replay uses the repository's ELF and frame readers, matches both fresh native byte partitions to the retained rows, and writes the selected FDE/CIE records, body identities and control results under the output directory.
++
++```sh
++python3 -I -B research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/reproduce.py \
++  --binary artifacts/node/115/hl-node --out work/r11-caller-replay
++```
++
++## Evidence
++
++Coordinates are linked ELF virtual addresses before load bias. File offsets were not retained for the new caller and are not inferred from an assumed address bias. FDE-described extents are interval evidence, not proof of independent source-level function boundaries. The stripped binary's nearest-symbol labels in disassembler output are not ownership labels.
++
++| Role | Interval | Bytes / native instructions | Body SHA-256 |
++| --- | --- | ---: | --- |
++| Caller | `0x250ecd0..0x250ee44` | 372 / 100 | `2932c0a51fa7c21e24c078a45e3b2638807d30a254546ddec98710500be7d3a6` |
++| Selected R11-CFA interval | `0x298af40..0x298b04d` | 269 / 70 | `9573b1ff5c818a9efc8f841b1b4d5c5627cc4f5c1b966de2220341b358e2d84c` |
++
++The executable-section E8 scan yields two candidates whose signed relative operands resolve to entry `0x298af40`. Both are actual instruction starts in the complete GNU and LLVM partitions. Both lie in the same caller interval:
++
++| Call site | Original bytes | Independent address calculation |
++| --- | --- | --- |
++| `0x250ed83` | `e8b8c14700` | next instruction VA plus signed rel32 = `0x298af40` |
++| `0x250edd0` | `e86bc14700` | next instruction VA plus signed rel32 = `0x298af40` |
++
++`evidence.json` separates ten pinned observations from the limited inference. The main context is:
++
++| Classification | Fact or interpretation | Supporting sites / limit |
++| --- | --- | --- |
++| Observation | Load r14 from rcx+8 and r13 from rcx+0x10 | `0x250ecf4`, `0x250ecf8`; no source-level field labels |
++| Observation | Test r13 before the first call; the zero branch bypasses it | `0x250ed78..0x250ed7b` |
++| Observation | At both calls, rdi is r14 and rsi is rbx | setup immediately before `0x250ed83` and `0x250edd0` |
++| Observation | On the path where rax is zero after the first call, shift r13 left by 17, advance r14 by 0x20000 and subtract 0x20000 from r13 | `0x250ed88..0x250ed98`; no source-level success meaning assigned |
++| Observation | The repeated path advances r14 and subtracts the same stride from r13 | `0x250edd5`, `0x250eddc` |
++| Inference | This is consistent with repeated processing at a fixed 128 KiB stride under suitable validity/non-overflow premises | It does not recover a container, element type, field name or runtime length contract |
++| Unknown | Original source/type owner, data referenced at 0x5f1452/54/55/56, arbitrary register-computed callers and runtime behavior | Not established by this collection |
++
++The producer found no `R_X86_64_RELATIVE` addend exactly equal to entry `0x298af40`. Its selected RIP MOV/LEA/FF scans did not add another qualified reference. Those scans are explicitly limited to the entry, selected pointer slots and aligned potential table bases, with at most one REX prefix. They do not establish that no indirect or interior-entry caller exists. The caller uses `0x25bf160` and `0x22f2f70`; this packet does not rename those helpers or re-claim the prior formatting-adapter work.
++
++## Implementation and comparison
++
++No Rust implementation, compiler/source build, independent source-body match or normalized comparison is supplied. The 641 bytes in the two raw intervals are disassembly evidence, not newly reconstructed or compared implementation bytes. No byte-window registration or component gate is requested.
++
++The hosted producer rejects a truncated capture, a changed full capture and a changed selected-body hash. Those three actual input/body controls are preserved in `receipts/controls.json`. The replay also checks rejection of altered call destinations at both sites, an increment and decrement, the shift count, an incomplete native partition, a changed FDE extent and a changed body digest. These eight checks operate on in-memory copies of parsed evidence. Both validation runs reproduced the two call edges and the stride, and rejected all eight controls for the expected reasons.
++
++## Results and limitations
++
++The explicit direct-call denominator is two E8-target candidates: two of two pass complete GNU/LLVM instruction-boundary and byte checks. One complete caller interval was exported. Both native producers agreed on all 135,313 FDE headers. The hosted audit and artifact index are retained separately from the producer's own result. The source-level owner and the build-wide Rust frame-pointer setting remain unknown.
++
++The lower-hex operation and scalar arm are existing work from [PR #2650](https://github.com/lalalune/hyperliquid-source/pull/2650). [PR #3646](https://github.com/lalalune/hyperliquid-source/pull/3646) retains the formatting adapter. The separate open [PR #6031](https://github.com/lalalune/hyperliquid-source/pull/6031) targets encoder `0x2eabb50` through slot `0x64e4d08`; that path is excluded. The new candidate contribution is the qualified incoming edges and their observed stride context. Current indexed caller/callsite and public PR/issue searches found no matches, with index and active-branch limits preserved in the private review record.
++
++The validation candidate at `cac3e221a3820a2a2fc7c620d2979ca3d40c16ae` completed all 1,397 test modules across the [serial run](https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/42934523733) and [continuation](https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/43048885814). The serial run reached its cap after 1,234 completed modules. The continuation completed the remaining 163 using the same test runner. Together the receipts report zero failed modules and 30 skipped tests. The continuation also passed the post-test verify and catalogue checks. The replay code, original receipts and test files are identical in this validation note update.
++
++Next question: can the caller's source/type owner be established from qualified caller/data context without assuming that a large stack buffer or a familiar encoding pattern names its owner? Keep the current direct-edge/stride claim separate from any later source attribution or behavior claim.
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/evidence.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/evidence.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/evidence.json
+@@ -0,0 +1,221 @@
++{
++  "schema_version": 1,
++  "task": "RE-002",
++  "related_task": "RE-001",
++  "component": "foundation",
++  "bounded_question": "Which direct E8 sites reach the selected R11-CFA interval, and which input-stride instructions surround those calls?",
++  "claim_status": "static observations; source ownership unresolved",
++  "target": {
++    "release": "node115",
++    "sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
++    "bytes": 105896032,
++    "coordinate_system": "linked ELF virtual addresses before load bias"
++  },
++  "source_base": "a8616af9432b8d8517b2af677880e117b7c28ef3",
++  "hosted_run": {
++    "id": 42886723454,
++    "url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/42886723454",
++    "job_id": 130076867810,
++    "control_commit": "c8a4700c83f811e6f7fe1074f796345a245b93d2",
++    "control_tree": "a91897eda42769b0132aba75e56a80a43b516698",
++    "job_seconds": 14
++  },
++  "caller": {
++    "start_va": "0x250ecd0",
++    "end_va": "0x250ee44",
++    "extent_basis": "GNU/LLVM-agreed FDE bounds; not an independent source-level function boundary",
++    "bytes": 372,
++    "instructions": 100,
++    "body_sha256": "2932c0a51fa7c21e24c078a45e3b2638807d30a254546ddec98710500be7d3a6",
++    "file_offset": "not retained; not inferred from a presumed VA bias"
++  },
++  "selected_callee": {
++    "start_va": "0x298af40",
++    "end_va": "0x298b04d",
++    "bytes": 269,
++    "instructions": 70,
++    "body_sha256": "9573b1ff5c818a9efc8f841b1b4d5c5627cc4f5c1b966de2220341b358e2d84c"
++  },
++  "observations": [
++    {
++      "id": "O1",
++      "classification": "observation",
++      "site_va": "0x250ecf4",
++      "bytes": "4c8b7108",
++      "description": "Load r14 from rcx+8.",
++      "limit": "Source-level field and container type unknown."
++    },
++    {
++      "id": "O2",
++      "classification": "observation",
++      "site_va": "0x250ecf8",
++      "bytes": "4c8b6910",
++      "description": "Load r13 from rcx+0x10.",
++      "limit": "No source-level length/type label assigned."
++    },
++    {
++      "id": "O3",
++      "classification": "observation",
++      "site_va": "0x250ed78",
++      "bytes": "4d85ed",
++      "description": "Test r13; the following branch reaches 0x250edea when zero.",
++      "limit": "Observed branch only; no source-level empty-container contract."
++    },
++    {
++      "id": "O4",
++      "classification": "observation",
++      "site_va": "0x250ed83",
++      "bytes": "e8b8c14700",
++      "description": "Direct E8 call targets 0x298af40.",
++      "limit": "One of two qualified direct sites, not every possible runtime caller.",
++      "independently_recomputed_destination": "0x298af40"
++    },
++    {
++      "id": "O5",
++      "classification": "observation",
++      "site_va": "0x250ed8d",
++      "bytes": "49c1e511",
++      "description": "Shift r13 left by 17.",
++      "limit": "Integer/register operation; do not assume non-overflow source arithmetic."
++    },
++    {
++      "id": "O6",
++      "classification": "observation",
++      "site_va": "0x250ed91",
++      "bytes": "4981c600000200",
++      "description": "Advance r14 by 0x20000.",
++      "limit": "Observed input-pointer stride."
++    },
++    {
++      "id": "O7",
++      "classification": "observation",
++      "site_va": "0x250ed98",
++      "bytes": "4981c50000feff",
++      "description": "Add sign-extended -0x20000 to r13.",
++      "limit": "Observed register update."
++    },
++    {
++      "id": "O8",
++      "classification": "observation",
++      "site_va": "0x250edd0",
++      "bytes": "e86bc14700",
++      "description": "Repeated-path E8 call also targets 0x298af40.",
++      "limit": "Native GNU and LLVM instruction boundaries agree.",
++      "independently_recomputed_destination": "0x298af40"
++    },
++    {
++      "id": "O9",
++      "classification": "observation",
++      "site_va": "0x250edd5",
++      "bytes": "4981c600000200",
++      "description": "Advance r14 by 0x20000 on the repeated path.",
++      "limit": "No source-level element type assigned."
++    },
++    {
++      "id": "O10",
++      "classification": "observation",
++      "site_va": "0x250eddc",
++      "bytes": "4981c50000feff",
++      "description": "Add sign-extended -0x20000 to r13 on the repeated path.",
++      "limit": "No runtime bounds/validity premise inferred."
++    }
++  ],
++  "inferences": [
++    {
++      "id": "I1",
++      "text": "The caller is consistent with repeated processing at a fixed 128 KiB stride under suitable input-validity and non-overflow premises. The original container, field and source owner are not recovered."
++    }
++  ],
++  "unknowns": [
++    "Source/type owner and source-level container/field names",
++    "Readonly bytes at 0x5f1452/0x5f1454/0x5f1455/0x5f1456",
++    "Register-computed, interior-entry and runtime-only incoming references",
++    "Source build, exact producer, complete helper/data closure and runtime behavior"
++  ],
++  "metrics": {
++    "E8_candidates": 2,
++    "E8_candidates_native_qualified": 2,
++    "exported_caller_intervals": 1,
++    "caller_bytes": 372,
++    "callee_bytes": 269,
++    "full_FDE_headers_agreed": 135313,
++    "exact_entry_relative_pointer_slots": 0,
++    "identity_body_controls_passed": 3,
++    "new_compiled_source_comparisons": 0,
++    "component_gates_requested": 0
++  },
++  "scan_limits": [
++    "E8 rel32 only for direct calls",
++    "R_X86_64_RELATIVE exact addends only for slots",
++    "RIP MOV/LEA/FF candidates with at most one REX prefix; no whole-ISA xref claim",
++    "Addresses before pointer slots are candidate table bases only; no type/layout is assigned",
++    "At most eight complete caller FDE intervals of at most 16 KiB each",
++    "No arbitrary register-computed targets, runtime dispatch or source/type identity inferred"
++  ],
++  "producer_sources": {
++    "payload/probe.py": {
++      "private_packet_path": "producer/probe.py.txt",
++      "sha256": "cd2f3d5421550252a82186eb7abc6da6b7e86430e8b745ddc8c93cc53ac7eff6",
++      "source_url": "https://github.com/clutchpbcfo/hyperliquid-source/blob/c8a4700c83f811e6f7fe1074f796345a245b93d2/payload/probe.py"
++    },
++    "payload/bootstrap.sh": {
++      "private_packet_path": "producer/bootstrap.sh.txt",
++      "sha256": "305a5974bddc2da5b7f73106623bbe6281772b78b16413c0623a573b0418df9a",
++      "source_url": "https://github.com/clutchpbcfo/hyperliquid-source/blob/c8a4700c83f811e6f7fe1074f796345a245b93d2/payload/bootstrap.sh"
++    },
++    "payload/isolate.sh": {
++      "private_packet_path": "producer/isolate.sh.txt",
++      "sha256": "ce6982c46eab4bcf74c324428c896dcae05454f30949a3710cf7105ea1fe9e75",
++      "source_url": "https://github.com/clutchpbcfo/hyperliquid-source/blob/c8a4700c83f811e6f7fe1074f796345a245b93d2/payload/isolate.sh"
++    },
++    ".github/workflows/r11-owner.yml": {
++      "private_packet_path": "producer/r11-owner.yml.txt",
++      "sha256": "c881f0e4c952b5b80a81220f26621398f337268d471d98e7042f56d356c3a03d",
++      "source_url": "https://github.com/clutchpbcfo/hyperliquid-source/blob/c8a4700c83f811e6f7fe1074f796345a245b93d2/.github/workflows/r11-owner.yml"
++    }
++  },
++  "related_work": {
++    "2650": "Merged hex operation/scalar-arm study; not a new claim here",
++    "3646": "Merged formatting-adapter packet for 0x25bf160",
++    "6031": "Separate open census for entry 0x2eabb50 / slot 0x64e4d08; excluded"
++  },
++  "implementation": "not implemented; no Rust reconstruction or source-body identity claim",
++  "repository_validation": "1,397 modules completed across the two runs recorded in validation_runs",
++  "replay": {
++    "entrypoint": "reproduce.py",
++    "status": "passed in both hosted validation runs",
++    "expected_controls": 8,
++    "observed_controls_rejected": 8
++  },
++  "validation_runs": {
++    "tested_commit": "cac3e221a3820a2a2fc7c620d2979ca3d40c16ae",
++    "tested_tree": "a772c506781b173fae4aab3d1b059856893940cf",
++    "runs": [
++      {
++        "id": 42934523733,
++        "url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/42934523733",
++        "completed_modules": 1234,
++        "reported_failures": 0,
++        "skipped_tests": 29,
++        "serial_test_timed_out": true,
++        "receipt_sha256": "4d897712b5a06d5730b572d19f606d749d2f5d84de1ea2d2653de0f3833e04ba"
++      },
++      {
++        "id": 43048885814,
++        "url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/43048885814",
++        "completed_modules": 163,
++        "reported_failures": 0,
++        "skipped_tests": 1,
++        "receipt_sha256": "b959b98e12c5181fed2b4bc885c8a3e2adfeccb7ce7414112ab3063ea2241486"
++      }
++    ],
++    "completed_modules": 1397,
++    "failed_modules": 0,
++    "skipped_tests": 30,
++    "post_checks": [
++      "verify",
++      "catalogue-check"
++    ],
++    "replay_controls_rejected": 8
++  }
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/hosted-audit.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/hosted-audit.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/hosted-audit.json
+@@ -0,0 +1,74 @@
++{
++  "checked_utc": "2026-11-10T19:39:02.410680+00:00",
++  "passed": true,
++  "run_id": 42886723454,
++  "run_url": "https://github.com/clutchpbcfo/hyperliquid-source/actions/runs/42886723454",
++  "job_id": 130076867810,
++  "job_seconds": 14.0,
++  "control_commit": "c8a4700c83f811e6f7fe1074f796345a245b93d2",
++  "control_tree": "a91897eda42769b0132aba75e56a80a43b516698",
++  "base": "a8616af9432b8d8517b2af677880e117b7c28ef3",
++  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
++  "body_sha256": "9573b1ff5c818a9efc8f841b1b4d5c5627cc4f5c1b966de2220341b358e2d84c",
++  "native_instruction_rows": 70,
++  "FDE_headers_agree": 135313,
++  "identity_controls": 3,
++  "caller_intervals": {
++    "0x250ecd0": {
++      "end": "0x250ee44",
++      "bytes": 372,
++      "instructions": 100,
++      "body_sha256": "2932c0a51fa7c21e24c078a45e3b2638807d30a254546ddec98710500be7d3a6"
++    }
++  },
++  "qualified_references": [
++    {
++      "kind": "E8-rel32",
++      "site": "0x250ed83",
++      "destination": "0x298af40",
++      "bytes": "e8b8c14700",
++      "fde_owners": [
++        [
++          "0x250ecd0",
++          "0x250ee44"
++        ]
++      ],
++      "native_qualified": true,
++      "decoded_instruction": {
++        "bytes": "e8b8c14700",
++        "instruction": "call   298af40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4f0>"
++      }
++    },
++    {
++      "kind": "E8-rel32",
++      "site": "0x250edd0",
++      "destination": "0x298af40",
++      "bytes": "e86bc14700",
++      "fde_owners": [
++        [
++          "0x250ecd0",
++          "0x250ee44"
++        ]
++      ],
++      "native_qualified": true,
++      "decoded_instruction": {
++        "bytes": "e86bc14700",
++        "instruction": "call   298af40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4f0>"
++      }
++    }
++  ],
++  "relative_pointer_slots": [],
++  "source_owner_proven": false,
++  "captured_code_executed": false,
++  "compiler_installed": false,
++  "optional_retry": false,
++  "pr_authorized": false,
++  "scope_limitations": [
++    "E8 rel32 only for direct calls",
++    "R_X86_64_RELATIVE exact addends only for slots",
++    "RIP MOV/LEA/FF candidates with at most one REX prefix; no whole-ISA xref claim",
++    "Addresses before pointer slots are candidate table bases only; no type/layout is assigned",
++    "At most eight complete caller FDE intervals of at most 16 KiB each",
++    "No arbitrary register-computed targets, runtime dispatch or source/type identity inferred"
++  ]
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/bootstrap.sh.txt b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/bootstrap.sh.txt
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/bootstrap.sh.txt
+@@ -0,0 +1,17 @@
++#!/usr/bin/env bash
++set -euo pipefail
++probe_root=$(mktemp -d /tmp/node115-r11-XXXXXXXX)
++chmod 755 "$probe_root"
++mkdir "$probe_root/output" "$probe_root/target" "$probe_root/work" "$probe_root/bin"
++mkdir -p "$GITHUB_WORKSPACE/probe-receipts"
++cp -R payload "$probe_root/frozen"
++collect() {
++  /usr/bin/python3 -I -B "$probe_root/frozen/probe.py" collect "$probe_root" "$GITHUB_WORKSPACE/probe-receipts"
++}
++trap collect EXIT
++timeout --kill-after=5s 100s /usr/bin/python3 -I -B "$probe_root/frozen/probe.py" prepare "$probe_root"
++chmod 777 "$probe_root/output"
++sudo chown 65534:65534 "$probe_root/work"
++parent_namespace=$(readlink /proc/self/ns/net)
++sudo unshare --mount --net --pid --fork --mount-proc --propagation private \
++  /bin/bash "$probe_root/frozen/isolate.sh" "$probe_root" "$parent_namespace"
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/isolate.sh.txt b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/isolate.sh.txt
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/isolate.sh.txt
+@@ -0,0 +1,19 @@
++#!/usr/bin/env bash
++set -euo pipefail
++probe_root=$1
++parent_namespace=$2
++for input in frozen target bin; do
++  mount --bind "$probe_root/$input" "$probe_root/$input"
++  mount -o remount,bind,ro,nosuid,nodev "$probe_root/$input"
++done
++for input in frozen target; do
++  mount -o remount,bind,ro,nosuid,nodev,noexec "$probe_root/$input"
++done
++mount --bind "$probe_root/work" "$probe_root/work"
++mount -o remount,bind,nosuid,nodev,noexec "$probe_root/work"
++exec setpriv --reuid=65534 --regid=65534 --clear-groups \
++  --inh-caps=-all --ambient-caps=-all --bounding-set=-all --no-new-privs \
++  env -i PATH="$probe_root/bin" LANG=C.UTF-8 LC_ALL=C.UTF-8 \
++    TMPDIR="$probe_root/work" PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 \
++    "$probe_root/bin/timeout" --kill-after=5s 420s \
++    "$probe_root/bin/python3" -I -B "$probe_root/frozen/probe.py" analyze "$probe_root" "$parent_namespace"
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/probe.py.txt b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/probe.py.txt
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/probe.py.txt
+@@ -0,0 +1,323 @@
++"""Hosted-only bounded incoming-reference probe. Never run this on the Mac."""
++import collections
++import datetime
++import hashlib
++import json
++import os
++from pathlib import Path
++import re
++import resource
++import shutil
++import struct
++import subprocess
++import sys
++import time
++import urllib.request
++
++BASE = 'a8616af9432b8d8517b2af677880e117b7c28ef3'
++TARGET_SHA = 'a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301'
++TARGET_SIZE = 105896032
++START, END = 0x298AF40, 0x298B04D
++BODY_SHA = '9573b1ff5c818a9efc8f841b1b4d5c5627cc4f5c1b966de2220341b358e2d84c'
++FDE_HEADER = re.compile(r'^\s*(?:0x)?([0-9a-fA-F]+)\s+.*\bFDE\b.*\bpc=(?:0x)?([0-9a-fA-F]+)\.{2,3}(?:0x)?([0-9a-fA-F]+)')
++DEADLINE = None
++
++
++def require(ok, message):
++    if not ok:
++        raise ValueError(message)
++
++
++def digest(data):
++    return hashlib.sha256(data).hexdigest()
++
++
++def file_digest(path):
++    with path.open('rb') as stream:
++        return hashlib.file_digest(stream, 'sha256').hexdigest()
++
++
++def save(root, name, value):
++    (root / 'output' / name).write_text(json.dumps(value, indent=2) + '\n')
++
++
++def authenticate(data):
++    require(len(data) == TARGET_SIZE and digest(data) == TARGET_SHA, 'capture identity mismatch')
++
++
++def sections(data):
++    require(data[:6] == b'\x7fELF\x02\x01' and struct.unpack_from('<H', data, 18)[0] == 62, 'ELF identity')
++    offset = struct.unpack_from('<Q', data, 40)[0]
++    stride, count, names = struct.unpack_from('<HHH', data, 58)
++    require(stride == 64 and 0 < count < 1000 and names < count and offset + count * stride <= len(data), 'section table')
++    rows = []
++    for i in range(count):
++        n,t,flags,va,off,size,link,info,align,step = struct.unpack_from('<IIQQQQIIQQ', data, offset+i*stride)
++        require(t == 8 or off + size <= len(data), 'section exceeds capture')
++        rows.append(dict(index=i, name_offset=n, type=t, flags=flags, va=va, offset=off, size=size, step=step))
++    ns = rows[names]
++    require(ns['type'] == 3, 'section-name STRTAB')
++    names_data = data[ns['offset']:ns['offset']+ns['size']]
++    for row in rows:
++        require(row['name_offset'] < len(names_data), 'section-name bound')
++        end = names_data.find(b'\0', row['name_offset'])
++        require(end >= 0, 'section-name terminator')
++        row['name'] = names_data[row['name_offset']:end].decode('ascii')
++    return rows
++
++
++def body(data, rows, start, end):
++    owners = [r for r in rows if r['type'] != 8 and r['va'] <= start < end <= r['va']+r['size']]
++    require(len(owners) == 1, 'unique file-backed section')
++    row, = owners
++    off = row['offset'] + start-row['va']
++    return data[off:off+end-start], row
++
++
++def prepare(root):
++    url = f'https://media.githubusercontent.com/media/lalalune/hyperliquid-source/{BASE}/artifacts/node/115/hl-node'
++    target = root / 'target/hl-node'
++    total = 0
++    with urllib.request.urlopen(url, timeout=90) as response, target.open('xb') as out:
++        while True:
++            chunk = response.read(1048576)
++            if not chunk:
++                break
++            total += len(chunk)
++            require(total <= TARGET_SIZE, 'capture download exceeds exact size')
++            out.write(chunk)
++    require(total == TARGET_SIZE and file_digest(target) == TARGET_SHA, 'downloaded capture identity')
++    target.chmod(0o444)
++    for alias, choices in {
++        'objdump': ['objdump'], 'readelf': ['readelf'],
++        'llvm-objdump': ['llvm-objdump', 'llvm-objdump-18', 'llvm-objdump-19', 'llvm-objdump-20', 'llvm-objdump-21'],
++        'llvm-dwarfdump': ['llvm-dwarfdump', 'llvm-dwarfdump-18', 'llvm-dwarfdump-19', 'llvm-dwarfdump-20', 'llvm-dwarfdump-21'],
++        'timeout': ['timeout'],
++    }.items():
++        found = next((p for name in choices if (p := shutil.which(name, path='/usr/bin:/bin'))), None)
++        require(found is not None, 'missing existing tool: '+alias)
++        (root / 'bin' / alias).symlink_to(found)
++    (root / 'bin/python3').symlink_to(sys.executable)
++    save(root, 'prepared.json', {'base': BASE, 'capture_url': url, 'target_sha256': TARGET_SHA,
++         'target_bytes': total, 'tools': {p.name: str(p.resolve()) for p in (root/'bin').iterdir()},
++         'packages_installed': False, 'compiler_installed': False})
++
++
++def command(root, label, argv, large=False):
++    require(time.monotonic() < DEADLINE, 'analysis deadline')
++    dest = root / ('work' if large else 'output') / (label+'.log')
++    error = root / 'work' / (label+'.stderr')
++    with dest.open('wb') as out, error.open('wb') as err:
++        result = subprocess.run(argv, stdout=out, stderr=err, cwd=root/'work', timeout=min(90, max(1, DEADLINE-time.monotonic())))
++    require(dest.stat().st_size <= (256000000 if large else 2000000) and error.stat().st_size < 100000, 'native output bound')
++    commands = json.loads((root/'output/commands.json').read_text())
++    commands[label] = {'argv': argv, 'exit_code': result.returncode, 'stdout_bytes': dest.stat().st_size,
++        'stdout_sha256': file_digest(dest), 'stderr_bytes': error.stat().st_size, 'stderr_sha256': file_digest(error),
++        'full_stdout_retained': not large}
++    save(root, 'commands.json', commands)
++    if error.stat().st_size:
++        shutil.copy2(error,root/'output'/(label+'.stderr.log'))
++    require(result.returncode == 0 and not error.stat().st_size, 'native tool failure: '+label)
++    return dest
++
++
++def native_rows(path, start, end):
++    result = []
++    cursor = start
++    for line in path.read_text().splitlines():
++        match = re.match(r'^\s*([0-9a-fA-F]+):\s+((?:[0-9a-fA-F]{2}\s+)+)(.*)$', line)
++        if match:
++            va = int(match.group(1), 16)
++            raw = bytes.fromhex(match.group(2))
++            require(va == cursor, 'native row gap/overlap')
++            result.append((va, raw, match.group(3)))
++            cursor += len(raw)
++    require(cursor == end, 'incomplete native body')
++    return result
++
++
++def decoded(root, target, start, end, label, expected):
++    gnu = command(root, label+'-gnu', ['objdump','-d','-z','--insn-width=16',f'--start-address={hex(start)}',f'--stop-address={hex(end)}',str(target)])
++    llvm = command(root, label+'-llvm', ['llvm-objdump','-d','--disassemble-zeroes',f'--start-address={hex(start)}',f'--stop-address={hex(end)}',str(target)])
++    a,b = native_rows(gnu,start,end), native_rows(llvm,start,end)
++    require([(r[0],r[1]) for r in a] == [(r[0],r[1]) for r in b], 'GNU/LLVM instruction disagreement')
++    require(b''.join(r[1] for r in a) == expected, 'native bytes disagree with authenticated capture')
++    return {va: {'bytes': raw.hex(), 'instruction': instruction} for va,raw,instruction in a}
++
++
++def fdes(path):
++    rows = []
++    with path.open() as stream:
++        for line in stream:
++            match = FDE_HEADER.search(line)
++            if match:
++                off,start,end = (int(v,16) for v in match.groups())
++                require(end >= start, 'FDE negative extent')
++                rows.append((off,start,end))
++    require(len(rows) == 135313, 'FDE inventory differs from frozen target')
++    return rows
++
++
++def analyze(root, parent_namespace):
++    global DEADLINE
++    DEADLINE = time.monotonic()+390
++    resource.setrlimit(resource.RLIMIT_CORE, (0,0))
++    resource.setrlimit(resource.RLIMIT_FSIZE, (512000000,512000000))
++    status = dict(line.split(':',1) for line in Path('/proc/self/status').read_text().splitlines() if ':' in line)
++    caps = {k:status[k].strip() for k in ['CapInh','CapPrm','CapEff','CapBnd','CapAmb']}
++    interfaces = [line.split(':',1)[0].strip() for line in Path('/proc/net/dev').read_text().splitlines()[2:]]
++    require(os.getuid() == os.getgid() == 65534 and os.getgroups() == [], 'rootless identity')
++    require(all(int(v,16) == 0 for v in caps.values()) and status['NoNewPrivs'].strip() == '1', 'capability isolation')
++    require(os.readlink('/proc/self/ns/net') != parent_namespace and interfaces == ['lo'], 'offline namespace')
++    for name in ['frozen','target','bin']:
++        require(os.statvfs(root/name).f_flag & os.ST_RDONLY, 'input not readonly')
++    require(os.statvfs(root/'target').f_flag & os.ST_NOEXEC and os.statvfs(root/'work').f_flag & os.ST_NOEXEC, 'noexec mounts')
++    target = root/'target/hl-node'
++    require(not os.access(target,os.X_OK), 'capture executable')
++    save(root,'qualification.json',{'uid':os.getuid(),'gid':os.getgid(),'groups':os.getgroups(),'capabilities':caps,
++        'no_new_privs':1,'interfaces':interfaces,'network_isolated':True,'target_readonly_nonexecutable':True,
++        'frozen_readonly':True,'work_noexec':True,'parent_namespace':parent_namespace,
++        'analysis_namespace':os.readlink('/proc/self/ns/net')})
++    data = target.read_bytes()
++    authenticate(data)
++    rows = sections(data)
++    selected,section = body(data,rows,START,END)
++    require(section['flags'] & 4 and digest(selected) == BODY_SHA, 'selected body mismatch')
++    controls = {}
++    for label, changed in [('truncated_capture_rejected',data[:-1]), ('modified_capture_rejected',data[:-1]+bytes([data[-1]^1]))]:
++        try:
++            authenticate(changed)
++        except ValueError:
++            controls[label] = True
++        else:
++            controls[label] = False
++    controls['changed_selected_body_rejected'] = digest(bytes([selected[0]^1])+selected[1:]) != BODY_SHA
++    require(all(controls.values()), 'identity control accepted mutation')
++    save(root,'controls.json',controls)
++    save(root,'commands.json',{})
++    versions = {}
++    for name in ['objdump','readelf','llvm-objdump','llvm-dwarfdump']:
++        path = command(root,'version-'+name,[name,'--version'])
++        versions[name] = path.read_text().splitlines()[0]
++    versions['python'] = sys.version
++    save(root,'versions.json',versions)
++    native = decoded(root,target,START,END,'selected',selected)
++    require(len(native) == 70, 'selected instruction partition changed')
++    gnu = command(root,'all-fdes-gnu',['readelf','--debug-dump=frames-interp',str(target)],large=True)
++    llvm = command(root,'all-fdes-llvm',['llvm-dwarfdump','--eh-frame',str(target)],large=True)
++    fa,fb = fdes(gnu),fdes(llvm)
++    require(collections.Counter(fa) == collections.Counter(fb), 'native FDE-bound disagreement')
++    require((0xcbef8,START,END) in fa, 'selected FDE missing')
++    intervals = sorted(set((a,b) for _,a,b in fa if b>a))
++    direct, slots, rip = [], [], []
++    for section in rows:
++        if section['type'] == 4:
++            require(section['step'] == 24 and section['size']%24 == 0, 'RELA stride')
++            for at in range(section['offset'],section['offset']+section['size'],24):
++                slot,info,addend = struct.unpack_from('<QQq',data,at)
++                if info & 0xffffffff == 8 and addend == START:
++                    slots.append({'slot':hex(slot),'type':8,'addend':hex(addend),'relocation_file_offset':hex(at)})
++        if section['type'] != 8 and section['flags'] & 4:
++            raw = data[section['offset']:section['offset']+section['size']]
++            at = raw.find(b'\xe8')
++            while at >= 0:
++                if at+5 <= len(raw) and section['va']+at+5+struct.unpack_from('<i',raw,at+1)[0] == START:
++                    direct.append({'kind':'E8-rel32','site':hex(section['va']+at),'destination':hex(START),'bytes':raw[at:at+5].hex()})
++                at = raw.find(b'\xe8',at+1)
++    require(len(slots) <= 64 and len(direct) <= 128, 'incoming-reference census bound')
++    destinations = {START} | {int(r['slot'],16)+delta for r in slots for delta in [0,-8,-16,-24,-32]}
++    for section in rows:
++        if section['type'] == 8 or not section['flags'] & 4:
++            continue
++        raw = data[section['offset']:section['offset']+section['size']]
++        for opcode in [0x8b,0x8d,0xff]:
++            at = raw.find(bytes([opcode]))
++            while at >= 0:
++                if at+6 <= len(raw) and raw[at+1] & 0xc7 == 5:
++                    destination = section['va']+at+6+struct.unpack_from('<i',raw,at+2)[0]
++                    if destination in destinations:
++                        starts = [at]
++                        if at and 0x40 <= raw[at-1] <= 0x4f:
++                            starts.append(at-1)
++                        for start in starts:
++                            rip.append({'kind':'RIP-MOV-LEA-FF','site':hex(section['va']+start),'destination':hex(destination),
++                                'relation':'function entry or pointer slot / possible table base within 32 preceding bytes',
++                                'bytes':raw[start:at+6].hex()})
++                at = raw.find(bytes([opcode]),at+1)
++    require(len(rip) <= 128, 'RIP candidate bound')
++    candidates = sorted(direct+rip,key=lambda r:(int(r['site'],16),r['kind'],r['bytes']))
++    cache = {}
++    for row in candidates:
++        site = int(row['site'],16)
++        owners = [(a,b) for a,b in intervals if a <= site < b]
++        row['fde_owners'] = [[hex(a),hex(b)] for a,b in owners]
++        row['native_qualified'] = False
++        if len(owners) != 1:
++            row['limitation'] = 'no unique FDE interval'
++            continue
++        a,b = owners[0]
++        if b-a > 16384 or ((a,b) not in cache and len(cache) >= 8):
++            row['limitation'] = 'caller export cap: at most 8 intervals of at most 16 KiB each'
++            continue
++        if (a,b) not in cache:
++            chunk, owner_section = body(data,rows,a,b)
++            require(owner_section['flags'] & 4, 'caller outside executable section')
++            cache[(a,b)] = decoded(root,target,a,b,'caller-'+hex(a),chunk)
++        instruction = cache[(a,b)].get(site)
++        row['native_qualified'] = bool(instruction and instruction['bytes'] == row['bytes'])
++        if instruction:
++            row['decoded_instruction'] = instruction
++    for row in slots:
++        address = int(row['slot'],16)
++        found = [r for r in rows if r['type'] != 8 and r['va'] <= address-32 and address+64 <= r['va']+r['size']]
++        if len(found) == 1:
++            context,_ = body(data,rows,address-32,address+64)
++            row['file_context'] = {'start':hex(address-32),'hex':context.hex(),'sha256':digest(context),
++                                  'meaning':'file bytes before loader relocation; no inferred runtime layout'}
++    save(root,'incoming-references.json',{'base':BASE,'target_start':hex(START),'target_end':hex(END),
++        'target_body_sha256':BODY_SHA,'direct_E8_candidates':direct,'relative_pointer_slots':slots,
++        'instruction_candidates':candidates,'native_qualified_candidates':sum(r['native_qualified'] for r in candidates),
++        'exported_caller_intervals':len(cache),'full_FDE_headers_agree':True,'FDE_records':len(fa),
++        'scope_limitations':['E8 rel32 only for direct calls','R_X86_64_RELATIVE exact addends only for slots',
++            'RIP MOV/LEA/FF candidates with at most one REX prefix; no whole-ISA xref claim',
++            'Addresses before pointer slots are candidate table bases only; no type/layout is assigned',
++            'At most eight complete caller FDE intervals of at most 16 KiB each',
++            'No arbitrary register-computed targets, runtime dispatch or source/type identity inferred']})
++    require(file_digest(target) == TARGET_SHA, 'capture changed')
++    require(sum(p.stat().st_size for p in (root/'output').iterdir() if p.is_file()) < 8000000, 'receipt output budget')
++    save(root,'result.json',{'completed':True,'base':BASE,'target_sha256':TARGET_SHA,'target_bytes':TARGET_SIZE,
++        'body_sha256':BODY_SHA,'selected_native_instruction_rows':70,'full_FDE_headers_agree':True,
++        'controls':controls,'caller_intervals_exported':len(cache),'raw_E8_candidates':len(direct),
++        'relative_pointer_slots':len(slots),'native_qualified_candidates':sum(r['native_qualified'] for r in candidates),
++        'source_owner':'unresolved; interpret incoming-reference receipts before any attribution',
++        'captured_code_executed':False,'compiler_installed':False,'repository_code_executed':False})
++
++
++def collect(root, destination):
++    destination.mkdir(parents=True,exist_ok=True)
++    files = list((root/'output').iterdir())
++    require(all(p.is_file() and not p.is_symlink() and p.suffix in ['.json','.log'] for p in files), 'receipt file types')
++    total = sum(p.stat().st_size for p in files)
++    if total >= 8000000 or len(files) > 45:
++        record = {'error':'receipt output exceeded approved bound; full payload omitted', 'output_bytes':total,
++                  'files':{p.name:{'bytes':p.stat().st_size,'sha256':file_digest(p)} for p in files}}
++        (destination/'collection-error.json').write_text(json.dumps(record,indent=2)+'\n')
++        return
++    for path in files:
++        shutil.copy2(path,destination/path.name)
++
++
++if __name__ == '__main__':
++    require(sys.platform == 'linux', 'hosted Linux probe only; never execute this controller on the Mac')
++    root = Path(sys.argv[2]).resolve()
++    try:
++        if sys.argv[1] == 'prepare':
++            prepare(root)
++        elif sys.argv[1] == 'collect':
++            collect(root,Path(sys.argv[3]).resolve())
++        else:
++            require(sys.argv[1] == 'analyze', 'mode')
++            analyze(root,sys.argv[3])
++    except Exception as error:
++        save(root,'controller-error.json',{'type':type(error).__name__,'detail':str(error)[:1500]})
++        raise
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/r11-owner.yml.txt b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/r11-owner.yml.txt
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/producer/r11-owner.yml.txt
+@@ -0,0 +1,22 @@
++name: Node115 bounded R11 source-ownership references
++on:
++  push:
++    branches: [research-validation/node115-r11-owner-20261110]
++permissions:
++  contents: read
++jobs:
++  inspect:
++    runs-on: ubuntu-24.04
++    timeout-minutes: 10
++    steps:
++      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
++        with:
++          persist-credentials: false
++      - name: Authenticate capture and inspect bounded references offline
++        run: bash payload/bootstrap.sh
++      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
++        if: always()
++        with:
++          name: node115-r11-owner-receipts
++          path: probe-receipts/
++          retention-days: 7
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipt-index.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipt-index.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipt-index.json
+@@ -0,0 +1,24 @@
++{
++  "artifact_id": 13795304709,
++  "archive_sha256": "afd39ba2017d3c261aa6298a5bde7b0700099c18dce14302dd13516b3198a9bc",
++  "archive_bytes": 11412,
++  "files": {
++    "caller-0x250ecd0-gnu.log": "da8550443a5af52add127a6d8352ce4baad420e710c733f3ad7557afbce0b1b6",
++    "caller-0x250ecd0-llvm.log": "27c377ce6cb2ae170fd24b2df9602ff7deff0b5661603f10ee771a4aec58c14b",
++    "controls.json": "8caa79956172227d2248f9df609b1d727c3d79f17ba99c11f60d7830e1d375f5",
++    "commands.json": "1f7c54bdc8c6c2b43857176358af36efd32b6da65a2facd7fc1277403c4fc188",
++    "incoming-references.json": "874f1e2f65ffcadc1ca8426e96fc5940d550105bbe6523e0d8ed63cbf9a42277",
++    "prepared.json": "900e852c450a92b5514c7867df6cef6e72136a54ef4a8ea68deb234a88317799",
++    "qualification.json": "8108e9085297891a557bab9f59a9d390cd955349fac3d63fbcebfb78bb390ba0",
++    "result.json": "59606e4d7793552d8ae1efb397e11b7c74f1e40d6e8349064eb16666aab7c6fa",
++    "selected-gnu.log": "13e41bf1aa2e951ef777cee3608bf7cd8fedfeb97d212068ee5d67d719773b8d",
++    "selected-llvm.log": "d68a05b71cb809b344c8fde48e7cd6d69137231dbfe26bf9d53974b3f5a20d6c",
++    "version-llvm-dwarfdump.log": "cfb9286322cccef53a692448cf4007a998d186dfb8e8313d317390a95eeb10f1",
++    "version-llvm-objdump.log": "51392c170c10af97eef3453dc5fcdf5c978f7413c95106fd742cc2474d6efa99",
++    "version-objdump.log": "8feb2cb2830955a0c282e6abca2b512dcf52cb9380e6b0263a481bf1c6349d8d",
++    "version-readelf.log": "6aca4321453ac381865f3d353ea7896b150c05026483cb9db0047eee6916723d",
++    "versions.json": "5e68da0b2184d79dc47d262a66f2aa11c01e2dd2ee1020e8cbf2948906cc9a55"
++  },
++  "download_method": "GitHub connector artifact file reference",
++  "expanded_bytes": 38278
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/caller-0x250ecd0-gnu.log b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/caller-0x250ecd0-gnu.log
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/caller-0x250ecd0-gnu.log
+@@ -0,0 +1,107 @@
++
++/tmp/node115-r11-bmWHHA3N/target/hl-node:     file format elf64-x86-64
++
++
++Disassembly of section .text:
++
++000000000250ecd0 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3839760>:
++ 250ecd0:	55                                              	push   %rbp
++ 250ecd1:	41 57                                           	push   %r15
++ 250ecd3:	41 56                                           	push   %r14
++ 250ecd5:	41 55                                           	push   %r13
++ 250ecd7:	41 54                                           	push   %r12
++ 250ecd9:	53                                              	push   %rbx
++ 250ecda:	50                                              	push   %rax
++ 250ecdb:	48 8b 07                                        	mov    (%rdi),%rax
++ 250ecde:	48 8b 00                                        	mov    (%rax),%rax
++ 250ece1:	48 8b 28                                        	mov    (%rax),%rbp
++ 250ece4:	80 7d 00 01                                     	cmpb   $0x1,0x0(%rbp)
++ 250ece8:	0f 84 3d 01 00 00                               	je     250ee2b <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3839605>
++ 250ecee:	49 89 d7                                        	mov    %rdx,%r15
++ 250ecf1:	49 89 f4                                        	mov    %rsi,%r12
++ 250ecf4:	4c 8b 71 08                                     	mov    0x8(%rcx),%r14
++ 250ecf8:	4c 8b 69 10                                     	mov    0x10(%rcx),%r13
++ 250ecfc:	48 8b 5d 08                                     	mov    0x8(%rbp),%rbx
++ 250ed00:	80 7d 01 01                                     	cmpb   $0x1,0x1(%rbp)
++ 250ed04:	74 1d                                           	je     250ed23 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x383970d>
++ 250ed06:	48 8d 35 47 27 0e fe                            	lea    -0x1f1d8b9(%rip),%rsi        # 5f1454 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x5756fdc>
++ 250ed0d:	ba 01 00 00 00                                  	mov    $0x1,%edx
++ 250ed12:	48 89 df                                        	mov    %rbx,%rdi
++ 250ed15:	e8 56 42 de ff                                  	call   22f2f70 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3a554c0>
++ 250ed1a:	48 85 c0                                        	test   %rax,%rax
++ 250ed1d:	0f 85 f1 00 00 00                               	jne    250ee14 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x383961c>
++ 250ed23:	c6 45 01 02                                     	movb   $0x2,0x1(%rbp)
++ 250ed27:	48 89 df                                        	mov    %rbx,%rdi
++ 250ed2a:	4c 89 e2                                        	mov    %r12,%rdx
++ 250ed2d:	4c 89 f9                                        	mov    %r15,%rcx
++ 250ed30:	e8 2b 04 0b 00                                  	call   25bf160 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x37892d0>
++ 250ed35:	48 85 c0                                        	test   %rax,%rax
++ 250ed38:	0f 85 d6 00 00 00                               	jne    250ee14 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x383961c>
++ 250ed3e:	48 8d 35 10 27 0e fe                            	lea    -0x1f1d8f0(%rip),%rsi        # 5f1455 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x5756fdb>
++ 250ed45:	ba 01 00 00 00                                  	mov    $0x1,%edx
++ 250ed4a:	48 89 df                                        	mov    %rbx,%rdi
++ 250ed4d:	e8 1e 42 de ff                                  	call   22f2f70 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3a554c0>
++ 250ed52:	48 85 c0                                        	test   %rax,%rax
++ 250ed55:	0f 85 b9 00 00 00                               	jne    250ee14 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x383961c>
++ 250ed5b:	48 8d 35 f0 26 0e fe                            	lea    -0x1f1d910(%rip),%rsi        # 5f1452 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x5756fde>
++ 250ed62:	ba 01 00 00 00                                  	mov    $0x1,%edx
++ 250ed67:	48 89 df                                        	mov    %rbx,%rdi
++ 250ed6a:	e8 01 42 de ff                                  	call   22f2f70 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3a554c0>
++ 250ed6f:	48 85 c0                                        	test   %rax,%rax
++ 250ed72:	0f 85 9c 00 00 00                               	jne    250ee14 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x383961c>
++ 250ed78:	4d 85 ed                                        	test   %r13,%r13
++ 250ed7b:	74 6d                                           	je     250edea <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3839646>
++ 250ed7d:	4c 89 f7                                        	mov    %r14,%rdi
++ 250ed80:	48 89 de                                        	mov    %rbx,%rsi
++ 250ed83:	e8 b8 c1 47 00                                  	call   298af40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4f0>
++ 250ed88:	48 85 c0                                        	test   %rax,%rax
++ 250ed8b:	75 78                                           	jne    250ee05 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x383962b>
++ 250ed8d:	49 c1 e5 11                                     	shl    $0x11,%r13
++ 250ed91:	49 81 c6 00 00 02 00                            	add    $0x20000,%r14
++ 250ed98:	49 81 c5 00 00 fe ff                            	add    $0xfffffffffffe0000,%r13
++ 250ed9f:	4c 8d 3d ae 26 0e fe                            	lea    -0x1f1d952(%rip),%r15        # 5f1454 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x5756fdc>
++ 250eda6:	66 2e 0f 1f 84 00 00 00 00 00                   	cs nopw 0x0(%rax,%rax,1)
++ 250edb0:	4d 85 ed                                        	test   %r13,%r13
++ 250edb3:	74 35                                           	je     250edea <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3839646>
++ 250edb5:	ba 01 00 00 00                                  	mov    $0x1,%edx
++ 250edba:	48 89 df                                        	mov    %rbx,%rdi
++ 250edbd:	4c 89 fe                                        	mov    %r15,%rsi
++ 250edc0:	e8 ab 41 de ff                                  	call   22f2f70 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3a554c0>
++ 250edc5:	48 85 c0                                        	test   %rax,%rax
++ 250edc8:	75 4a                                           	jne    250ee14 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x383961c>
++ 250edca:	4c 89 f7                                        	mov    %r14,%rdi
++ 250edcd:	48 89 de                                        	mov    %rbx,%rsi
++ 250edd0:	e8 6b c1 47 00                                  	call   298af40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4f0>
++ 250edd5:	49 81 c6 00 00 02 00                            	add    $0x20000,%r14
++ 250eddc:	49 81 c5 00 00 fe ff                            	add    $0xfffffffffffe0000,%r13
++ 250ede3:	48 85 c0                                        	test   %rax,%rax
++ 250ede6:	74 c8                                           	je     250edb0 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3839680>
++ 250ede8:	eb 1b                                           	jmp    250ee05 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x383962b>
++ 250edea:	48 8d 35 65 26 0e fe                            	lea    -0x1f1d99b(%rip),%rsi        # 5f1456 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x5756fda>
++ 250edf1:	ba 01 00 00 00                                  	mov    $0x1,%edx
++ 250edf6:	48 89 df                                        	mov    %rbx,%rdi
++ 250edf9:	e8 72 41 de ff                                  	call   22f2f70 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3a554c0>
++ 250edfe:	48 85 c0                                        	test   %rax,%rax
++ 250ee01:	75 11                                           	jne    250ee14 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x383961c>
++ 250ee03:	31 c0                                           	xor    %eax,%eax
++ 250ee05:	48 83 c4 08                                     	add    $0x8,%rsp
++ 250ee09:	5b                                              	pop    %rbx
++ 250ee0a:	41 5c                                           	pop    %r12
++ 250ee0c:	41 5d                                           	pop    %r13
++ 250ee0e:	41 5e                                           	pop    %r14
++ 250ee10:	41 5f                                           	pop    %r15
++ 250ee12:	5d                                              	pop    %rbp
++ 250ee13:	c3                                              	ret
++ 250ee14:	48 89 c7                                        	mov    %rax,%rdi
++ 250ee17:	48 83 c4 08                                     	add    $0x8,%rsp
++ 250ee1b:	5b                                              	pop    %rbx
++ 250ee1c:	41 5c                                           	pop    %r12
++ 250ee1e:	41 5d                                           	pop    %r13
++ 250ee20:	41 5e                                           	pop    %r14
++ 250ee22:	41 5f                                           	pop    %r15
++ 250ee24:	5d                                              	pop    %rbp
++ 250ee25:	ff 25 9d 25 fd 03                               	jmp    *0x3fd259d(%rip)        # 64e13c8 <__register_atfork@plt+0xef838>
++ 250ee2b:	48 8d 3d 35 33 0e fe                            	lea    -0x1f1cccb(%rip),%rdi        # 5f2167 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x57562c9>
++ 250ee32:	48 8d 15 5f 4d f2 03                            	lea    0x3f24d5f(%rip),%rdx        # 6433b98 <__register_atfork@plt+0x42008>
++ 250ee39:	be 28 00 00 00                                  	mov    $0x28,%esi
++ 250ee3e:	ff 15 ec 08 fd 03                               	call   *0x3fd08ec(%rip)        # 64df730 <__register_atfork@plt+0xedba0>
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/caller-0x250ecd0-llvm.log b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/caller-0x250ecd0-llvm.log
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/caller-0x250ecd0-llvm.log
+@@ -0,0 +1,106 @@
++
++/tmp/node115-r11-bmWHHA3N/target/hl-node:	file format elf64-x86-64
++
++Disassembly of section .text:
++
++0000000001419300 <.text>:
++ 250ecd0: 55                           	pushq	%rbp
++ 250ecd1: 41 57                        	pushq	%r15
++ 250ecd3: 41 56                        	pushq	%r14
++ 250ecd5: 41 55                        	pushq	%r13
++ 250ecd7: 41 54                        	pushq	%r12
++ 250ecd9: 53                           	pushq	%rbx
++ 250ecda: 50                           	pushq	%rax
++ 250ecdb: 48 8b 07                     	movq	(%rdi), %rax
++ 250ecde: 48 8b 00                     	movq	(%rax), %rax
++ 250ece1: 48 8b 28                     	movq	(%rax), %rbp
++ 250ece4: 80 7d 00 01                  	cmpb	$0x1, (%rbp)
++ 250ece8: 0f 84 3d 01 00 00            	je	0x250ee2b <.text+0x10f5b2b>
++ 250ecee: 49 89 d7                     	movq	%rdx, %r15
++ 250ecf1: 49 89 f4                     	movq	%rsi, %r12
++ 250ecf4: 4c 8b 71 08                  	movq	0x8(%rcx), %r14
++ 250ecf8: 4c 8b 69 10                  	movq	0x10(%rcx), %r13
++ 250ecfc: 48 8b 5d 08                  	movq	0x8(%rbp), %rbx
++ 250ed00: 80 7d 01 01                  	cmpb	$0x1, 0x1(%rbp)
++ 250ed04: 74 1d                        	je	0x250ed23 <.text+0x10f5a23>
++ 250ed06: 48 8d 35 47 27 0e fe         	leaq	-0x1f1d8b9(%rip), %rsi  # 0x5f1454
++ 250ed0d: ba 01 00 00 00               	movl	$0x1, %edx
++ 250ed12: 48 89 df                     	movq	%rbx, %rdi
++ 250ed15: e8 56 42 de ff               	callq	0x22f2f70 <.text+0xed9c70>
++ 250ed1a: 48 85 c0                     	testq	%rax, %rax
++ 250ed1d: 0f 85 f1 00 00 00            	jne	0x250ee14 <.text+0x10f5b14>
++ 250ed23: c6 45 01 02                  	movb	$0x2, 0x1(%rbp)
++ 250ed27: 48 89 df                     	movq	%rbx, %rdi
++ 250ed2a: 4c 89 e2                     	movq	%r12, %rdx
++ 250ed2d: 4c 89 f9                     	movq	%r15, %rcx
++ 250ed30: e8 2b 04 0b 00               	callq	0x25bf160 <.text+0x11a5e60>
++ 250ed35: 48 85 c0                     	testq	%rax, %rax
++ 250ed38: 0f 85 d6 00 00 00            	jne	0x250ee14 <.text+0x10f5b14>
++ 250ed3e: 48 8d 35 10 27 0e fe         	leaq	-0x1f1d8f0(%rip), %rsi  # 0x5f1455
++ 250ed45: ba 01 00 00 00               	movl	$0x1, %edx
++ 250ed4a: 48 89 df                     	movq	%rbx, %rdi
++ 250ed4d: e8 1e 42 de ff               	callq	0x22f2f70 <.text+0xed9c70>
++ 250ed52: 48 85 c0                     	testq	%rax, %rax
++ 250ed55: 0f 85 b9 00 00 00            	jne	0x250ee14 <.text+0x10f5b14>
++ 250ed5b: 48 8d 35 f0 26 0e fe         	leaq	-0x1f1d910(%rip), %rsi  # 0x5f1452
++ 250ed62: ba 01 00 00 00               	movl	$0x1, %edx
++ 250ed67: 48 89 df                     	movq	%rbx, %rdi
++ 250ed6a: e8 01 42 de ff               	callq	0x22f2f70 <.text+0xed9c70>
++ 250ed6f: 48 85 c0                     	testq	%rax, %rax
++ 250ed72: 0f 85 9c 00 00 00            	jne	0x250ee14 <.text+0x10f5b14>
++ 250ed78: 4d 85 ed                     	testq	%r13, %r13
++ 250ed7b: 74 6d                        	je	0x250edea <.text+0x10f5aea>
++ 250ed7d: 4c 89 f7                     	movq	%r14, %rdi
++ 250ed80: 48 89 de                     	movq	%rbx, %rsi
++ 250ed83: e8 b8 c1 47 00               	callq	0x298af40 <.text+0x1571c40>
++ 250ed88: 48 85 c0                     	testq	%rax, %rax
++ 250ed8b: 75 78                        	jne	0x250ee05 <.text+0x10f5b05>
++ 250ed8d: 49 c1 e5 11                  	shlq	$0x11, %r13
++ 250ed91: 49 81 c6 00 00 02 00         	addq	$0x20000, %r14          # imm = 0x20000
++ 250ed98: 49 81 c5 00 00 fe ff         	addq	$-0x20000, %r13         # imm = 0xFFFE0000
++ 250ed9f: 4c 8d 3d ae 26 0e fe         	leaq	-0x1f1d952(%rip), %r15  # 0x5f1454
++ 250eda6: 66 2e 0f 1f 84 00 00 00 00 00	nopw	%cs:(%rax,%rax)
++ 250edb0: 4d 85 ed                     	testq	%r13, %r13
++ 250edb3: 74 35                        	je	0x250edea <.text+0x10f5aea>
++ 250edb5: ba 01 00 00 00               	movl	$0x1, %edx
++ 250edba: 48 89 df                     	movq	%rbx, %rdi
++ 250edbd: 4c 89 fe                     	movq	%r15, %rsi
++ 250edc0: e8 ab 41 de ff               	callq	0x22f2f70 <.text+0xed9c70>
++ 250edc5: 48 85 c0                     	testq	%rax, %rax
++ 250edc8: 75 4a                        	jne	0x250ee14 <.text+0x10f5b14>
++ 250edca: 4c 89 f7                     	movq	%r14, %rdi
++ 250edcd: 48 89 de                     	movq	%rbx, %rsi
++ 250edd0: e8 6b c1 47 00               	callq	0x298af40 <.text+0x1571c40>
++ 250edd5: 49 81 c6 00 00 02 00         	addq	$0x20000, %r14          # imm = 0x20000
++ 250eddc: 49 81 c5 00 00 fe ff         	addq	$-0x20000, %r13         # imm = 0xFFFE0000
++ 250ede3: 48 85 c0                     	testq	%rax, %rax
++ 250ede6: 74 c8                        	je	0x250edb0 <.text+0x10f5ab0>
++ 250ede8: eb 1b                        	jmp	0x250ee05 <.text+0x10f5b05>
++ 250edea: 48 8d 35 65 26 0e fe         	leaq	-0x1f1d99b(%rip), %rsi  # 0x5f1456
++ 250edf1: ba 01 00 00 00               	movl	$0x1, %edx
++ 250edf6: 48 89 df                     	movq	%rbx, %rdi
++ 250edf9: e8 72 41 de ff               	callq	0x22f2f70 <.text+0xed9c70>
++ 250edfe: 48 85 c0                     	testq	%rax, %rax
++ 250ee01: 75 11                        	jne	0x250ee14 <.text+0x10f5b14>
++ 250ee03: 31 c0                        	xorl	%eax, %eax
++ 250ee05: 48 83 c4 08                  	addq	$0x8, %rsp
++ 250ee09: 5b                           	popq	%rbx
++ 250ee0a: 41 5c                        	popq	%r12
++ 250ee0c: 41 5d                        	popq	%r13
++ 250ee0e: 41 5e                        	popq	%r14
++ 250ee10: 41 5f                        	popq	%r15
++ 250ee12: 5d                           	popq	%rbp
++ 250ee13: c3                           	retq
++ 250ee14: 48 89 c7                     	movq	%rax, %rdi
++ 250ee17: 48 83 c4 08                  	addq	$0x8, %rsp
++ 250ee1b: 5b                           	popq	%rbx
++ 250ee1c: 41 5c                        	popq	%r12
++ 250ee1e: 41 5d                        	popq	%r13
++ 250ee20: 41 5e                        	popq	%r14
++ 250ee22: 41 5f                        	popq	%r15
++ 250ee24: 5d                           	popq	%rbp
++ 250ee25: ff 25 9d 25 fd 03            	jmpq	*0x3fd259d(%rip)        # 0x64e13c8
++ 250ee2b: 48 8d 3d 35 33 0e fe         	leaq	-0x1f1cccb(%rip), %rdi  # 0x5f2167
++ 250ee32: 48 8d 15 5f 4d f2 03         	leaq	0x3f24d5f(%rip), %rdx   # 0x6433b98
++ 250ee39: be 28 00 00 00               	movl	$0x28, %esi
++ 250ee3e: ff 15 ec 08 fd 03            	callq	*0x3fd08ec(%rip)        # 0x64df730
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/commands.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/commands.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/commands.json
+@@ -0,0 +1,142 @@
++{
++  "version-objdump": {
++    "argv": [
++      "objdump",
++      "--version"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 288,
++    "stdout_sha256": "8feb2cb2830955a0c282e6abca2b512dcf52cb9380e6b0263a481bf1c6349d8d",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": true
++  },
++  "version-readelf": {
++    "argv": [
++      "readelf",
++      "--version"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 288,
++    "stdout_sha256": "6aca4321453ac381865f3d353ea7896b150c05026483cb9db0047eee6916723d",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": true
++  },
++  "version-llvm-objdump": {
++    "argv": [
++      "llvm-objdump",
++      "--version"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 1613,
++    "stdout_sha256": "51392c170c10af97eef3453dc5fcdf5c978f7413c95106fd742cc2474d6efa99",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": true
++  },
++  "version-llvm-dwarfdump": {
++    "argv": [
++      "llvm-dwarfdump",
++      "--version"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 46,
++    "stdout_sha256": "cfb9286322cccef53a692448cf4007a998d186dfb8e8313d317390a95eeb10f1",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": true
++  },
++  "selected-gnu": {
++    "argv": [
++      "objdump",
++      "-d",
++      "-z",
++      "--insn-width=16",
++      "--start-address=0x298af40",
++      "--stop-address=0x298b04d",
++      "/tmp/node115-r11-bmWHHA3N/target/hl-node"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 6349,
++    "stdout_sha256": "13e41bf1aa2e951ef777cee3608bf7cd8fedfeb97d212068ee5d67d719773b8d",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": true
++  },
++  "selected-llvm": {
++    "argv": [
++      "llvm-objdump",
++      "-d",
++      "--disassemble-zeroes",
++      "--start-address=0x298af40",
++      "--stop-address=0x298b04d",
++      "/tmp/node115-r11-bmWHHA3N/target/hl-node"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 4707,
++    "stdout_sha256": "d68a05b71cb809b344c8fde48e7cd6d69137231dbfe26bf9d53974b3f5a20d6c",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": true
++  },
++  "all-fdes-gnu": {
++    "argv": [
++      "readelf",
++      "--debug-dump=frames-interp",
++      "/tmp/node115-r11-bmWHHA3N/target/hl-node"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 103141954,
++    "stdout_sha256": "f095847871e72cafb91f755be8df85e033ede745d7148553331937bdfc6e5cb9",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": false
++  },
++  "all-fdes-llvm": {
++    "argv": [
++      "llvm-dwarfdump",
++      "--eh-frame",
++      "/tmp/node115-r11-bmWHHA3N/target/hl-node"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 206541780,
++    "stdout_sha256": "97be650a34275713b69b3ecede4566e4f5e305a9d6767cad1845ad58dba8dcc6",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": false
++  },
++  "caller-0x250ecd0-gnu": {
++    "argv": [
++      "objdump",
++      "-d",
++      "-z",
++      "--insn-width=16",
++      "--start-address=0x250ecd0",
++      "--stop-address=0x250ee44",
++      "/tmp/node115-r11-bmWHHA3N/target/hl-node"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 9258,
++    "stdout_sha256": "da8550443a5af52add127a6d8352ce4baad420e710c733f3ad7557afbce0b1b6",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": true
++  },
++  "caller-0x250ecd0-llvm": {
++    "argv": [
++      "llvm-objdump",
++      "-d",
++      "--disassemble-zeroes",
++      "--start-address=0x250ecd0",
++      "--stop-address=0x250ee44",
++      "/tmp/node115-r11-bmWHHA3N/target/hl-node"
++    ],
++    "exit_code": 0,
++    "stdout_bytes": 6343,
++    "stdout_sha256": "27c377ce6cb2ae170fd24b2df9602ff7deff0b5661603f10ee771a4aec58c14b",
++    "stderr_bytes": 0,
++    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
++    "full_stdout_retained": true
++  }
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/controls.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/controls.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/controls.json
+@@ -0,0 +1,5 @@
++{
++  "truncated_capture_rejected": true,
++  "modified_capture_rejected": true,
++  "changed_selected_body_rejected": true
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/incoming-references.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/incoming-references.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/incoming-references.json
+@@ -0,0 +1,91 @@
++{
++  "base": "a8616af9432b8d8517b2af677880e117b7c28ef3",
++  "target_start": "0x298af40",
++  "target_end": "0x298b04d",
++  "target_body_sha256": "9573b1ff5c818a9efc8f841b1b4d5c5627cc4f5c1b966de2220341b358e2d84c",
++  "direct_E8_candidates": [
++    {
++      "kind": "E8-rel32",
++      "site": "0x250ed83",
++      "destination": "0x298af40",
++      "bytes": "e8b8c14700",
++      "fde_owners": [
++        [
++          "0x250ecd0",
++          "0x250ee44"
++        ]
++      ],
++      "native_qualified": true,
++      "decoded_instruction": {
++        "bytes": "e8b8c14700",
++        "instruction": "call   298af40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4f0>"
++      }
++    },
++    {
++      "kind": "E8-rel32",
++      "site": "0x250edd0",
++      "destination": "0x298af40",
++      "bytes": "e86bc14700",
++      "fde_owners": [
++        [
++          "0x250ecd0",
++          "0x250ee44"
++        ]
++      ],
++      "native_qualified": true,
++      "decoded_instruction": {
++        "bytes": "e86bc14700",
++        "instruction": "call   298af40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4f0>"
++      }
++    }
++  ],
++  "relative_pointer_slots": [],
++  "instruction_candidates": [
++    {
++      "kind": "E8-rel32",
++      "site": "0x250ed83",
++      "destination": "0x298af40",
++      "bytes": "e8b8c14700",
++      "fde_owners": [
++        [
++          "0x250ecd0",
++          "0x250ee44"
++        ]
++      ],
++      "native_qualified": true,
++      "decoded_instruction": {
++        "bytes": "e8b8c14700",
++        "instruction": "call   298af40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4f0>"
++      }
++    },
++    {
++      "kind": "E8-rel32",
++      "site": "0x250edd0",
++      "destination": "0x298af40",
++      "bytes": "e86bc14700",
++      "fde_owners": [
++        [
++          "0x250ecd0",
++          "0x250ee44"
++        ]
++      ],
++      "native_qualified": true,
++      "decoded_instruction": {
++        "bytes": "e86bc14700",
++        "instruction": "call   298af40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4f0>"
++      }
++    }
++  ],
++  "native_qualified_candidates": 2,
++  "exported_caller_intervals": 1,
++  "full_FDE_headers_agree": true,
++  "FDE_records": 135313,
++  "scope_limitations": [
++    "E8 rel32 only for direct calls",
++    "R_X86_64_RELATIVE exact addends only for slots",
++    "RIP MOV/LEA/FF candidates with at most one REX prefix; no whole-ISA xref claim",
++    "Addresses before pointer slots are candidate table bases only; no type/layout is assigned",
++    "At most eight complete caller FDE intervals of at most 16 KiB each",
++    "No arbitrary register-computed targets, runtime dispatch or source/type identity inferred"
++  ]
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/prepared.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/prepared.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/prepared.json
+@@ -0,0 +1,16 @@
++{
++  "base": "a8616af9432b8d8517b2af677880e117b7c28ef3",
++  "capture_url": "https://media.githubusercontent.com/media/lalalune/hyperliquid-source/a8616af9432b8d8517b2af677880e117b7c28ef3/artifacts/node/115/hl-node",
++  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
++  "target_bytes": 105896032,
++  "tools": {
++    "objdump": "/usr/bin/x86_64-linux-gnu-objdump",
++    "readelf": "/usr/bin/x86_64-linux-gnu-readelf",
++    "timeout": "/usr/bin/timeout",
++    "llvm-objdump": "/usr/lib/llvm-18/bin/llvm-objdump",
++    "llvm-dwarfdump": "/usr/lib/llvm-18/bin/llvm-dwarfdump",
++    "python3": "/usr/bin/python3.12"
++  },
++  "packages_installed": false,
++  "compiler_installed": false
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/qualification.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/qualification.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/qualification.json
+@@ -0,0 +1,22 @@
++{
++  "uid": 65534,
++  "gid": 65534,
++  "groups": [],
++  "capabilities": {
++    "CapInh": "0000000000000000",
++    "CapPrm": "0000000000000000",
++    "CapEff": "0000000000000000",
++    "CapBnd": "0000000000000000",
++    "CapAmb": "0000000000000000"
++  },
++  "no_new_privs": 1,
++  "interfaces": [
++    "lo"
++  ],
++  "network_isolated": true,
++  "target_readonly_nonexecutable": true,
++  "frozen_readonly": true,
++  "work_noexec": true,
++  "parent_namespace": "net:[4026531833]",
++  "analysis_namespace": "net:[4026532316]"
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/result.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/result.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/result.json
+@@ -0,0 +1,22 @@
++{
++  "completed": true,
++  "base": "a8616af9432b8d8517b2af677880e117b7c28ef3",
++  "target_sha256": "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301",
++  "target_bytes": 105896032,
++  "body_sha256": "9573b1ff5c818a9efc8f841b1b4d5c5627cc4f5c1b966de2220341b358e2d84c",
++  "selected_native_instruction_rows": 70,
++  "full_FDE_headers_agree": true,
++  "controls": {
++    "truncated_capture_rejected": true,
++    "modified_capture_rejected": true,
++    "changed_selected_body_rejected": true
++  },
++  "caller_intervals_exported": 1,
++  "raw_E8_candidates": 2,
++  "relative_pointer_slots": 0,
++  "native_qualified_candidates": 2,
++  "source_owner": "unresolved; interpret incoming-reference receipts before any attribution",
++  "captured_code_executed": false,
++  "compiler_installed": false,
++  "repository_code_executed": false
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/selected-gnu.log b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/selected-gnu.log
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/selected-gnu.log
+@@ -0,0 +1,77 @@
++
++/tmp/node115-r11-bmWHHA3N/target/hl-node:     file format elf64-x86-64
++
++
++Disassembly of section .text:
++
++000000000298af40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4f0>:
++ 298af40:	41 57                                           	push   %r15
++ 298af42:	41 56                                           	push   %r14
++ 298af44:	53                                              	push   %rbx
++ 298af45:	49 89 e3                                        	mov    %rsp,%r11
++ 298af48:	49 81 eb 00 00 04 00                            	sub    $0x40000,%r11
++ 298af4f:	48 81 ec 00 10 00 00                            	sub    $0x1000,%rsp
++ 298af56:	48 c7 04 24 00 00 00 00                         	movq   $0x0,(%rsp)
++ 298af5e:	4c 39 dc                                        	cmp    %r11,%rsp
++ 298af61:	75 ec                                           	jne    298af4f <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd4e1>
++ 298af63:	48 83 ec 10                                     	sub    $0x10,%rsp
++ 298af67:	48 89 f3                                        	mov    %rsi,%rbx
++ 298af6a:	49 89 fe                                        	mov    %rdi,%r14
++ 298af6d:	4c 8d 7c 24 10                                  	lea    0x10(%rsp),%r15
++ 298af72:	ba 00 00 04 00                                  	mov    $0x40000,%edx
++ 298af77:	4c 89 ff                                        	mov    %r15,%rdi
++ 298af7a:	31 f6                                           	xor    %esi,%esi
++ 298af7c:	ff 15 ce 47 b5 03                               	call   *0x3b547ce(%rip)        # 64df750 <__register_atfork@plt+0xedbc0>
++ 298af82:	66 c7 44 24 0e 30 78                            	movw   $0x7830,0xe(%rsp)
++ 298af89:	48 8b 05 d0 4a b5 03                            	mov    0x3b54ad0(%rip),%rax        # 64dfa60 <__register_atfork@plt+0xeded0>
++ 298af90:	48 8b 00                                        	mov    (%rax),%rax
++ 298af93:	48 85 c0                                        	test   %rax,%rax
++ 298af96:	74 63                                           	je     298affb <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd435>
++ 298af98:	a9 00 02 00 00                                  	test   $0x200,%eax
++ 298af9d:	75 69                                           	jne    298b008 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd428>
++ 298af9f:	b8 01 00 00 00                                  	mov    $0x1,%eax
++ 298afa4:	48 8d 0d 95 ad ac fd                            	lea    -0x253526b(%rip),%rcx        # 455d40 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x58f26f0>
++ 298afab:	0f 1f 44 00 00                                  	nopl   0x0(%rax,%rax,1)
++ 298afb0:	41 0f b6 54 06 ff                               	movzbl -0x1(%r14,%rax,1),%edx
++ 298afb6:	89 d6                                           	mov    %edx,%esi
++ 298afb8:	83 e6 0f                                        	and    $0xf,%esi
++ 298afbb:	0f b6 34 0e                                     	movzbl (%rsi,%rcx,1),%esi
++ 298afbf:	c1 ea 04                                        	shr    $0x4,%edx
++ 298afc2:	0f b6 14 0a                                     	movzbl (%rdx,%rcx,1),%edx
++ 298afc6:	88 54 44 0e                                     	mov    %dl,0xe(%rsp,%rax,2)
++ 298afca:	40 88 74 44 0f                                  	mov    %sil,0xf(%rsp,%rax,2)
++ 298afcf:	41 0f b6 14 06                                  	movzbl (%r14,%rax,1),%edx
++ 298afd4:	89 d6                                           	mov    %edx,%esi
++ 298afd6:	83 e6 0f                                        	and    $0xf,%esi
++ 298afd9:	0f b6 34 0e                                     	movzbl (%rsi,%rcx,1),%esi
++ 298afdd:	c1 ea 04                                        	shr    $0x4,%edx
++ 298afe0:	0f b6 14 0a                                     	movzbl (%rdx,%rcx,1),%edx
++ 298afe4:	88 54 44 10                                     	mov    %dl,0x10(%rsp,%rax,2)
++ 298afe8:	40 88 74 44 11                                  	mov    %sil,0x11(%rsp,%rax,2)
++ 298afed:	48 83 c0 02                                     	add    $0x2,%rax
++ 298aff1:	48 3d 01 00 02 00                               	cmp    $0x20001,%rax
++ 298aff7:	75 b7                                           	jne    298afb0 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd480>
++ 298aff9:	eb 1d                                           	jmp    298b018 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd418>
++ 298affb:	ff 15 67 4a b5 03                               	call   *0x3b54a67(%rip)        # 64dfa68 <__register_atfork@plt+0xeded8>
++ 298b001:	a9 00 02 00 00                                  	test   $0x200,%eax
++ 298b006:	74 97                                           	je     298af9f <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd491>
++ 298b008:	be 00 00 02 00                                  	mov    $0x20000,%esi
++ 298b00d:	4c 89 f7                                        	mov    %r14,%rdi
++ 298b010:	4c 89 fa                                        	mov    %r15,%rdx
++ 298b013:	e8 78 67 0a 00                                  	call   2a31790 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x3316ca0>
++ 298b018:	48 8d 73 08                                     	lea    0x8(%rbx),%rsi
++ 298b01c:	48 8d 54 24 0e                                  	lea    0xe(%rsp),%rdx
++ 298b021:	b9 02 00 04 00                                  	mov    $0x40002,%ecx
++ 298b026:	48 89 df                                        	mov    %rbx,%rdi
++ 298b029:	e8 32 41 c3 ff                                  	call   25bf160 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x37892d0>
++ 298b02e:	48 85 c0                                        	test   %rax,%rax
++ 298b031:	75 0f                                           	jne    298b042 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd3ee>
++ 298b033:	31 c0                                           	xor    %eax,%eax
++ 298b035:	48 81 c4 10 00 04 00                            	add    $0x40010,%rsp
++ 298b03c:	5b                                              	pop    %rbx
++ 298b03d:	41 5e                                           	pop    %r14
++ 298b03f:	41 5f                                           	pop    %r15
++ 298b041:	c3                                              	ret
++ 298b042:	48 89 c7                                        	mov    %rax,%rdi
++ 298b045:	ff 15 7d 63 b5 03                               	call   *0x3b5637d(%rip)        # 64e13c8 <__register_atfork@plt+0xef838>
++ 298b04b:	eb e8                                           	jmp    298b035 <_ZNKSt5ctypeIcE8do_widenEc@@Base-0x33bd3fb>
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/selected-llvm.log b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/selected-llvm.log
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/selected-llvm.log
+@@ -0,0 +1,76 @@
++
++/tmp/node115-r11-bmWHHA3N/target/hl-node:	file format elf64-x86-64
++
++Disassembly of section .text:
++
++0000000001419300 <.text>:
++ 298af40: 41 57                        	pushq	%r15
++ 298af42: 41 56                        	pushq	%r14
++ 298af44: 53                           	pushq	%rbx
++ 298af45: 49 89 e3                     	movq	%rsp, %r11
++ 298af48: 49 81 eb 00 00 04 00         	subq	$0x40000, %r11          # imm = 0x40000
++ 298af4f: 48 81 ec 00 10 00 00         	subq	$0x1000, %rsp           # imm = 0x1000
++ 298af56: 48 c7 04 24 00 00 00 00      	movq	$0x0, (%rsp)
++ 298af5e: 4c 39 dc                     	cmpq	%r11, %rsp
++ 298af61: 75 ec                        	jne	0x298af4f <.text+0x1571c4f>
++ 298af63: 48 83 ec 10                  	subq	$0x10, %rsp
++ 298af67: 48 89 f3                     	movq	%rsi, %rbx
++ 298af6a: 49 89 fe                     	movq	%rdi, %r14
++ 298af6d: 4c 8d 7c 24 10               	leaq	0x10(%rsp), %r15
++ 298af72: ba 00 00 04 00               	movl	$0x40000, %edx          # imm = 0x40000
++ 298af77: 4c 89 ff                     	movq	%r15, %rdi
++ 298af7a: 31 f6                        	xorl	%esi, %esi
++ 298af7c: ff 15 ce 47 b5 03            	callq	*0x3b547ce(%rip)        # 0x64df750
++ 298af82: 66 c7 44 24 0e 30 78         	movw	$0x7830, 0xe(%rsp)      # imm = 0x7830
++ 298af89: 48 8b 05 d0 4a b5 03         	movq	0x3b54ad0(%rip), %rax   # 0x64dfa60
++ 298af90: 48 8b 00                     	movq	(%rax), %rax
++ 298af93: 48 85 c0                     	testq	%rax, %rax
++ 298af96: 74 63                        	je	0x298affb <.text+0x1571cfb>
++ 298af98: a9 00 02 00 00               	testl	$0x200, %eax            # imm = 0x200
++ 298af9d: 75 69                        	jne	0x298b008 <.text+0x1571d08>
++ 298af9f: b8 01 00 00 00               	movl	$0x1, %eax
++ 298afa4: 48 8d 0d 95 ad ac fd         	leaq	-0x253526b(%rip), %rcx  # 0x455d40
++ 298afab: 0f 1f 44 00 00               	nopl	(%rax,%rax)
++ 298afb0: 41 0f b6 54 06 ff            	movzbl	-0x1(%r14,%rax), %edx
++ 298afb6: 89 d6                        	movl	%edx, %esi
++ 298afb8: 83 e6 0f                     	andl	$0xf, %esi
++ 298afbb: 0f b6 34 0e                  	movzbl	(%rsi,%rcx), %esi
++ 298afbf: c1 ea 04                     	shrl	$0x4, %edx
++ 298afc2: 0f b6 14 0a                  	movzbl	(%rdx,%rcx), %edx
++ 298afc6: 88 54 44 0e                  	movb	%dl, 0xe(%rsp,%rax,2)
++ 298afca: 40 88 74 44 0f               	movb	%sil, 0xf(%rsp,%rax,2)
++ 298afcf: 41 0f b6 14 06               	movzbl	(%r14,%rax), %edx
++ 298afd4: 89 d6                        	movl	%edx, %esi
++ 298afd6: 83 e6 0f                     	andl	$0xf, %esi
++ 298afd9: 0f b6 34 0e                  	movzbl	(%rsi,%rcx), %esi
++ 298afdd: c1 ea 04                     	shrl	$0x4, %edx
++ 298afe0: 0f b6 14 0a                  	movzbl	(%rdx,%rcx), %edx
++ 298afe4: 88 54 44 10                  	movb	%dl, 0x10(%rsp,%rax,2)
++ 298afe8: 40 88 74 44 11               	movb	%sil, 0x11(%rsp,%rax,2)
++ 298afed: 48 83 c0 02                  	addq	$0x2, %rax
++ 298aff1: 48 3d 01 00 02 00            	cmpq	$0x20001, %rax          # imm = 0x20001
++ 298aff7: 75 b7                        	jne	0x298afb0 <.text+0x1571cb0>
++ 298aff9: eb 1d                        	jmp	0x298b018 <.text+0x1571d18>
++ 298affb: ff 15 67 4a b5 03            	callq	*0x3b54a67(%rip)        # 0x64dfa68
++ 298b001: a9 00 02 00 00               	testl	$0x200, %eax            # imm = 0x200
++ 298b006: 74 97                        	je	0x298af9f <.text+0x1571c9f>
++ 298b008: be 00 00 02 00               	movl	$0x20000, %esi          # imm = 0x20000
++ 298b00d: 4c 89 f7                     	movq	%r14, %rdi
++ 298b010: 4c 89 fa                     	movq	%r15, %rdx
++ 298b013: e8 78 67 0a 00               	callq	0x2a31790 <.text+0x1618490>
++ 298b018: 48 8d 73 08                  	leaq	0x8(%rbx), %rsi
++ 298b01c: 48 8d 54 24 0e               	leaq	0xe(%rsp), %rdx
++ 298b021: b9 02 00 04 00               	movl	$0x40002, %ecx          # imm = 0x40002
++ 298b026: 48 89 df                     	movq	%rbx, %rdi
++ 298b029: e8 32 41 c3 ff               	callq	0x25bf160 <.text+0x11a5e60>
++ 298b02e: 48 85 c0                     	testq	%rax, %rax
++ 298b031: 75 0f                        	jne	0x298b042 <.text+0x1571d42>
++ 298b033: 31 c0                        	xorl	%eax, %eax
++ 298b035: 48 81 c4 10 00 04 00         	addq	$0x40010, %rsp          # imm = 0x40010
++ 298b03c: 5b                           	popq	%rbx
++ 298b03d: 41 5e                        	popq	%r14
++ 298b03f: 41 5f                        	popq	%r15
++ 298b041: c3                           	retq
++ 298b042: 48 89 c7                     	movq	%rax, %rdi
++ 298b045: ff 15 7d 63 b5 03            	callq	*0x3b5637d(%rip)        # 0x64e13c8
++ 298b04b: eb e8                        	jmp	0x298b035 <.text+0x1571d35>
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-llvm-dwarfdump.log b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-llvm-dwarfdump.log
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-llvm-dwarfdump.log
+@@ -0,0 +1,2 @@
++Ubuntu LLVM version 18.1.3
++  Optimized build.
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-llvm-objdump.log b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-llvm-objdump.log
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-llvm-objdump.log
+@@ -0,0 +1,49 @@
++Ubuntu LLVM version 18.1.3
++  Optimized build.
++
++
++  Registered Targets:
++    aarch64     - AArch64 (little endian)
++    aarch64_32  - AArch64 (little endian ILP32)
++    aarch64_be  - AArch64 (big endian)
++    amdgcn      - AMD GCN GPUs
++    arm         - ARM
++    arm64       - ARM64 (little endian)
++    arm64_32    - ARM64 (little endian ILP32)
++    armeb       - ARM (big endian)
++    avr         - Atmel AVR Microcontroller
++    bpf         - BPF (host endian)
++    bpfeb       - BPF (big endian)
++    bpfel       - BPF (little endian)
++    hexagon     - Hexagon
++    lanai       - Lanai
++    loongarch32 - 32-bit LoongArch
++    loongarch64 - 64-bit LoongArch
++    m68k        - Motorola 68000 family
++    mips        - MIPS (32-bit big endian)
++    mips64      - MIPS (64-bit big endian)
++    mips64el    - MIPS (64-bit little endian)
++    mipsel      - MIPS (32-bit little endian)
++    msp430      - MSP430 [experimental]
++    nvptx       - NVIDIA PTX 32-bit
++    nvptx64     - NVIDIA PTX 64-bit
++    ppc32       - PowerPC 32
++    ppc32le     - PowerPC 32 LE
++    ppc64       - PowerPC 64
++    ppc64le     - PowerPC 64 LE
++    r600        - AMD GPUs HD2XXX-HD6XXX
++    riscv32     - 32-bit RISC-V
++    riscv64     - 64-bit RISC-V
++    sparc       - Sparc
++    sparcel     - Sparc LE
++    sparcv9     - Sparc V9
++    systemz     - SystemZ
++    thumb       - Thumb
++    thumbeb     - Thumb (big endian)
++    ve          - VE
++    wasm32      - WebAssembly 32-bit
++    wasm64      - WebAssembly 64-bit
++    x86         - 32-bit X86: Pentium-Pro and above
++    x86-64      - 64-bit X86: EM64T and AMD64
++    xcore       - XCore
++    xtensa      - Xtensa 32
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-objdump.log b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-objdump.log
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-objdump.log
+@@ -0,0 +1,5 @@
++GNU objdump (GNU Binutils for Ubuntu) 2.42
++Copyright (C) 2024 Free Software Foundation, Inc.
++This program is free software; you may redistribute it under the terms of
++the GNU General Public License version 3 or (at your option) any later version.
++This program has absolutely no warranty.
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-readelf.log b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-readelf.log
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/version-readelf.log
+@@ -0,0 +1,5 @@
++GNU readelf (GNU Binutils for Ubuntu) 2.42
++Copyright (C) 2024 Free Software Foundation, Inc.
++This program is free software; you may redistribute it under the terms of
++the GNU General Public License version 3 or (at your option) any later version.
++This program has absolutely no warranty.
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/versions.json b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/versions.json
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/receipts/versions.json
+@@ -0,0 +1,7 @@
++{
++  "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
++  "readelf": "GNU readelf (GNU Binutils for Ubuntu) 2.42",
++  "llvm-objdump": "Ubuntu LLVM version 18.1.3",
++  "llvm-dwarfdump": "Ubuntu LLVM version 18.1.3",
++  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]"
++}
+diff --git a/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/reproduce.py b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/reproduce.py
+new file mode 100644
+--- /dev/null
++++ b/research/work-items/RE-002-node115-cfa-frame-policy/r11-fixed-hex-caller/reproduce.py
+@@ -0,0 +1,202 @@
++"""Recheck the two recorded node #115 call edges and their stride as static data."""
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import re
++import struct
++import subprocess
++import sys
++
++
++PACKET = Path(__file__).resolve().parent
++ROOT = PACKET.parents[3]
++TARGET_SHA = "a6e2897cd051213d004802deca416e8eca62b7a8278fa39f249e98c3867b5301"
++TARGET_SIZE = 105896032
++CALLER = (0x250ECD0, 0x250EE44)
++CALLEE = (0x298AF40, 0x298B04D)
++SITES = (0x250ED83, 0x250EDD0)
++STRIDES = {
++    0x250ED91: (b"\x49\x81\xc6", 0x20000),
++    0x250ED98: (b"\x49\x81\xc5", -0x20000),
++    0x250EDD5: (b"\x49\x81\xc6", 0x20000),
++    0x250EDDC: (b"\x49\x81\xc5", -0x20000),
++}
++ROW = re.compile(r"^\s*([0-9a-fA-F]+):\s+((?:[0-9a-fA-F]{2}\s+)+)")
++
++
++def require(condition, reason):
++    if not condition:
++        raise ValueError(reason)
++
++
++def sha(raw):
++    return hashlib.sha256(raw).hexdigest()
++
++
++def rows(log):
++    result = []
++    for line in log.splitlines():
++        match = ROW.match(line)
++        if match:
++            result.append((int(match[1], 16), bytes.fromhex(match[2])))
++    return result
++
++
++def partition(native, bounds):
++    start, end = bounds
++    position = start
++    for address, raw in native:
++        require(address == position and 1 <= len(raw) <= 15, "native partition")
++        position += len(raw)
++    require(position == end, "native partition")
++    return b"".join(raw for _, raw in native)
++
++
++def observations(native):
++    by_site = dict(native)
++    for site in SITES:
++        raw = by_site.get(site, b"")
++        require(len(raw) == 5 and raw[:1] == b"\xe8"
++                and site + len(raw) + int.from_bytes(raw[1:], "little", signed=True) == CALLEE[0],
++                f"call destination {site:#x}")
++    for site, (opcode, stride) in STRIDES.items():
++        raw = by_site.get(site, b"")
++        require(len(raw) == 7 and raw[:3] == opcode
++                and int.from_bytes(raw[3:], "little", signed=True) == stride,
++                f"stride {site:#x}")
++    require(by_site.get(0x250ED8D) == bytes.fromhex("49c1e511"), "shift amount")
++
++
++def extent(matches, expected):
++    require(len(matches) == 1 and (matches[0]["start"], matches[0]["end"]) == expected, "FDE extent")
++    return matches[0]
++
++
++def identity(raw, expected):
++    require(sha(raw) == expected, "body digest")
++
++
++def controls(native, caller_body, caller_sha, fde):
++    results = {}
++
++    def reject(label, reason, call, *args):
++        try:
++            call(*args)
++        except ValueError as error:
++            require(str(error) == reason, f"{label} rejected for the wrong reason")
++            results[label] = reason
++        else:
++            raise ValueError(f"{label} passed")
++
++    for site, byte, reason in [
++        *((site, 1, f"call destination {site:#x}") for site in SITES),
++        (0x250ED91, 5, "stride 0x250ed91"),
++        (0x250EDDC, 5, "stride 0x250eddc"),
++        (0x250ED8D, 3, "shift amount"),
++    ]:
++        altered = [(address, raw[:byte] + bytes([raw[byte] ^ 1]) + raw[byte + 1:]
++                    if address == site else raw) for address, raw in native]
++        reject(reason, reason, observations, altered)
++    reject("gap", "native partition", partition, native[:1] + native[2:], CALLER)
++    reject("extent", "FDE extent", extent, [dict(fde, end=fde["end"] - 1)], CALLER)
++    reject("body", "body digest", identity, bytes([caller_body[0] ^ 1]) + caller_body[1:], caller_sha)
++    return results
++
++
++def file_window(image, section, start, end):
++    require(section["address"] <= start < end <= section["address"] + section["size"], "section bounds")
++    offset = section["offset"] + start - section["address"]
++    return offset, image[offset:offset + end - start]
++
++
++def frame_record(image, section, address):
++    offset, length_bytes = file_window(image, section, address, address + 4)
++    length = struct.unpack("<I", length_bytes)[0]
++    require(4 <= length <= 4096, "frame record size")
++    _, raw = file_window(image, section, address, address + length + 4)
++    return {"va": hex(address), "file_offset": hex(offset), "hex": raw.hex(), "sha256": sha(raw)}
++
++
++def reproduce(binary, output):
++    require(binary.stat().st_size == TARGET_SIZE, "capture size")
++    image = binary.read_bytes()
++    require(len(image) == TARGET_SIZE and sha(image) == TARGET_SHA, "capture digest")
++    sys.path.insert(0, str(ROOT / "tools"))
++    from elf_index import sections
++    from fde_extents import eh_frame_records
++
++    evidence = json.loads((PACKET / "evidence.json").read_text())
++    require(evidence["target"]["sha256"] == TARGET_SHA, "evidence target identity")
++    receipt_index = json.loads((PACKET / "receipt-index.json").read_text())["files"]
++    receipts = PACKET / "receipts"
++    require({path.name: sha(path.read_bytes()) for path in receipts.iterdir()} == receipt_index,
++            "original receipt identity")
++    section_rows = sections(image)
++    frames = [item for item in section_rows if item["name"] == ".eh_frame" and item["type"] != 8]
++    require(len(frames) == 1, "unique file-backed .eh_frame")
++    frame_section, = frames
++    _, fdes = eh_frame_records(image, section_rows)
++    output.mkdir(parents=True, exist_ok=False)
++    result = {"target_sha256": TARGET_SHA, "target_bytes": TARGET_SIZE, "intervals": {}, "tool_versions": {}}
++    tools = {"gnu": ("objdump", "-d", "-z", "--insn-width=16"),
++             "llvm": ("llvm-objdump", "-d", "--disassemble-zeroes")}
++    for label, (tool, *_) in tools.items():
++        result["tool_versions"][label] = subprocess.check_output(
++            [tool, "--version"], text=True, timeout=10).splitlines()[0]
++
++    for label, bounds, receipt, key in [
++        ("caller", CALLER, "caller-0x250ecd0", "caller"),
++        ("callee", CALLEE, "selected", "selected_callee"),
++    ]:
++        start, end = bounds
++        meta = evidence[key]
++        require((int(meta["start_va"], 16), int(meta["end_va"], 16)) == bounds, "evidence interval")
++        fde = extent([item for item in fdes if item["start"] == start], bounds)
++        owners = [item for item in section_rows if item["type"] != 8 and item["flags"] & 4
++                  and item["address"] <= start < end <= item["address"] + item["size"]]
++        require(len(owners) == 1, "unique executable section")
++        offset, body = file_window(image, owners[0], start, end)
++        identity(body, meta["body_sha256"])
++        require(len(body) == meta["bytes"], "evidence body size")
++        command_records = {}
++        native = None
++        for flavor, command in tools.items():
++            argv = [*command, f"--start-address={start:#x}", f"--stop-address={end:#x}", str(binary)]
++            run = subprocess.run(argv, check=True, capture_output=True, timeout=30)
++            require(len(run.stdout) <= 65536 and not run.stderr, "unexpected native output")
++            current = rows(run.stdout.decode("utf-8"))
++            retained = rows((receipts / f"{receipt}-{flavor}.log").read_text())
++            require(current == retained and partition(current, bounds) == body, "native byte agreement")
++            require(len(current) == meta["instructions"], "native row count")
++            require(native is None or native == current, "GNU/LLVM agreement")
++            native = current
++            (output / f"{label}-{flavor}.log").write_bytes(run.stdout)
++            command_records[flavor] = {"argv": argv, "exit_code": run.returncode, "sha256": sha(run.stdout)}
++        result["intervals"][label] = {
++            "start": hex(start), "end": hex(end), "file_offset": hex(offset), "bytes": len(body),
++            "body_sha256": sha(body), "instruction_rows": len(native),
++            "fde": frame_record(image, frame_section, fde["fde"]),
++            "cie": frame_record(image, frame_section, fde["cie"]), "commands": command_records,
++        }
++        if label == "caller":
++            observations(native)
++            by_site = dict(native)
++            for observation in evidence["observations"]:
++                site = int(observation["site_va"], 16)
++                require(by_site.get(site) == bytes.fromhex(observation["bytes"]), "observation bytes")
++            result["controls"] = controls(native, body, meta["body_sha256"], fde)
++    result["direct_call_sites"] = [hex(site) for site in SITES]
++    result["direct_call_destination"] = hex(CALLEE[0])
++    result["observed_stride_bytes"] = 0x20000
++    (output / "result.json").write_text(json.dumps(result, indent=2) + "\n")
++    print(json.dumps({"intervals_checked": 2, "direct_calls_checked": len(SITES),
++                      "controls_rejected": len(result["controls"]), "result": str(output / "result.json")}))
++
++
++if __name__ == "__main__":
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--binary", type=Path, required=True)
++    parser.add_argument("--out", type=Path, required=True)
++    options = parser.parse_args()
++    reproduce(options.binary.resolve(), options.out.resolve())

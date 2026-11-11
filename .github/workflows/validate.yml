@@ -1,0 +1,35 @@
+name: Node #115 caller packet final documentation checks
+on:
+  push:
+    branches: [validation/node115-r11-caller-docs-20261111]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          path: control
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: lalalune/hyperliquid-source
+          ref: a8616af9432b8d8517b2af677880e117b7c28ef3
+          path: acquired
+          persist-credentials: false
+          lfs: true
+          submodules: recursive
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.3'
+      - name: Check final packet and manifest offline
+        working-directory: control
+        run: bash payload/bootstrap.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: node115-r11-caller-docs-receipts
+          path: probe-receipts/
+          retention-days: 7
